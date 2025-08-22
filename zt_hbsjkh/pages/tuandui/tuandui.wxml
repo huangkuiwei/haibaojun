@@ -1,0 +1,48 @@
+<view  class="container">
+  <view class='tuijian' wx:if="{{parent!=null}}">
+    <text class='tuijian_top'>您的推荐人</text>
+    <view class='tuijian_bottom'>
+      <image src='{{parent.avatar}}' wx:if="{{parent.avatar!=''}}"></image>
+      <image src='../../resource/img/tx_wode_kong.png' wx:else></image>
+      <text wx:if="{{parent.nickname!=''}}">{{parent.nickname}}</text>
+      <text wx:else>游客</text>
+    </view>
+  </view>
+  <view class='tuandui'>
+    <text class='tuandui_top'>我的团队</text>
+    <view class='tuandui_m'>
+      <image class="img_bg" src="../../resource/img/bg_tuandui.png"></image>
+      <view class="tuandui_m_num">{{totalall}}</view>
+      <view class="tuandui_m_sm">总人数</view>
+    </view>
+    <view class='tuandui_b'>
+      <view class='tuandui_b_item'>
+        <text style='margin-bottom:11rpx;font-size:32rpx;'>{{totaltoday}}</text>
+        <text>今日(人)</text>
+      </view>
+      <view class='tuandui_b_item'>
+        <text style='margin-bottom:11rpx;font-size:32rpx;'>{{totalyesterday}}</text>
+        <text>昨日(人)</text>
+      </view>
+      <view class='tuandui_b_item'>
+        <text style='margin-bottom:11rpx;font-size:32rpx;'>{{totalbenyue}}</text>
+        <text>本月(人)</text>
+      </view>
+      <view class='tuandui_b_item' style='border:none;'>
+        <text style='margin-bottom:11rpx;font-size:32rpx;'>{{totalshangyue}}</text>
+        <text>上月(人)</text>
+      </view>
+    </view>
+  </view>
+  <view class='huiyuan'>
+    <view class='huiyuan_head'>推荐列表</view>
+    <scroll-view class='huiyuan_list' scroll-y>
+      <view class='huiyuan_item' wx:for="{{show_huiyuan}}">
+        <image src='{{item.avatar}}' wx:if="{{item.avatar!=''}}"></image>
+        <image src='../../resource/img/tx_wode_kong.png' wx:else></image>
+        <text wx:if="{{item.nickname!=''}}">{{item.nickname}}</text>
+        <text wx:else>游客</text>
+      </view>
+    </scroll-view>    
+  </view>
+</view>

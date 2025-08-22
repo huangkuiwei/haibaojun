@@ -1,0 +1,11 @@
+<view class="success-page">
+    <view class="foot-box">
+      <navigator open-type="switchTab" url="/zt_hbsjkh/pages/index/index">
+        <image
+        class="success_btn"
+        mode="widthFix"
+        src="https://hnenjoy.oss-accelerate.aliyuncs.com/sempages/adlyzzfb/06031/success_btn.png"
+      />
+      </navigator>
+    </view>
+  </view>

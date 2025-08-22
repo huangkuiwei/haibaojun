@@ -1,0 +1,34 @@
+<!-- 加图或者换图 -->
+<view class='chang_pics' wx:if="{{show_status==8}}">
+  <view class='chang_pics_title'>
+    <view class='chang_pics_title_item' bindtap='chang_pics_swith' style='margin-left:40rpx;' data-status="1">
+      <image src='../../resource/img/icon_dz_wode_on.png' wx:if="{{edit_pics_status==1}}"></image>
+      <image src='../../resource/img/icon_dz_wode_off.png' wx:else></image>
+      <text class="{{edit_pics_status==0?'off':'on'}}">我的图片</text>
+    </view>
+    <view class='chang_pics_title_item' style='margin-left:60rpx;' bindtap='chang_pics_swith' data-status="0">
+      <image src='../../resource/img/icon_dz_xtpics_on.png' wx:if="{{edit_pics_status==0}}"></image>
+      <image src='../../resource/img/icon_dz_xtpics_off.png' wx:else></image>
+      <text class="{{edit_pics_status==0?'on':'off'}}">参考图片</text>
+    </view>
+    <text class='shuoming' bindtap='show_more_xtpics'>更多图片 ></text>
+  </view>
+  <view class='chang_pics_content' wx:if="{{edit_pics_status==1}}">
+    <view class='chang_pics_content_left'>
+      <image src='../../resource/img/icon_dz_upload.png' style='width:91rpx;height:95rpx;' bindtap='add_pic'></image>
+      <text bindtap='add_pic'>点击上传</text>
+    </view>
+    <scroll-view class='chang_pics_content_right' scrollWithAnimation="true" scroll-x="true" bindscrolltolower='load_mypic'>
+      <view class='chang_pics_content_item' wx:for="{{mpics}}" bindtap='choose_pics' data-url='{{item}}' wx:if="{{index<(cur_mypic_page*5)}}">
+        <image class='choose_xt_pics' src='{{item}}'></image>
+        <!-- <image src='../../resource/img/icon_dz_pics_selected.png' style='width:30rpx;height:34rpx;position: absolute;right:0rpx;bottom:0rpx;' wx:if="{{cur_selected_mypics==index}}"></image> -->
+      </view>
+    </scroll-view>
+  </view>
+  <scroll-view class='chang_pics_content_cankao' wx:if="{{edit_pics_status==0}}" scrollWithAnimation="true" scroll-x="true">
+    <view class='chang_pics_content_item' wx:for="{{moren_pics}}" bindtap='choose_pics' data-url='{{item}}'>
+      <image class='choose_xt_pics' src='{{item}}'></image>
+      <image src='../../resource/img/icon_dz_pics_selected.png' style='width:30rpx;height:34rpx;position: absolute;right:0rpx;bottom:0rpx;' wx:if="{{cur_selected_xtpics==index}}"></image>
+    </view>
+  </scroll-view>
+</view>

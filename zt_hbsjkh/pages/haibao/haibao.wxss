@@ -1,0 +1,114 @@
+page{
+  width: 750rpx;
+  height: 100%;
+}
+.canvas_view{
+  overflow: hidden;
+  position: absolute;
+  left: 750rpx;
+}
+.canvas{
+  width: 486px;
+  height: 800px;
+  background-color:red;
+  position: absolute;
+  top: 0rpx;
+}
+page{
+  background-color: #EEF2F5;
+}
+.container{
+  width: 750rpx;
+  position: absolute;
+  top: 0rpx;
+  min-height: 100%;
+  background-color: #EEF2F5;
+  margin-bottom: 150rpx;
+}
+.top_head{
+  width: 750rpx;
+  height: 90rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.top_head text{
+  width: 750rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  float: left;
+  text-align: center;
+  background-color: white;
+  font-size: 33rpx;
+  letter-spacing: 1rpx;
+}
+.haibao_shuoming{
+  width: 690rpx;
+  padding: 30rpx;
+  background-color: white; 
+  margin-bottom: 45rpx; 
+}
+.haibao_shuoming image{
+  width: 692rpx;
+  height: 293rpx;
+}
+.btns{
+  width:664rpx;
+  height:90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background:linear-gradient(-4deg,rgba(246,201,98,1),rgba(251,213,111,1),rgba(255,222,135,1));
+
+  position: fixed;
+  left: 43rpx;
+  bottom: 20rpx;
+  font-size: 32rpx;
+  letter-spacing: 1rpx;
+  color: #333333;
+  border-radius: 45rpx;
+}
+.btns text{
+  float: left;
+  color: white;
+  height: 110rpx;
+  line-height: 110rpx;
+  width: 750rpx;
+  text-align: center;
+  font-size:32rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+}
+.haibao_content{
+  padding-bottom: 120rpx;
+  width: 600rpx;
+  background-color: white;
+  padding: 30rpx 75rpx 75rpx 75rpx;
+}
+.haibao_pic{
+  width: 600rpx;
+  height: 1025rpx;
+}
+.slide-image{
+  width: 600rpx;
+  height: 1025rpx;
+}
+.guize{
+  margin: 40rpx;
+  width: 670rpx;
+}
+.guize text{
+  width:670rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  line-height:47rpx;
+  display: block;
+}
+.guize .guize_head{
+  font-size:35rpx;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+.guize .guize_content{
+
+}

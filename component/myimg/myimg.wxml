@@ -1,0 +1,8 @@
+<view class="section" style="width:{{width}}rpx; height: {{height}}rpx;">
+	<view class="imgcontainer {{ismoving==0?'no_biankuang':'has_biankuang'}}"
+		style="width:{{width-4}}rpx; height: {{height-4}}rpx;" wx:if="{{originImg.path!=''}}" catchtap="want_focus">
+		<image class='show_img'
+			style="transform: translate({{stv.offsetX}}rpx, {{stv.offsetY}}rpx) scale({{stv.scale}}) rotate({{ stv.rotate }}deg);width:{{originImg.width}}rpx; height: {{originImg.height}}rpx;"
+			src="{{originImg.path}}"></image>
+	</view>
+</view>

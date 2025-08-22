@@ -1,0 +1,192 @@
+
+@import './jieguo.wxss';
+.container {
+  width: 750rpx;
+  height: 100%;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+.view_sousuo {
+  width: 720rpx;
+  height: 64rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-left: 15rpx;
+  margin-top: 15rpx;
+}
+
+.view_sousuo_icon {
+  width: 80rpx;
+  height: 52rpx;
+}
+
+.view_sousuo_input {
+  width: 720rpx;
+  height: 64rpx;
+  background: rgba(240, 239, 239, 1);
+  border-radius: 30rpx;
+  padding-left: 37rpx;
+  padding-right: 37rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.view_sousuo_input image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 21rpx;
+}
+
+.view_sousuo_input text {
+  font-size: 28rpx;
+  font-family: SimHei;
+  font-weight: 400;
+  color: rgba(114, 114, 114, 1);
+}
+
+.fenlei {
+  width: 750rpx;
+  /* margin-top: 30rpx; */
+  border-top: 2rpx solid #F0EFEF;
+  position: absolute;
+  left: 0rpx;
+  right: 0rpx;
+  top: 111rpx;
+  bottom: 0rpx;
+}
+
+.fenlei_head {
+  width: 158rpx;
+  height: 100%;
+  position: absolute;
+  left: 0rpx;
+  background-color: #F4F4F4;
+}
+
+.scroll-view-item {
+  display: inline-block;
+  height: 78rpx;
+  width: 158rpx;
+  position: relative;
+}
+
+.yellow_bar {
+  width: 6rpx;
+  height: 60rpx;
+  background-color: #FFDD02;
+  position: absolute;
+  left: 0rpx;
+  top: 9rpx;
+  z-index: 999;
+}
+
+.scroll-view-item .right {
+  color: #606060;
+  width: 98rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 158rpx;
+  font-size: 26rpx;
+  text-align: center;
+  position: absolute;
+  right: 0rpx;
+  top: 9rpx;
+}
+
+.active {
+  color: #333333;
+  background-color: white;
+}
+
+.fenlei_content {
+  width: 536rpx;
+  height: 100%;
+  position: absolute;
+  right: 24rpx;
+  top: 0rpx;
+}
+
+.fenlei_content_head {
+  width: 536rpx;
+  height: 46rpx;
+  white-space: nowrap;
+  margin-top: 15rpx;
+  margin-bottom: 18rpx;
+}
+
+.fenlei_content_head_item {
+  display: inline-block;
+  height: 46rpx;
+  line-height: 46rpx;
+  text-align: center;
+  padding-right: 17rpx;
+  padding-left: 17rpx;
+  background: rgba(240, 239, 239, 1);
+  border-radius: 15rpx;
+  font-size: 24rpx;
+  font-family: SimHei;
+  font-weight: 400;
+  color: rgba(96, 96, 96, 1);
+  /* width: fit-content; */
+  /* display: inline-block; */
+  margin-right: 24rpx;
+}
+.fenlei_content_head_item_on{
+  color: #333333;
+  background-color: #FFDD02;
+}
+.fenlei_content_show{
+  width: 536rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 79rpx;
+  bottom: 0rpx;
+}
+.fenlei_content_show_left{
+  width: 258rpx;
+  position: absolute;
+  left: 0rpx;
+  min-height: 103%;
+}
+.fenlei_content_show_right{
+  width: 258rpx;
+  position: absolute;
+  right: 0rpx;
+  min-height: 103%;
+}
+.fenlei_content_show image{
+  width: 258rpx;
+  margin-bottom: 15rpx;  
+  border-radius: 10rpx;
+}
+.fenlei_content_show video{
+  width: 258rpx;
+  margin-bottom: 15rpx;
+  position: relative;
+}
+.icon_editzuopin{
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+.old_border{
+  /* border: 4rpx solid black; */
+}
+.btn_download{
+  width: 40rpx!important;
+  height: 40rpx!important;
+  position: absolute!important;
+  bottom: 20rpx!important;
+  right: 10rpx!important;
+}
+.muban_item{
+  position: relative;
+}

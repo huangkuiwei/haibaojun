@@ -1,0 +1,38 @@
+<view class='jieguo_view' wx:if="{{wenan_show_status==1}}">
+  <view class="jieguo_content">
+    <image src="../../resource/img/bg_dz_bcss.png" class="jieguo_content_bg"></image>
+    <view class="jieguo_content_btn_close" bindtap="wenan_jieguo_content_close"></view>
+    <view wx:if="{{wenan_user_info.vip==4}}">
+      <view class="jieguo_tishi_1">您是超级会员</view>
+      <view class="jieguo_tishi_2">可以无限制下载文案</view>
+      <view class="btns_view">
+        <view class="btns_view_left" bindtap="wenan_jieguo_content_close">取消</view>
+        <view class="btns_view_right" bindtap="down_wenan">下载</view>
+      </view>
+    </view>
+    <view wx:elif="{{wenan_user_info.vip!=0}}">
+      <view class="jieguo_tishi_1">您是会员</view>
+      <view class="jieguo_tishi_2">可以免费下载无水印文案</view>
+      <view class="btns_view">
+        <view class="btns_view_left" bindtap="wenan_jieguo_content_close">取消</view>
+        <view class="btns_view_right" bindtap="down_wenan">下载</view>
+      </view>
+    </view>
+    <view wx:elif="{{(wenan_user_info.vip==0)&&(sys_ios==0)}}">
+      <view class="jieguo_tishi_1">会员才能免费下载无水印文案</view>
+      <view class="jieguo_tishi_2">前往开通会员</view>
+      <view class="btns_view">
+        <view class="btns_view_left" bindtap="wenan_jieguo_content_close">取消</view>
+        <view class="btns_view_right" bindtap="go_vip">前往</view>
+      </view>
+    </view>
+    <view wx:elif="{{(wenan_user_info.vip==0)&&(sys_ios==1)}}">
+      <view class="jieguo_tishi_1">抱歉,您不能免费下载文案</view>
+      <view class="jieguo_tishi_2">联系客服开通权限</view>
+      <view class="btns_view">
+        <view class="btns_view_left" bindtap="wenan_jieguo_content_close">取消</view>
+        <button class="btns_view_right" open-type='contact' style="margin:0;">客服</button>
+      </view>
+    </view>
+  </view>
+</view>

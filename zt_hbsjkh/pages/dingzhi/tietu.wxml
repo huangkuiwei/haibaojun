@@ -1,0 +1,12 @@
+<view class='tietu_container' wx:if="{{show_status==3}}">
+	<scroll-view class='tietu_title_title' scrollWithAnimation="true" scroll-x="true">
+		<view wx:for="{{all_xtpics}}" class="tietu_title_title_item {{cur_xtpics_index==index?'active':''}}" data-index='{{index}}' bindtap='select_xtpics_kind' style='color:{{mlib_style.fontcolor}};'>{{item.name}}</view>
+	</scroll-view>
+	<!-- <scroll-view class='tietu_title_title' scrollWithAnimation="true" scroll-x="true">
+		<text wx:for="{{all_xtpics}}" class="tietu_title_title_item {{cur_xtpics_index==index?'active':''}}" data-index='{{index}}' bindtap='select_xtpics_kind'>{{item.name}}</text>
+	</scroll-view> -->
+	<scroll-view class='tietu_title_content' scroll-y="true">
+		<image wx:for="{{all_xtpics[cur_xtpics_index].pics}}" class="tietu_title_content_item" data-url='{{item}}' bindtap='choose_pics' src="{{item}}" lazy-load='true' mode="widthFix"></image>
+	</scroll-view>
+	<view class="tietu_foot" bindtap="close_xtpics">取消</view>
+</view>

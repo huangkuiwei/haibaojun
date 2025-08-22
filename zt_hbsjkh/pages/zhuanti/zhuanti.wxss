@@ -1,0 +1,76 @@
+.container{
+  width: 750rpx;
+  min-height: 100%;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  padding-bottom: 60rpx;
+}
+.top_img{
+  width: 750rpx;
+  position: relative;
+}
+.mubans{
+  width: 690rpx;
+  position: relative;
+  left: 30rpx;
+}
+.muban_item_title{
+  width: 690rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.muban_item_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  white-space: pre-wrap;
+  flex-wrap: wrap;
+}
+.muban_item_content image{
+  width: 220rpx;
+  /* margin-right: 15rpx; */
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.muban_item_bottom{
+  width: 690rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 23rpx;
+  text-align: center;
+  margin-top: 25rpx;
+}
+.menus{
+  width: 90rpx;
+  height: 230rpx;
+  display: flex;  
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  position: fixed;
+  right: 30rpx;
+  bottom: 120rpx;
+}
+.menus_item{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 90rpx;
+  text-align: center;
+  color: white;
+  font-size: 26rpx;
+  letter-spacing: 2rpx;
+  white-space: nowrap;
+  position: relative;
+}
+.menus_item button{
+  position: absolute;
+  opacity: 0;
+}

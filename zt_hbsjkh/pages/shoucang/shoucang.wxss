@@ -1,0 +1,112 @@
+.container{
+  width: 750rpx;
+  min-height: 100%;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  background-color: #fafafa;
+}
+.zuopin_kong image{
+  width: 456rpx;
+  height: 454rpx;
+  position: absolute;
+  left: 164rpx;
+  top: 172rpx;
+}
+.zuopin_kong view{
+  width: 750rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 630rpx;
+  text-align: center;
+  font-size:36rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(151,151,151,1);
+}
+.zuopin_list{
+  width: 710rpx;
+  position: relative;
+  left: 20rpx;
+  top: 30rpx;
+}
+.zuopin_list_left{
+  width: 342rpx;
+  position: absolute;
+  left: 0rpx;
+}
+.zuopin_list_right{
+  width: 342rpx;
+  position: absolute;
+  right: 0rpx;
+}
+.zuopin_item{
+  width: 342rpx;
+  box-shadow:0px 8rpx 5rpx 1rpx rgba(69,69,69,0.24);
+  margin-bottom: 30rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+  position: relative;
+}
+.img_zuopin{
+  width: 342rpx;
+  display: inline-block;
+  margin: 0;  
+  outline-width:0rpx;
+  vertical-align:top;
+}
+.zuopin_item_bottom{
+  width: 304rpx;
+  height: 56rpx;
+  padding: 19rpx 19rpx 14rpx 19rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.btn_close{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+.btn_download{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: 153rpx;
+  right: 10rpx;
+}
+.btn_share{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: 103rpx;
+  right: 10rpx;
+}
+.zuopin_name{
+  width: 304rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size:24rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.zuopin_date{
+  width: 304rpx;
+  height: 18rpx;
+  line-height: 18rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size:24rpx;
+  font-family:Arial;
+  font-weight:400;
+  color:rgba(151,151,151,1);
+}

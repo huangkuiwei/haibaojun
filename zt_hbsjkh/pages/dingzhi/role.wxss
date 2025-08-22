@@ -1,0 +1,34 @@
+.role_txt_container{
+  width: 80rpx;
+  height: 380rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: 30rpx;
+  top: 500rpx;
+  /* background-color: yellow; */
+  z-index: 999;
+}
+.role_txt_container image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.role_img_container{
+  width: 80rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: 30rpx;
+  top: 400rpx;
+  /* background-color: yellow; */
+  z-index: 999;
+}
+.role_img_container image{
+  width: 80rpx;
+  height: 80rpx;
+}

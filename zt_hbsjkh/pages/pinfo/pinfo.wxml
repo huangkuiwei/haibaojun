@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="txt_tishi">#个人信息将用于自动替换模板里的指定内容#</view>
+	<view class='tiwen'>
+		<form bindsubmit="tijiao">
+			<view class="qy_info">
+				<view class="info_title">基本信息</view>
+				<view class="info_input" bindtap="change_tx">
+					<text>二维码</text>
+          <image src="{{member.erweima}}" class="image_info" wx:if="{{member.erweima!=''}}"></image>
+          <image class="image_info_kong" wx:else src="../../resource/img/icon_jia_yuan.png"></image>
+				</view>
+				<view class="info_input" bindtap="change_logo">
+					<text>LOGO</text>
+          <image src="{{member.logo}}" class="image_info" wx:if="{{member.logo!=''}}"></image>
+          <image class="image_info_kong" wx:else src="../../resource/img/icon_jia_yuan.png"></image>
+				</view>
+				<view class="info_input">
+					<text>姓名</text>
+					<input name='realname' placeholder='请填写真实姓名' placeholder-class="info_input_placeholder" value="{{member.realname}}"></input>
+				</view>
+				<view class="info_input">
+					<text>公司职级</text>
+					<input name='shopname' placeholder='请填写公司职级' placeholder-class="info_input_placeholder" value="{{member.shopname}}"></input>
+        </view>
+				<view class="info_input">
+					<text>电话</text>
+					<input name='tel' placeholder='请填写电话' placeholder-class="info_input_placeholder" value="{{member.tel}}" type='number'></input>
+        </view>
+				<view class="info_input">
+					<text>个人签名</text>
+					<input name='addr' placeholder='请填写个人签名' placeholder-class="info_input_placeholder" value="{{member.addr}}"></input>
+        </view>
+			</view>
+			<button formType="submit" class='foot_btn_right'>修改</button>
+		</form>
+	</view>
+</view>

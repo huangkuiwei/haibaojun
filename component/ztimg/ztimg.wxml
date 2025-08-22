@@ -1,0 +1,23 @@
+<view class="ztimg_container" style='z-index:{{zindex}};height:{{pos_inited[3]}}rpx;width:{{pos_inited[2]}}rpx;top:{{pos_inited[1]}}rpx;left:{{pos_inited[0]}}rpx;transform: translate({{cStv.offsetX}}rpx, {{cStv.offsetY}}rpx) scale({{cStv.scale}}) rotate({{ cStv.rotate }}deg);' wx:if="{{has_inite==1}}" catchtap="selected">
+  <view class="tips" wx:if="{{(status==1)&&(ismoving==0)}}" style="left:{{pos_inited[2]/2-108}}rpx;transform: translate(0rpx, {{15*(1-1/cStv.scale)-30}}rpx) scale({{1/cStv.scale}}) rotate(0deg);">点击替换图片,双指缩放</view>
+	<!--图片内容 -->
+	<view class="ztimg_content" style='height:{{pos_inited[3]}}rpx;width:{{pos_inited[2]}}rpx;top:0rpx;left:0rpx;'>
+		<image src="{{originImg.path}}" style='height:{{pos_inited[3]}}rpx;width:{{pos_inited[2]}}rpx;transform: translate({{imgStv.offsetX}}rpx, {{imgStv.offsetY}}rpx) scale({{imgStv.scale}}) rotate({{ imgStv.rotate }}deg);opacity: {{toumingdu/100}};'></image>
+	</view>
+	<!--图片框 -->
+	<view class="ztimg_kuang" style='height:{{pos_inited[3]}}rpx;width:{{pos_inited[2]}}rpx;top:-2rpx;left:-2rpx;' wx:if="{{status==1}}">
+		<view class="btn_zoom" style="bottom:-25rpx;right:-25rpx;transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);" catchtouchmove='touchmove' catchtouchstart="touchstart" catchtouchend="touchend" data-type="3" wx:if="{{ismoving==0}}">
+			<image src="./img/icon_zoom.png" style="width:30rpx;height:30rpx;"></image>
+		</view>
+		<view class="btn_zoom" style="bottom:-25rpx;left:-25rpx;transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);" wx:if="{{ismoving==0}}" catchtap="go_down">
+			<image src="./img/down.png" style="width:30rpx;height:30rpx;"></image>
+		</view>
+		<view class="btn_zoom" style="top:-25rpx;right:-25rpx;transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);" wx:if="{{ismoving==0}}" catchtap="go_up">
+			<image src="./img/up.png" style="width:30rpx;height:30rpx;"></image>
+		</view>
+	</view>
+	<!--旋转按钮-->
+	<view class="btn_xuanzhuan_view" wx:if="{{(status==1)&&(ismoving==0)}}" catchtouchmove='touchmove' catchtouchstart="touchstart" catchtouchend="touchend" data-type="0" style="bottom: {{-11-(1/cStv.scale-1)*5.5}}vw;left:{{pos_inited[2]/2-37.5}}rpx;transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);">
+		<image src="./img/icon_xuanzhuan.png" class="btn_xuanzhuan"></image>
+	</view>
+</view>

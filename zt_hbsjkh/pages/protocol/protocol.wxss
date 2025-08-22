@@ -1,0 +1,22 @@
+.protocol-page {
+  padding: 30rpx;
+  font-size: 24rpx;
+  line-height: 1.8;
+}
+
+.protocol-page view {
+  margin-bottom: 10rpx;
+}
+
+.protocol-page view.title {
+  text-align: center;
+  font-size: 46rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+
+.protocol-page view.subtitle {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 20rpx 0;
+}

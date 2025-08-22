@@ -1,0 +1,11 @@
+<view class='container' wx:if="{{show_status==1}}" bindtap="colse">
+  <view class="content" catchtap="ceshi">
+    <view class="title">{{title}}</view>
+    <view class="content_content">{{content}}</view>
+    <view class="btns" wx:if="{{(ltxt!='')||(rtxt!='')}}">
+      <view class="btns_left" catchtap="l_onclick" wx:if="{{ltxt!=''}}">{{ltxt}}</view>
+      <!-- <view class="btns_right" catchtap="r_onclick" wx:if="{{rtxt!=''}}">{{rtxt}}</view> -->
+      <button open-type='contact' class="btns_right" catchtap="r_onclick" wx:if="{{rtxt!=''}}">{{rtxt}}</button>
+    </view>
+  </view>
+</view>

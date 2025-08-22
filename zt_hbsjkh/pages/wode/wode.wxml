@@ -1,0 +1,142 @@
+<include src="../shouquan/shouquan" />
+<view class='container'>
+  <view class="head">
+    <!-- <image src="../../resource/img/bg_wode.png" class="bg_head"></image> -->
+    <view class="head_content">
+      <image src="../../resource/img/tx_wode_kong.png" class="touxiang" wx:if="{{(member.avatar=='')&&(member.nickname=='') || (is_login == 0)}}" bindtap="login"></image>
+      <open-data type="userAvatarUrl" class="touxiang" wx:else></open-data>
+      <view>
+        <view class="nickname" wx:if="{{(member.avatar=='')&&(member.nickname=='')  || (is_login == 0)}}" bindtap="login">点击登录</view>
+        <open-data type="userNickName" class="nickname" wx:else></open-data>
+        <!-- <view style="margin-top: 10rpx;" wx:if="{{is_login == 1}}">{{member.tel}}</view> -->
+      </view>
+
+      <block wx:if="{{ is_login == 1 }}">
+        <!-- <image class="icon_vip" src="../../resource/img/icon_vip_0.png" wx:if="{{member.vip==0}}"></image>
+        <image class="icon_vip" src="{{fenxiao.niankalogo}}" wx:elif="{{member.vip==3}}"></image>
+        <image class="icon_vip" src="{{fenxiao.jikalogo}}" wx:elif="{{member.vip==2}}"></image>
+        <image class="icon_vip" src="{{fenxiao.yuekalogo}}" wx:elif="{{member.vip==1}}"></image> -->
+
+        <view class="icon_vip-wrap">
+          <image mode="widthFix" class="icon_vip" src="../../resource/img/tp-vip.png" wx:if="{{member.vip==0}}"></image>
+          <image mode="widthFix" class="icon_vip" src="{{fenxiao.niankalogo}}" wx:if="{{member.vip==3}}"></image>
+          <image mode="widthFix" class="icon_vip" src="{{fenxiao.yuekalogo}}" wx:if="{{member.vip==1}}"></image>
+          <image mode="widthFix" class="icon_vip" src="{{fenxiao.jikalogo}}" wx:if="{{member.vip==2}}"></image>
+
+          <text class="pt-vip-text" wx:if="{{member.vip==0}}">普通会员</text>
+
+          <view class="vip-text" wx:if="{{member.vip==1 || member.vip==2 ||member.vip==3}}">
+            <text style="color: #FFE2B2; margin-right: 24rpx;">VIP</text>
+            <text style="color: #D12021;" wx:if="{{member.vip==1}}">月</text>
+            <text style="color: #D12021;" wx:if="{{member.vip==2}}">月</text>
+            <text style="color: #D12021;" wx:if="{{member.vip==3}}">年</text>
+          </view>
+        </view>
+      </block>
+
+    </view>
+    <view class="uid_view" bindtap="copy" wx:if="{{ is_login == 1 }}">
+      <view class="uid_view_right" wx:if="{{(member.vip!=0)&&(member.vip!=4)}}">{{member.vipendtime}}会员到期</view>
+    </view>
+    <!-- <view class="shouyi">
+      <view class="shouyi_bottom">
+        <view class="shouyi_bottom_item">
+          <view class="top">{{zuopin}}</view>
+          <view>手机海报</view>
+        </view>
+        <view class="shouyi_bottom_item">
+          <view class="top">{{shoucang}}</view>
+          <view>我的收藏</view>
+        </view>
+        <view class="shouyi_bottom_item">
+          <view class="top">{{wenan}}</view>
+          <view>投稿文案</view>
+        </view>
+      </view>
+    </view> -->
+  </view>
+  <view class="wode_content">
+    <view class="wode_content_item" bindtap="go_vip">
+      <image class="wode_content_item_icon" src="../../resource/img/icon_wode_huiyuan.png"></image>
+      <text class="wode_content_item_name">会员权益</text>
+      <text class="wode_content_item_arrow">></text>
+    </view>
+    <view class="wode_content_item" bindtap="go_shoucang">
+      <image class="wode_content_item_icon" src="../../resource/img/icon_wode_shoucang.png"></image>
+      <text class="wode_content_item_name">我的收藏</text>
+      <text class="wode_content_item_arrow">></text>
+    </view>
+    <!-- <view class="wode_content_item" bindtap="go_pinfo">
+      <image class="wode_content_item_icon" src="../../resource/img/icon_geren_info.png"></image>
+      <text class="wode_content_item_name">个人信息</text>
+      <text class="wode_content_item_arrow">></text>
+    </view>
+    <view class="wode_content_item" style="border:none;" bindtap="show_shouyi_view">
+      <image class="wode_content_item_icon" src="../../resource/img/icon_geren_info.png"></image>
+      <text class="wode_content_item_name">我的收益</text>
+      <text class="wode_content_item_arrow"><text class="shouyi_head_right">￥{{yue}}</text> ></text>
+    </view> -->
+    <view style="width:636rpx;" class="shouyi_bottom" wx:if="{{show_shouyi==1}}">
+      <view class="shouyi_bottom_item" bindtap="go_haibao">
+        <image src="../../resource/img/icon_yqhy.png"></image>
+        <view>分享赚钱</view>
+      </view>
+      <view class="shouyi_bottom_item" bindtap="go_tuandui">
+        <image src="../../resource/img/icon_td.png"></image>
+        <view>我的粉丝</view>
+      </view>
+      <view class="shouyi_bottom_item" bindtap="go_quxian">
+        <image src="../../resource/img/icon_qx.png"></image>
+        <view>收益取现</view>
+      </view>
+    </view>
+  </view>
+  <view class="wode_content">
+    <view class="wode_content_item" bindtap="go_tel">
+      <image class="wode_content_item_icon" src="../../resource/img/icon_wode_tel.png"></image>
+      <text class="wode_content_item_name">联系电话</text>
+      <text class="wode_content_item_arrow">{{info.tel}}</text>
+    </view>
+    <view class="wode_content_item" style="border:none;">
+      <image class="wode_content_item_icon" src="../../resource/img/icon_wode_wx.png"></image>
+      <text class="wode_content_item_name">微信客服</text>
+      <text class="wode_content_item_arrow">></text>
+      <button bindtap="openCustomerServiceChat"></button>
+    </view>
+  </view>
+
+  <view style="height: 60rpx;"></view>
+  <view style="padding: 30rpx;" wx:if="{{is_login == 1}}">
+    <button bindtap="logout" style="background-color: red;color: #fff;">退出登录</button>
+  </view>
+</view>
+
+<view class="protocol-dialog" wx:if="{{showProtocolDialog}}">
+  <view class="mask"></view>
+
+  <view class="protocol-dialog-wrapper">
+    <view class="protocol-dialog-content">
+      <view class="top-logo">
+        <image mode="widthFix" src="../../resource/img/protocol-logo.png"></image>
+
+        <view class="title">
+          温馨提示
+        </view>
+      </view>
+
+      <view class="protocol-tip">
+        欢迎来到magic创意社小程序，在使用我们的服务，确保您能正常体验小程序功能前，请仔细阅读
+        <navigator open-type="navigate" url="/zt_hbsjkh/pages/protocol/protocol">《用户服务协议》</navigator>
+        和
+        <navigator open-type="navigate" url="/zt_hbsjkh/pages/privacy/privacy">《隐私政策》</navigator>
+      </view>
+
+      <view class="options">
+        <view bindtap="refuse">拒绝</view>
+        <view bindtap="argee">同意</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<mypop title='温馨提示' content='十分抱歉，由于相关规范，您暂时无法使用苹果手机开通会员。请联系客服购买' ltxt='确定' rtxt='咨询客服' ifshow="{{show_tips}}"></mypop>

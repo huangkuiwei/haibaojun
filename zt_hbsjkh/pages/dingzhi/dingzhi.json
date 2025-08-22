@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "myimg": "../../../component/myimg/myimg",
+    "ztimg": "../../../component/ztimg/ztimg",
+    "zttxt": "../../../component/zttxt/zttxt"
+  },
+  "disableScroll": true
+}

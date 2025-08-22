@@ -1,0 +1,14 @@
+<view class="qiandao_view" wx:if="{{(qiandao_info.r==1)&&(qiandao_info.icon=='')}}" bindtap="close_qiandao">
+  <view class="qiandao_content" catchtap="ceshi">
+    <image src="../../resource/img/bg_index_qiandao.png"></image>
+    <!-- <view class="txt_lxqd">连续签到第{{qiandao_info.l+1}}天</view> -->
+    <view class="txt_qdcg">签到成功</view>
+    <view class="txt_hdxacs">获得{{qiandao_info.d}}次免费下载</view>
+    <view class="txt_ts">注：新用户{{qiandao_info.s.day}}内每天可签到领取下载次数</view>
+    <button open-type="share">分享给好友</button>
+  </view>
+  <image src="../../resource/img/icon_qiandao_close.png" class="qiandao_close" bindtap="close_qiandao"></image>
+</view>
+<view class="qiandao_icon_view" wx:if="{{(qiandao_info.icon!='')&&(qiandao_info.r==1)}}" bindtap="close_qiandao">
+  <image src="{{qiandao_info.icon}}" class="qiandao_icon" mode="widthFix"></image>
+</view>

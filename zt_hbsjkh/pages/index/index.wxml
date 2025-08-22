@@ -1,0 +1,131 @@
+<view class="container_head">
+  <!-- <view class="show_type_item_view" data-index='{{0}}' bindtap='switchShow' style='color:{{mlib_style.fontcolor}};'>
+		<view class="show_type_item_name {{show_type==0?'show_type_item_name_active':''}}">手机海报</view>
+		<view class="{{show_type==0?'hengxian_active':'hengxian'}}"></view>
+	</view> -->
+  <!-- <view class="show_type_item_view" data-index='{{1}}' bindtap='switchShow' style='color:{{mlib_style.fontcolor}};'>
+		<view class="show_type_item_name {{show_type==1?'show_type_item_name_active':''}}">文案馆</view>
+		<view class="{{show_type==1?'hengxian_active':'hengxian'}}"></view>
+	</view> -->
+</view>
+<view wx:if="{{(fenlei_guding==1)&&(show_type==1)}}" class="select_view select_view_guding">
+  <view class="select_title">
+    <view class="select_title_item {{cur_select_index==0?'select_title_item_on':''}}" bindtap="select" data-index="0">
+      2h最热</view>
+    <view class="select_title_item {{cur_select_index==1?'select_title_item_on':''}}" bindtap="select" data-index="1">
+      今日最热</view>
+    <view class="select_title_item {{cur_select_index==2?'select_title_item_on':''}}" bindtap="select" data-index="2">
+      7天最热</view>
+    <view class="select_title_item {{cur_select_index==3?'select_title_item_on':''}}" bindtap="select" data-index="3">
+      最新</view>
+    <view class="select_fenlei" bindtap="show_fenlei">{{fenlei_selected_num==0?'所有分类':('分类-'+fenlei_selected_num)}}
+    </view>
+  </view>
+</view>
+<view class="container_haibao" wx:if="{{show_type==0}}">
+  <view class="view_sousuo" bindtap="go_sousuo">
+    <view class="view_sousuo_input">
+      <image src="../../resource/img/icon_sousuo.png"></image>
+      <text>搜索模板</text>
+    </view>
+  </view>
+  <view wx:if="{{cur_fenlei_index==-1}}" class="tuijian_content">
+    <view class="lunbotu_view">
+      <swiper class='top_lunbo' indicator-dots='false' autoplay='true' interval='5000' duration='1000'>
+        <block wx:for="{{lbt}}">
+          <swiper-item>
+            <image src="{{item.icon}}" class="slide-image" bindtap='lunbotu_go_fenlei' data-index='{{index}}' />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='index_fenlei' wx:if="{{entrance.length>0}}">
+      <view wx:for="{{entrance}}">
+        <view wx:if="{{item.type==1}}" class='index_fenlei_item' bindtap='go_entrance' data-index='{{index}}'>
+          <image src='{{item.icon}}' style='width:66rpx;' mode='widthFix'></image>
+          <text>{{item.name}}</text>
+          <button open-type='contact'></button>
+        </view>
+        <view wx:else class='index_fenlei_item' bindtap='go_entrance' data-index='{{index}}'>
+          <image src='{{item.icon}}' style='width:66rpx;' mode='widthFix'></image>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <image src="{{shouye_info.imgM}}" wx:if="{{show_vip==1}}" mode="widthFix" class="img_guanggao" bindtap="go_vip" binderror="pics_error"></image>
+    <view class="zhuanti" wx:if="{{zhuanti.length>0}}">
+      <view class="zhuanti_title">
+        <image src="../../resource/img/icon_huo.png"></image>
+        <text>近期热门专题</text>
+      </view>
+      <scroll-view class="zhuanti_content" scrollWithAnimation="true" scroll-x="true">
+        <image src="{{item.icon}}" wx:for="{{zhuanti}}" mode="heightFix" bindtap="go_zhuanti" data-id="{{item.id}}">
+        </image>
+      </scroll-view>
+    </view>
+    <view class="tuijian_haibao" wx:for="{{shouye_info.tjfenleiinfo}}">
+      <view class="tuijian_haibao_title">
+        <text class="left">{{item.name}}</text>
+        <text class="right" bindtap="tuijian_go_fenlei" data-index="{{index}}">全部 ></text>
+      </view>
+      <view class="tuijian_haibao_content">
+        <view wx:for="{{tuijian_fenlei_info[index].muban}}" wx:for-index="cindex">
+          <image src="{{item.icon}}" mode="widthFix" bindtap="go_dingzhi" data-id="{{item.id}}"></image>
+          <image src="../../resource/img/btn_download.png" class="btn_download" bindtap="show_download" data-index="{{cindex}}" data-muban="{{item}}" data-type="0" data-pindex="{{index}}" wx:if="{{dzsetting.downset==1}}"></image>
+        </view>
+      </view>
+      <view class="tuijian_haibao_btns">
+        <view bindtap="tuijian_go_fenlei" data-index="{{index}}">更多</view>
+        <view bindtap="huanyipi" data-index="{{index}}">换一批</view>
+      </view>
+    </view>
+  </view>
+  <view class="fenlei_content" wx:else>
+    <view class="fenlei_content_left">
+      <view wx:for="{{all_fenlei[cur_fenlei_index].muban}}" class="muban_item" wx:if="{{index%2==0}}">
+        <image src="{{item.icon}}" mode="widthFix" bindtap="go_dingzhi" data-id="{{item.id}}"></image>
+        <image src="../../resource/img/btn_download.png" class="btn_download" bindtap="show_download" data-index="{{index}}" data-muban="{{item}}" data-type="1" data-pindex="{{cur_fenlei_index}}" wx:if="{{dzsetting.downset==1}}"></image>
+      </view>
+    </view>
+    <view class="fenlei_content_right">
+      <view wx:for="{{all_fenlei[cur_fenlei_index].muban}}" class="muban_item" wx:if="{{index%2==1}}">
+        <image src="{{item.icon}}" mode="widthFix" bindtap="go_dingzhi" data-id="{{item.id}}"></image>
+        <image src="../../resource/img/btn_download.png" class="btn_download" bindtap="show_download" data-index="{{index}}" data-muban="{{item}}" data-type="1" data-pindex="{{cur_fenlei_index}}" wx:if="{{dzsetting.downset==1}}"></image>
+      </view>
+    </view>
+  </view>
+  <include src="./qiandao" />
+  <mypop title='温馨提示' content='十分抱歉，由于相关规范，您暂时无法使用苹果手机开通会员。请联系客服购买' ltxt='确定' rtxt='咨询客服' ifshow="{{show_tips}}">
+  </mypop>
+  <mypop title='温馨提示' content='该模板的制作，需要客服配合，请您联系客服' ltxt='取消' rtxt='咨询客服' ifshow="{{show_kefu_tips}}"></mypop>
+  <include src="./jieguo" />
+
+  <view class="protocol-dialog" wx:if="{{showProtocolDialog}}">
+    <view class="mask"></view>
+
+    <view class="protocol-dialog-wrapper">
+      <view class="protocol-dialog-content">
+        <view class="top-logo">
+          <image mode="widthFix" src="../../resource/img/protocol-logo.png"></image>
+
+          <view class="title">
+            温馨提示
+          </view>
+        </view>
+
+        <view class="protocol-tip">
+          欢迎来到magic创意社小程序，在使用我们的服务，确保您能正常体验小程序功能前，请仔细阅读
+          <navigator open-type="navigate" url="/zt_hbsjkh/pages/protocol/protocol">《用户服务协议》</navigator>
+          和
+          <navigator open-type="navigate" url="/zt_hbsjkh/pages/privacy/privacy">《隐私政策》</navigator>
+        </view>
+
+        <view class="options">
+          <view bindtap="refuse">拒绝</view>
+          <view bindtap="argee">同意</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<include src="./wenan" />

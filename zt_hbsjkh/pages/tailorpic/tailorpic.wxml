@@ -1,0 +1,25 @@
+<view class='container' bindtouchstart='touchstart' catchtouchmove='touchmove' bindtouchend='touchend'>
+  <view class="txt_tishi">#双指缩放旋转，单指平移剪裁图片#</view>
+  <view class="dz_content">
+    <view class="dz_content_top_content" style='height:{{mb_pic_pos[3]}}rpx;width:{{mb_pic_pos[2]}}rpx;top:{{mb_pic_pos[1]}}rpx;left:{{mb_pic_pos[0]}}rpx;'>
+      <view class="img_view" style='height:{{mb_pic_pos[3]}}rpx;width:{{mb_pic_pos[2]}}rpx;top:0rpx;left:0rpx;'>
+        <image src="{{img_url}}" style='height:{{scale*img_pos[3]}}rpx;width:{{scale*img_pos[2]}}rpx;left:{{scale*img_pos[0]}}rpx;top:{{scale*img_pos[1]}}rpx;transform: translate({{stv.offsetX}}rpx, {{stv.offsetY}}rpx) scale({{stv.scale}}) rotate({{ stv.rotate }}deg);'
+          class="img_ctr"></image>
+      </view>
+      <view class="bian_kuan_view" style='height:{{mb_pic_pos[3]}}rpx;width:{{mb_pic_pos[2]}}rpx;top:-2rpx;left:-2rpx;'>
+        <image src="../../resource/img/icon_tailor_l_t.png" style="left:-6rpx;top:-6rpx;" class="bian_kuang"></image>
+        <image src="../../resource/img/icon_tailor_r_t.png" style="right:-6rpx;top:-6rpx;" class="bian_kuang"></image>
+        <image src="../../resource/img/icon_tailor_l_b.png" style="left:-6rpx;bottom:-6rpx;" class="bian_kuang"></image>
+        <image src="../../resource/img/icon_tailor_r_b.png" style="right:-6rpx;bottom:-6rpx;" class="bian_kuang"></image>
+        <view class="fenge_xian_heng" style="left:0rpx;top:{{mb_pic_pos[3]/3}}rpx"></view>
+        <view class="fenge_xian_heng" style="left:0rpx;top:{{mb_pic_pos[3]*2/3}}rpx"></view>
+        <view class="fenge_xian_shu" style="top:0rpx;left:{{mb_pic_pos[2]/3}}rpx"></view>
+        <view class="fenge_xian_shu" style="top:0rpx;left:{{mb_pic_pos[2]*2/3}}rpx"></view>
+      </view>
+    </view>
+  </view>
+  <view class="foot">
+    <view class="left" catchtap="go_back">取消</view>
+    <view class="right" catchtap="queding">完成</view>
+  </view>
+</view>

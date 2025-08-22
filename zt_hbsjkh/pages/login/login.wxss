@@ -1,0 +1,21 @@
+/* zt_hbsjkh/pages/login/login.wxss */
+.avatar-wrapper{
+    width: 150rpx;
+    height: 150rpx;
+    padding: 0;
+    border: none;
+}
+.avatar{
+    width: 150rpx;
+    height: 150rpx;
+}
+.btn {
+    background: red;
+    border-radius: 24rpx;
+    color: #fff;
+    font-size: 32rpx;
+    font-weight: 800;
+    line-height: 96rpx;
+    padding: 0;
+    width: 100%
+  }

@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="content_item">
+    <view class="content_item_title">
+      <view class="left">*</view>
+      <view class="right">文案分类</view>
+    </view>
+    <picker mode="selector" value="{{cur_fenlei}}" bindchange="bindStarttimeChange" range="{{fenlei}}" range-key="name">
+      <view class="fenlei_view">
+        <text style="">{{fenlei[cur_fenlei].name}}</text>
+        <image src="../../resource/img/icon_arrow_down2.png" mode="heightFix"></image>
+      </view>
+    </picker>
+  </view>
+  <form bindsubmit="tijiao">
+    <view class="content_item">
+      <view class="content_item_title">
+        <view class="left">*</view>
+        <view class="right">文案内容</view>
+      </view>
+      <view class="content_view">
+        <textarea name='content' placeholder-class="info_textarea_placeholder" placeholder='请填写问题描述'></textarea>
+      </view>
+    </view>
+    <view class="content_item">
+      <view class="content_item_title">
+        <view class="left">*</view>
+        <view class="right">选择海报</view>
+      </view>
+      <view class="sucai_view">
+        <view class="sucai_view_item" bindtap="add_pic" wx:if="{{cur_select_hb.hbicon==null}}">
+          <view class="left">+</view>
+          <view class="right">选择素材</view>
+        </view>
+        <image src="{{cur_select_hb.hbicon}}" mode="widthFix" bindtap="add_pic"  style="width:300rpx;" wx:else></image>
+      </view>
+    </view>
+    <button formType="submit" class="foot">提交</button>
+  </form>
+  <image src="../../resource/img/btn_go_upwenan.png" class="btn_go_upwenan" mode="widthFix" bindtap="go_upsm"></image>
+</view>

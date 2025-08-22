@@ -1,0 +1,55 @@
+page, .qyhywx-page, .qyhywx-page-wrap {
+  height: 100%;
+  width: 100%;
+}
+
+.qyhywx-page-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100vh;
+  height: 100%;
+  background: url('https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/bideng/auorder/dialog_back_img.png') left
+    top/100% 100% no-repeat;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000070;
+  z-index: 9;
+}
+
+.check-confirm-dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-content {
+  position: relative;
+  width: 676rpx;
+  height: 711rpx;
+  background: url('https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/bideng/auorder/dialog_box.png') left top/100%
+    100% no-repeat;
+}
+
+.buy {
+  position: absolute;
+  bottom: 180rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.agree-btn {
+  width: 318rpx;
+  height: 86rpx;
+}

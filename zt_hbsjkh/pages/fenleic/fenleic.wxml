@@ -1,0 +1,47 @@
+<view class='container'>
+	<view class="view_sousuo" bindtap="go_sousuo">
+		<view class="view_sousuo_input">
+			<image src="../../resource/img/icon_sousuo.png"></image>
+			<text>搜索模板</text>
+		</view>
+	</view>
+	<view class="fenlei">
+		<scroll-view class='fenlei_head' scrollWithAnimation="true" scroll-y="true"
+			scroll-into-view="{{'id'+(cur_fenlei-5)}}">
+			<view wx:for="{{fenlei_info}}" class="scroll-view-item {{cur_fenlei==index?'active':''}}" data-index='{{index}}'
+				bindtap='change_fenlei' id="{{'id'+index}}">
+				<view class="yellow_bar" wx:if="{{cur_fenlei==index}}"></view>
+				<view class="right {{cur_fenlei==index?'active':''}}">{{item.info.name}}</view>
+			</view>
+		</scroll-view>
+		<view class="fenlei_content">
+			<scroll-view class="fenlei_content_head" scrollWithAnimation="true" scroll-x="true"
+				scroll-into-view="{{'id'+(cur_erji_fenlei-1)}}" wx:if="{{fenlei_info[cur_fenlei].erji.length!=0}}">
+				<text class="fenlei_content_head_item {{cur_erji_fenlei==index?'fenlei_content_head_item_on':''}}"
+					wx:for="{{fenlei_info[cur_fenlei].erji}}" id="{{'id'+index}}" bindtap="change_erji_fenlei"
+					data-index='{{index}}'>{{item.name}}</text>
+			</scroll-view>
+			<scroll-view class="fenlei_content_show" scrollWithAnimation="true" scroll-y="true"
+				bindscrolltolower='refresh_fenlei' style="{{fenlei_info[cur_fenlei].erji.length==0?'top:0rpx;':''}}" scroll-top="{{scroll_top}}">
+				<view class="fenlei_content_show_left">
+					<view wx:for="{{fenlei_info[cur_fenlei].muban[cur_erji_fenlei]}}" class="muban_item" wx:if="{{index%2==0}}">
+						<image src="{{item.icon}}" mode="widthFix"bindtap="go_dingzhi"
+							data-id="{{item.id}}" data-icon="{{item.icon}}"></image>
+						<image src="../../resource/img/btn_download.png" class="btn_download" bindtap="show_download"
+							data-index="{{index}}" data-muban="{{item}}"></image>
+					</view>
+				</view>
+				<view class="fenlei_content_show_right">
+					<view wx:for="{{fenlei_info[cur_fenlei].muban[cur_erji_fenlei]}}" class="muban_item" wx:if="{{index%2==1}}">
+						<image src="{{item.icon}}" mode="widthFix" bindtap="go_dingzhi"
+							data-id="{{item.id}}" data-icon="{{item.icon}}" class="{{item.id<684?'old_border':''}}"></image>
+						<image src="../../resource/img/btn_download.png" class="btn_download" bindtap="show_download"
+						data-index="{{index}}" data-muban="{{item}}"></image>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+</view>
+<mypop title='温馨提示' content='该模板的制作，需要客服配合，请您联系客服' ltxt='取消' rtxt='咨询客服' ifshow="{{show_kefu_tips}}"></mypop>
+<include src="./jieguo" />

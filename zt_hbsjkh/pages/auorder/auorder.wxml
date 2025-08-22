@@ -1,0 +1,15 @@
+<view class="qyhywx-page">
+  <view class="qyhywx-page-wrap"></view>
+  <view class="mask"></view>
+  <view class="check-confirm-dialog" bindtap="confirmReceive">
+    <view class="check-content">
+      <view class="buy">
+        <image
+          class="agree-btn"
+          mode="widthFix"
+          src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/bideng/auorder/order_btn.png"
+        />
+      </view>
+    </view>
+  </view>
+</view>

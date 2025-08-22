@@ -1,0 +1,4 @@
+<view class="container">
+  <view class="kuang"></view>
+  <text>添加文字\n测试</text>
+</view>

@@ -1,0 +1,76 @@
+.edit_pic{
+  width: 750rpx;
+  height: 120rpx;
+  background-color: white;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+}
+.edit_pic_ok{
+  width: 137rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  background-color: #FFDD02;
+  font-size:26rpx;
+  color: #333333;
+  position: absolute;
+  right: 44rpx;
+  top: 24rpx;
+}
+.edit_pic_left{
+  width: 750rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.edit_pic_left_item{
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.edit_pic_left_item image{
+  width: 35rpx;
+  height: 35rpx;
+  margin-bottom: 10rpx;
+}
+.edit_pic_left_item text{
+  font-size:24rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+}
+.toumingdu_container_top{
+  width: 650rpx;
+  height: 70rpx;
+  position: absolute;
+  left: 0rpx;
+  bottom: 120rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  background-color: white;
+}
+.toumingdu_container_top_item{
+  width: 650rpx;
+  height: 25rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.toumingdu_container_top_item text{
+  font-size:28rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgb(99, 70, 70);
+}
+.toumingdu_container_top_item slider{
+  width: 500rpx;
+  padding: 0;
+  margin: 0;
+}

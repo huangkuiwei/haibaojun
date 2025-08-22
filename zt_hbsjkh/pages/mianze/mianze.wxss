@@ -1,0 +1,15 @@
+@import "../../../wxParse/wxParse.wxss";
+.wxParse {
+  margin:0rpx;
+  width: 750rpx;
+  padding-top: 27rpx;
+  background-color: white;
+}
+.wxParse-p{
+  margin: 0;
+  padding: 0;
+}
+.wxParse-img{
+  width: 750rpx!important;
+  display: flex!important;
+}

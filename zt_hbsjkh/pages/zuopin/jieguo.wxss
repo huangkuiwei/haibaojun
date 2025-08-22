@@ -1,0 +1,193 @@
+.jieguo_view{
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.jieguo_content{
+  width: 504rpx;
+  height: 578rpx;
+  position: relative;
+}
+.jieguo_content_bg{
+  width: 504rpx;
+  height: 578rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+.jieguo_content_btn_close{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+}
+.jieguo_tishi{
+  font-size:28rpx;
+  font-family:Adobe Heiti Std;
+  font-weight:normal;
+  color:rgba(51,51,51,1);
+  position: absolute;
+  left: 49rpx;
+  top: 114rpx;
+}
+.jieguo_tishi_1{
+  width: 504rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 295rpx;
+  text-align: center;
+  height:34rpx;
+  line-height: 34rpx;
+  font-size:36rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(68,68,68,1);
+}
+.jieguo_tishi_2{
+  width: 484rpx;
+  position: absolute;
+  left: 10rpx;
+  top: 354rpx;
+  text-align: center;
+  height:31rpx;
+  font-size:32rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(56,56,56,1);
+}
+.btns_view{
+  width: 504rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 458rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btns_view_left{
+  width:186rpx;
+  height:76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  border:2rpx solid rgba(201,208,218,1);
+  border-radius:10rpx;
+  margin: 0 40rpx 0 0;
+  font-size:32rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(57,57,57,1);
+}
+.btns_view_right{
+  width:190rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background:rgba(255,221,2,1);
+  border-radius:10rpx;
+}
+
+.protocol-dialog {
+  position: relative;
+}
+
+.protocol-dialog .mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #00000090;
+}
+
+.protocol-dialog-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.protocol-dialog-content {
+  background: #ffffff;
+  width: 440rpx;
+  padding: 0 30rpx;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+}
+
+.protocol-dialog-content .top-logo {
+  padding: 0 10rpx;
+  position: relative;
+}
+
+.protocol-dialog-content .top-logo image {
+  width: 100%;
+  position: relative;
+  top: -10rpx;
+}
+
+.protocol-dialog-content .top-logo .title {
+  position: absolute;
+  bottom: 60rpx;
+  left: 0;
+  right: 0;
+  color: #333333;
+  font-size: 38rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.protocol-dialog-content .protocol-tip {
+  color: #333333;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  text-indent: 50rpx;
+  text-align: justify;
+  position: relative;
+  top: -40rpx;
+}
+
+.protocol-dialog-content .protocol-tip navigator {
+  color: #F25B5C;
+  display: inline;
+}
+
+.protocol-dialog-content .options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30rpx
+}
+
+.protocol-dialog-content .options view {
+  width: 185rpx;
+  height: 55rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: 26rpx;
+  border-radius: 28rpx;
+}
+
+.protocol-dialog-content .options view:nth-child(1) {
+  background: #E6E6E6;
+  color: #999999;
+}
+
+.protocol-dialog-content .options view:nth-child(2) {
+  background: #F25B5C;
+  color: #FFFFFF;
+}

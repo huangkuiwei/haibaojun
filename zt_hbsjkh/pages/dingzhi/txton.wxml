@@ -1,0 +1,119 @@
+<view class='txton_container' wx:if="{{btn_status[0]==2}}">
+	<!-- <view class="txton_container_top">
+		<view class="txton_container_top_left" bindtap="go_change_ziti">
+			<image src="{{item.icon}}" style="height:46rpx;width:{{46*all_ziti[0].bili}}rpx;margin-right:13rpx;" wx:for="{{all_ziti}}" wx:if="{{element[btn_status[1]].font==item.name}}"></image>
+			<image src="../../resource/img/icon_arrow_down.png" style="width:16rpx;height:12rpx;"></image>
+		</view>
+		<view class="txton_container_top_right" bindtap="go_select_color" style="background:{{element[btn_status[1]].color}};"></view>
+	</view> -->
+	<!-- <view class="txton_container_bottom">
+		<view bindtap="go_edit_txt">编辑</view>
+		<view bindtap="go_select_duiqi">样式</view>
+		<view bindtap="go_select_yangshi">颜色</view>
+		<view bindtap="go_change_jianju">字体</view>
+	</view> -->
+	<view class="txton_container_bottom">
+		<view bindtap="go_edit_txt">编辑</view>
+		<view bindtap="go_select_duiqi">样式</view>
+		<view bindtap="go_select_color">颜色</view>
+		<view bindtap="go_change_ziti">字体</view>
+		<view bindtap="go_select_toumingdu">透明度</view>
+	</view>
+</view>
+<!-- 选择字体 -->
+<view class="ziti_container" wx:if="{{(btn_status[0]==2)&&(show_status==4)}}">
+	<scroll-view class="ziti_container_top" scrollWithAnimation="true" scroll-y="true" scroll-into-view="{{element[btn_status[1]].font}}">
+		<image src="{{item.icon}}" wx:for="{{all_ziti}}" style="height:46rpx;width:{{46*all_ziti[0].bili}}rpx;" class="{{element[btn_status[1]].font==item.name?'ziti_item':'ziti_item_off'}}" bindtap="select_ziti" data-index="{{index}}" id="{{item.name}}"></image>
+	</scroll-view>
+	<view class="txton_container_foot">
+		<view class="img_container" bindtap="close_edit_ziti">
+			<image src="../../resource/img/icon_dz_txt_close.png" style="width:20rpx;height:20rpx;"></image>
+		</view>
+		<view style="font-size:26rpx;color:rgba(102,102,102,1);">字体</view>
+		<view class="img_container" bindtap="close_edit_ziti">
+			<image src="../../resource/img/icon_dz_txt_ok.png" style="width:25rpx;height:25rpx;"></image>
+		</view>
+	</view>
+</view>
+<!-- 选择颜色 -->
+<view class="color_container" wx:if="{{(btn_status[0]==2)&&(show_status==5)}}">
+	<scroll-view class="color_container_top" scrollWithAnimation="true" scroll-y="true">
+		<view class="{{element[btn_status[1]].color==item?'colors_item':'colors_item_off'}}" wx:for="{{colors}}" bindtap="select_color" data-color="{{item}}">
+			<view style="background-color:{{item}};width: 58rpx;height: 58rpx;  border-radius: 50%;"></view>
+		</view>
+	</scroll-view>
+	<view class="txton_container_foot">
+		<view class="img_container" bindtap="close_edit_ziti">
+			<image src="../../resource/img/icon_dz_txt_close.png" style="width:20rpx;height:20rpx;"></image>
+		</view>
+		<view style="font-size:26rpx;color:rgba(102,102,102,1);">颜色</view>
+		<view class="img_container" bindtap="close_edit_ziti">
+			<image src="../../resource/img/icon_dz_txt_ok.png" style="width:25rpx;height:25rpx;"></image>
+		</view>
+	</view>
+</view>
+<!-- 对齐方式 -->
+<view class="duiqi_container" wx:if="{{(btn_status[0]==2)&&(show_status==6)}}">
+	<view class="duiqi_container_top">
+	  <view class="{{element[btn_status[1]].duiqi=='left'?'duiqi_container_top_item_on':'duiqi_container_top_item'}}" bindtap="select_duiqi" data-duiqi="left">
+		  <image src="../../resource/img/icon_txt_left.png"></image>
+		</view>
+		<view class="{{element[btn_status[1]].duiqi=='center'?'duiqi_container_top_item_on':'duiqi_container_top_item'}}" bindtap="select_duiqi" data-duiqi="center">
+		  <image src="../../resource/img/icon_txt_center.png"></image>
+		</view>
+		<view class="{{element[btn_status[1]].duiqi=='right'?'duiqi_container_top_item_on':'duiqi_container_top_item'}}" bindtap="select_duiqi" data-duiqi="right">
+		  <image src="../../resource/img/icon_txt_right.png"></image>
+		</view>
+	</view>
+	<view class="duiqi_container_top">
+	  <view class="{{element[btn_status[1]].direction==0?'duiqi_container_top_item_on':'duiqi_container_top_item'}}" bindtap="select_direction" data-direction="{{element[btn_status[1]].direction==1?0:1}}">
+		  <image src="../../resource/img/icon_txt_heng.png" style="width:34rpx;height:28rpx;"></image>
+		</view>
+	  <view class="{{element[btn_status[1]].direction==1?'duiqi_container_top_item_on':'duiqi_container_top_item'}}" bindtap="select_direction" data-direction="{{element[btn_status[1]].direction==1?0:1}}">
+		  <image src="../../resource/img/icon_txt_shu.png" style="width:28rpx;height:34rpx;"></image>
+		</view>
+	  <view class="{{element[btn_status[1]].weight==1?'duiqi_container_top_item_on':'duiqi_container_top_item'}}" bindtap="select_bold" data-weight="{{element[btn_status[1]].weight==1?0:1}}">
+		  <image src="../../resource/img/icon_txt_bold.png" style="width:60rpx;height:60rpx;"></image>
+		</view>
+	</view>
+	<view class="jianju_container_top">
+	  <view class="jianju_container_top_item">
+		  <text>字间距</text>
+			<slider block-size='12' block-color='#666666' backgroundColor='#CCCCCC' activeColor='#666666' bindchanging='change_zijianju' value="{{element[btn_status[1]].letterspacing}}" min='0' max="100" bindchange="end_jianju"></slider>
+			<text>{{element[btn_status[1]].letterspacing}}</text>
+		</view>
+	  <view class="jianju_container_top_item">
+		  <text>行间距</text>
+			<slider block-size='12' block-color='#666666' backgroundColor='#CCCCCC' activeColor='#666666' bindchanging='change_hangjianju' value="{{element[btn_status[1]].lineheight}}" min='{{min_lineheight}}' max="{{max_lineheight}}" bindchange="end_jianju"></slider>
+			<text>{{element[btn_status[1]].lineheight}}</text>
+		</view>
+	</view>
+	<view class="txton_container_foot">
+		<view class="img_container" bindtap="close_edit_ziti">
+			<image src="../../resource/img/icon_dz_txt_close.png" style="width:20rpx;height:20rpx;"></image>
+		</view>
+		<view style="font-size:26rpx;color:rgba(102,102,102,1);">样式</view>
+		<view class="img_container" bindtap="close_edit_ziti">
+			<image src="../../resource/img/icon_dz_txt_ok.png" style="width:25rpx;height:25rpx;"></image>
+		</view>
+	</view>
+</view>
+<!-- 透明度 -->
+<view class="jianju_container" style="height:150rpx;" wx:if="{{(btn_status[0]==2)&&(show_status==7)}}">
+	<view class="jianju_container_top" style="height:70rpx;">
+	  <view class="jianju_container_top_item">
+		  <text>透明度</text>
+			<slider block-size='12' block-color='#666666' backgroundColor='#CCCCCC' activeColor='#666666' bindchanging='change_toumingdu' value="{{element[btn_status[1]].toumingdu}}" min='0' max="100" bindchange="end_change_toumingdu"></slider>
+			<text>{{element[btn_status[1]].toumingdu}}</text>
+		</view>
+	</view>
+	<view class="txton_container_foot">
+		<view class="img_container" bindtap="close_edit_ziti">
+			<image src="../../resource/img/icon_dz_txt_close.png" style="width:20rpx;height:20rpx;"></image>
+		</view>
+		<view style="font-size:26rpx;color:rgba(102,102,102,1);">透明度</view>
+		<view class="img_container" bindtap="close_edit_ziti">
+			<image src="../../resource/img/icon_dz_txt_ok.png" style="width:25rpx;height:25rpx;"></image>
+		</view>
+	</view>
+</view>

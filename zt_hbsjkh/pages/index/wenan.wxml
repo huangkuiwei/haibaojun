@@ -1,0 +1,92 @@
+<!-- <scroll-view class="container_wenan" bindscroll='on_change_fenlei' scrollWithAnimation="true" scroll-y="true"
+	bindscrolltolower="scroll_bottom" wx:if="{{show_type==1}}" refresher-enabled="true" bindrefresherrefresh="_inite_wenan"> -->
+<view class="container_wenan" wx:if="{{show_type==1}}">
+	<view class="view_sousuo" bindtap="go_wenan_sousuo">
+		<view class="view_sousuo_input">
+			<image src="../../resource/img/icon_sousuo.png"></image>
+			<text>搜索文案</text>
+		</view>
+	</view>
+	<view class="lunbotu_view">
+		<swiper class='top_lunbo' indicator-dots='false' autoplay='true' interval='5000' duration='1000'>
+			<block wx:for="{{lbt}}" wx:if="{{lbt.length!=0}}">
+				<swiper-item>
+					<image src="{{item.icon}}" class="slide-image" bindtap='wenan_lunbotu_go_fenlei' data-index='{{index}}' />
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+	<view class="select_back_view" wx:if="{{show_all_fenlei==1}}"></view>
+	<view class="select_view" style="opacity:{{fenlei_guding==0?1:0}};">
+		<view class="select_title">
+			<view class="select_title_item {{cur_select_index==0?'select_title_item_on':''}}" bindtap="select" data-index="0">
+				2h最热</view>
+			<view class="select_title_item {{cur_select_index==1?'select_title_item_on':''}}" bindtap="select" data-index="1">
+				今日最热</view>
+			<view class="select_title_item {{cur_select_index==2?'select_title_item_on':''}}" bindtap="select" data-index="2">
+				7天最热</view>
+			<view class="select_title_item {{cur_select_index==3?'select_title_item_on':''}}" bindtap="select" data-index="3">
+				最新</view>
+			<view class="select_fenlei" bindtap="show_fenlei">{{fenlei_selected_num==0?'所有分类':('分类-'+fenlei_selected_num)}}
+			</view>
+		</view>
+		<view class="select_fenlei_body" wx:if="{{show_all_fenlei==1}}">
+			<view class="select_fenlei_body_top">
+				<view class="select_fenlei_item {{fenlei_selected[index]==1?'select_fenlei_item_on':''}}"
+					wx:for="{{wenan_fenleiinfo}}" bindtap="select_fenlei" data-index="{{index}}">{{item.name}}</view>
+			</view>
+			<view class="select_fenlei_btns">
+				<view class="select_fenlei_btns_left" bindtap="clear_select">清除</view>
+				<view class="select_fenlei_btns_right" bindtap="wancheng">完成</view>
+			</view>
+		</view>
+	</view>
+	<view class="wenan_view">
+		<view class="wenan_item" wx:for="{{wenan_info.d}}" style="{{index==0?'border:none;':''}}">
+			<image class="wenan_tx" src="{{item.tx==''?setting.tx:item.tx}}"></image>
+			<view class="wenan_right">
+				<view class="wenan_right_top">
+					<view class="wenan_right_top_left">
+						<view class="wenan_nickname">{{item.nickname==''?setting.nickname:item.nickname}}</view>
+						<view class="wenan_date">{{item.time}}</view>
+					</view>
+					<view class="wenan_right_top_right" bindtap="go_mianze">
+						<image src="../../resource/img/icon_mianze_sm.png"></image>
+						<view>免责声明</view>
+					</view>
+				</view>
+				<view class="wenan_right_content">{{item.content}}</view>
+				<view class="img_view">
+					<image mode="widthFix" src="{{item.hbicon}}" bindtap="wanna_dingzhi" data-index="{{index}}">
+					</image>
+					<image mode="widthFix" src="{{shouye_info.imgshuiyin}}" class="img_shuiyin"></image>
+				</view>
+				<view class="wenan_btns">
+					<view class="btns_item" bindtap="wanna_down" data-index="{{index}}" style="width:260rpx;">
+						<image src="../../resource/img/icon_dz_copy.png"></image>
+						<view>复制文案 {{item.download}}</view>
+					</view>
+					<view class="btns_item" bindtap="wanna_dingzhi" data-index="{{index}}">
+						<image src="../../resource/img/icon_wenan_tp.png"></image>
+						<view>制作海报</view>
+					</view>
+					<view class="btns_item" style="width:160rpx;">
+						<image src="../../resource/img/icon_wenan_fx.png"></image>
+						<view>分享</view>
+						<button open-type="share" class="btn_share" style="opacity: 0;"></button>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="btn_gongxian" bindtap="btn_gongxian">
+		<image src="../../resource/img/icon_huangguan.png"></image>
+		<view>贡献榜</view>
+	</view>
+	<view class="btn_tougao" bindtap="btn_tougao">
+		<image src="../../resource/img/icon_jia.png"></image>
+		<view>投稿</view>
+	</view>
+<include src="./jieguo_wenan" />
+<!-- </scroll-view> -->
+</view>

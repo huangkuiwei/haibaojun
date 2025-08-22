@@ -1,0 +1,70 @@
+.ztimg_container{
+  position: absolute;
+}
+.ztimg_content{
+  overflow: hidden;
+  position: absolute;  
+}
+.ztimg_content image{
+  /* vertical-align: top; */
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+.ztimg_kuang{
+  border:2rpx solid rgba(153,153,153,1);  
+  position: absolute;  
+}
+.btn_xuanzhuan_view{
+  width: 10vw;
+  height: 11vw;
+  position: absolute;
+  bottom: -11vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btn_xuanzhuan{
+  width: 5vw;
+  height: 5vw;
+}
+.ztimg_kuang_yuan{
+  width:12rpx;
+  height:12rpx;
+  background:rgba(153,153,153,1);
+  border-radius:50%;
+  position: absolute;
+}
+.btn_suofang_heng{
+  width: 14rpx;
+  height: 6rpx;
+  position: absolute;
+}
+.btn_suofang_shu{
+  width: 6rpx;
+  height: 14rpx;
+  position: absolute;
+}
+.btn_zoom{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.tips{
+  font-size: 20rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  color: #333333;
+  background-color: #FFDD02;
+  text-align: center;
+  border-radius: 5rpx;
+  width:216rpx;
+}

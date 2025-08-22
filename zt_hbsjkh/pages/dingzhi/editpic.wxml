@@ -1,0 +1,37 @@
+<!-- 图片编辑界面 -->
+<view class='edit_pic' wx:if="{{btn_status[0]==1}}">
+  <view class="edit_pic_left">
+    <view class="edit_pic_left_item" bindtap="del_element">
+      <image src="../../resource/img/icon_dz_del.png"></image>
+      <text>删除</text>
+    </view>
+    <view class="edit_pic_left_item" bindtap='go_add_pic' data-index="{{btn_status[1]}}">
+      <image src="../../resource/img/icon_dz_huantu.png"></image>
+      <text>换图</text>
+    </view>
+    <view class="edit_pic_left_item" bindtap="go_jiancai">
+      <image src="../../resource/img/icon_dz_jiancai.png"></image>
+      <text>剪裁</text>
+    </view>
+    <view class="edit_pic_left_item" bindtap="go_toumingdu">
+      <image src="../../resource/img/icon_dz_toumingdu.png"></image>
+      <text>透明度</text>
+    </view>
+    <view class="edit_pic_left_item" bindtap="koutu" wx:if="{{(element[btn_status[1]].cankoutu==1)&&(can_koutu!=0)}}" data-type="0">
+      <image src="../../resource/img/icon_dz_koutu.png"></image>
+      <text>扣人像</text>
+    </view>
+    <view class="edit_pic_left_item" bindtap="kouhead" wx:if="{{(element[btn_status[1]].cankouhead==1)&&(can_kouhead!=0)}}" data-type="0">
+      <image src="../../resource/img/icon_dz_kouhead.png"></image>
+      <text>扣头像</text>
+    </view>
+  </view>
+</view>
+<view class="toumingdu_container_top" wx:if="{{(btn_status[0]==1)&&(show_status==9)}}">
+  <view class="toumingdu_container_top_item">
+    <text>透明度</text>
+    <slider block-size='12' block-color='#666666' backgroundColor='#CCCCCC' activeColor='#666666'
+      bindchanging='change_toumingdu' bindchange="end_change_toumingdu" value="{{element[btn_status[1]].toumingdu}}" min='0' max="100"></slider>
+    <text>{{element[btn_status[1]].toumingdu}}</text>
+  </view>
+</view>

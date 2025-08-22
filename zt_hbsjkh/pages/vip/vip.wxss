@@ -1,0 +1,283 @@
+@import "../../../wxParse/wxParse.wxss";
+@import '../shouquan/shouquan.wxss';
+
+.container {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg1 {
+  position: absolute;
+  top: -140rpx;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.container .vip_top {
+  flex-grow: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 9;
+  padding-top: 50rpx;
+}
+
+.container .vip_top .user_info {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0 20rpx 54rpx;
+}
+
+.container .vip_top .user_info .touxiang {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+}
+
+.container .vip_top .user_info .name-info {
+  margin-right: 12rpx;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.container .vip_top .user_info .nickname {
+  font-size: 30rpx;
+  color: #FFE2B2;
+  margin-bottom: 10rpx;
+}
+
+.container .vip_top .user_info .vip_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon_vip-wrap {
+  position: relative;
+  align-self: start;
+  width: 100rpx;
+  height: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 6rpx;
+}
+
+.pt-vip-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: #FFE2B2;
+  font-size: 20rpx;
+  text-align: center;
+}
+
+.vip-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 20rpx;
+  text-align: center;
+}
+
+.renew {
+  margin-right: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.renew image {
+  width: 181rpx;
+  margin-bottom: 14rpx;
+}
+
+.renew text {
+  font-size: 18rpx;
+  color: #F5CEC3;
+}
+
+.container .vip_top .user_info .icon_vip {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.container .vip_top .vip_info .vip_info_left {
+  height: 20rpx;
+  font-size: 20rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(243, 242, 242, 1);
+  line-height: 20rpx;
+  color: #F5CEC3;
+  margin-right: 10rpx;
+}
+
+.container .vip_top .vip_info .vip_info_right {
+  font-size: 20rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(242, 242, 242, 1);
+  line-height: 21rpx;
+}
+
+.vip_top .vip_shuoming {
+  flex-shrink: 0;
+  flex-grow: 1;
+  padding-left: 40rpx;
+  padding-top: 35rpx;
+  border-top-left-radius: 25rpx;
+  border-top-right-radius: 25rpx;
+  background: #ffffff;
+  margin-top: 50rpx;
+}
+
+.vip_shuoming .vip_content .vip_content_title {
+  font-size: 29rpx;
+  font-weight: 400;
+  color: #232323;
+  margin-bottom: 32rpx;
+}
+
+.vip_shuoming .vip_content .vip-list {
+  display: flex;
+  overflow: auto;
+}
+
+.vip_shuoming .vip_content .vip-list::-webkit-scrollbar {
+  display: none;
+}
+
+.vip_shuoming .vip_content .vip-list .vip_content_item,
+.vip_shuoming .vip_content .vip-list .vip_content_item_off {
+  box-sizing: border-box;
+  padding: 20rpx 0 0;
+  flex-shrink: 0;
+  width: 202rpx;
+  height: 240rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2rpx solid #B7B7B7;
+  border-radius: 25rpx;
+  color: #6A3313;
+  margin-right: 20rpx;
+
+}
+
+.vip_shuoming .vip_content .vip-list .vip_content_item {
+  background: #FEFAF5;
+  border: 2rpx solid #F15B5C;
+}
+
+.vip_shuoming .vip_content .vip-list .vip_content_item image,
+.vip_shuoming .vip_content .vip-list .vip_content_item_off image {
+  flex-shrink: 0;
+  width: 48rpx;
+  height: 48rpx;
+  margin-bottom: 10rpx;
+  border-radius: 50%;
+}
+
+.vip_shuoming .vip_content .vip-list .vip_content_item_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.vip_shuoming .vip_content .vip-list .vip_content_item_right .name {
+  font-size: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.vip_shuoming .vip_content .vip-list .vip_content_item_right .price {
+  color: #6A3313;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.vip_shuoming .vip_content .vip-list .vip_content_item_right .price text {
+  font-size: 54rpx;
+  position: relative;
+  top: 4rpx;
+}
+
+.vip_shuoming .vip_shuoming_title {
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 34rpx;
+  font-weight: normal;
+  color: #232323;
+  margin-bottom: 8rpx;
+  margin-top: 84rpx;
+  font-weight: bold;
+}
+
+.foot {
+  flex-shrink: 0;
+  padding: 30rpx 0;
+  position: relative;
+  z-index: 9;
+}
+
+.foot view {
+  width: 667rpx;
+  margin: 0 auto;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #fb6b6a;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #ffffff;
+  border-radius: 45rpx;
+}
+
+.shop-desc {
+  color: #505050;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+}
+
+.shop-desc view {
+  /* margin-bottom: 20rpx; */
+  /* display: flex; */
+  /* align-items: center; */
+}
+
+.shop-desc view text {
+  width: 10rpx;
+  height: 10rpx;
+  background: #363636;
+  margin-right: 10rpx;
+}
+
+.wxParse {
+  margin: 0rpx;
+  width: 670rpx;
+  padding-top: 27rpx;
+  background-color: white;
+  color: #505050;
+  font-size: 28rpx;
+}
+
+.wxParse-p {
+  margin: 0;
+  padding: 0;
+}
+
+.wxParse-img {
+  width: 670rpx !important;
+  display: flex !important;
+}

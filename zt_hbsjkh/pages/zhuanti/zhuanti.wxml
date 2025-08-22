@@ -1,0 +1,18 @@
+<view class="container" style="background-color: {{zhuanti.color}};">
+  <image class="top_img" mode="widthFix" src="{{zhuanti.img}}"></image>
+  <view class="mubans" wx:for="{{items}}">
+    <view class="muban_item_title" style="color:{{zhuanti.txtcolor}}">{{item.name}}</view>
+    <view class="muban_item_content">
+      <image src="{{item.icon}}" wx:for="{{item.muban}}" mode="widthFix" bindtap="go_muban" data-id="{{item.id}}">
+      </image>
+    </view>
+    <view class="muban_item_bottom" style="color:{{zhuanti.btxtcolor}}" bindtap="go_shouye">更多模板请访问首页>></view>
+  </view>
+</view>
+<view class="menus">
+  <view class="menus_item" bindtap="go_shouye">首页</view>
+  <view class="menus_item" style="background-color: rgba(0, 0, 0, 0);">
+    <view class="menus_item" style='position: absolute;'>分享</view>
+    <button open-type="share" class="menus_item" style=""></button>
+  </view>
+</view>

@@ -1,0 +1,131 @@
+<view class="container">
+  <view class="vip_top">
+    <view class="user_info">
+      <image src="../../resource/img/tx_wode_kong.png" class="touxiang" wx:if="{{(member.avatar=='')&&(member.nickname=='')}}" bindtap="login">
+      </image>
+      <!-- <open-data type="userAvatarUrl" class="touxiang" wx:else></open-data> -->
+      <image src="{{member.avatar || avatarUrl}}" class="touxiang" wx:else></image>
+
+      <view class="name-info">
+        <view class="nickname" wx:if="{{(member.avatar=='')&&(member.nickname=='')}}" bindtap="login">点击登录</view>
+        <view class="nickname" wx:else bindtap="login">{{member.nickname || '微信用户'}}</view>
+      </view>
+
+      <!-- <open-data type="userNickName" class="nickname" wx:else></open-data> -->
+      <view class="icon_vip-wrap">
+        <image mode="widthFix" class="icon_vip" src="../../resource/img/tp-vip.png" wx:if="{{member.vip==0}}"></image>
+        <image mode="widthFix" class="icon_vip" src="{{fenxiao.niankalogo}}" wx:if="{{member.vip==3}}"></image>
+        <image mode="widthFix" class="icon_vip" src="{{fenxiao.yuekalogo}}" wx:if="{{member.vip==1}}"></image>
+        <image mode="widthFix" class="icon_vip" src="{{fenxiao.jikalogo}}" wx:if="{{member.vip==2}}"></image>
+
+        <text class="pt-vip-text" wx:if="{{member.vip==0}}">普通会员</text>
+
+        <view class="vip-text" wx:if="{{member.vip==1 || member.vip==2 ||member.vip==3}}">
+          <text style="color: #FFE2B2; margin-right: 24rpx;">VIP</text>
+          <text style="color: #D12021;" wx:if="{{member.vip==1}}">月</text>
+          <text style="color: #D12021;" wx:if="{{member.vip==2}}">季</text>
+          <text style="color: #D12021;" wx:if="{{member.vip==3}}">年</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:for="{{orderInfo}}">
+    <view class="vip-detail">
+      <view class="title">
+        <text class="name">{{item.member_name}}</text>
+        <text class="auto">已开通自动续费</text>
+      </view>
+
+      <view class="way">
+        <view class="way-item">
+          <text class="name">下次续费日期</text>
+          <text class="value">{{item.NextAutoPaidTime}}</text>
+        </view>
+
+        <view class="way-item">
+          <text class="name">续费金额</text>
+          <text class="value" wx:if="{{item.SingleAmount}}">{{item.SingleAmount}}元</text>
+        </view>
+
+        <view class="way-item">
+          <text class="name">支付方式</text>
+          <text class="value" wx:if="{{item.pay_type === 10 || item.pay_type === 12 || item.pay_type === 13 || item.pay_type === 14 || item.pay_type === 15}}">微信</text>
+          <text class="value" wx:if="{{item.pay_type === 20 || item.pay_type === 21 || item.pay_type === 23 || item.pay_type === 40 || item.pay_type === 43 || item.pay_type === 53}}">支付宝</text>
+          <text class="value" wx:if="{{item.pay_type === 30}}">运营商签约</text>
+          <text class="value" wx:if="{{item.pay_type === 0}}">无选择</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="btn">
+      <text bindtap="renewal" data-business-type="{{item.businessType}}" data-external_agreement_no="{{item.external_agreement_no}}">取消自动续费</text>
+    </view>
+  </view>
+
+  <view class="empty-tip" wx:if="{{!orderInfo.length}}">
+    <text>暂无开通续费产品</text>
+  </view>
+
+  <view class="login-dialog" wx:if="{{showLoginDialog}}">
+    <view class="mask"></view>
+
+    <view class="login-dialog-wrapper">
+      <view class="login-dialog-content">
+        <view class="title">手机号验证码</view>
+
+        <view class="phone">
+          <text>手机号：</text>
+          <input type="text" disabled="{{true}}" value="{{member.tel}}" />
+        </view>
+
+        <view class="code">
+          <text class="label">验证码：</text>
+          <input type="text" placeholder="请输入验证码" value="{{sms_code}}" bindinput="onCodeChange" />
+          <text class="getCode" bindtap="sendCode">{{codeTip}}</text>
+        </view>
+
+        <view class="submit">
+          <button type="primary" size="mini" bindtap="phoneLogin">确定</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tip-dialog" wx:if="{{showTipDialog}}">
+    <view class="mask"></view>
+
+    <view class="tip-dialog-wrapper">
+      <view class="tip-dialog-content">
+        <view class="dialog-head-img">
+          <image mode="widthFix" src="https://file.biideng.cn/claimapp/bdlq/home/dialog_head_img.png" />
+        </view>
+        <view class="content">
+          <view class="content-info" wx:if="{{isUnFlag === 0}}">
+            <view class="info-text">确认退订{{ orderInfo.member_name }}？</view>
+            <view class="btn-box">
+              <view class="cancel" bindtap="closeTipDialog">取消</view>
+              <view class="confirm" bindtap="confirmUnfirst">确认</view>
+            </view>
+          </view>
+          <view class="content-info" wx:if="{{isUnFlag === 1}}">
+            <view class="info-text"> 为确认是您本人操作，已向手机号{{ member.tel }}发送验证码，请输入验证码</view>
+            <view class="code-box">
+              <input class="code-input" type="number" maxlength="6" value="{{sms_code}}" placeholder="请输入验证码" bindinput="onSmsCodeInput" />
+            </view>
+
+            <view class="btn-box">
+              <view class="cancel" bindtap="closeTipDialog">取消</view>
+              <view class="confirm" bindtap="handleUnsubscribe">确认</view>
+            </view>
+          </view>
+          <view class="content-info" wx:if="{{isUnFlag === 2}}">
+            <view class="info-text">{{ result }}</view>
+            <view class="confirm-btn" bindtap="submit">确认</view>
+          </view>
+        </view>
+        <image class="dialog-close" mode="widthFix" src="https://file.biideng.cn/claimapp/bdlq/home/dialog_close_icon.png" bindtap="closeTipDialog" />
+      </view>
+    </view>
+  </view>
+</view>

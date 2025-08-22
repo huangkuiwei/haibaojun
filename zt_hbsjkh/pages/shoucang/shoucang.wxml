@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class="zuopin_kong" wx:if="{{shoucang_info.length==0}}">
+    <image src="../../resource/img/bg_zuopin_kong.png"></image>
+    <view>空空如也。。。</view>
+  </view>
+  <view class="zuopin_list" wx:else>
+    <view class="zuopin_list_left">
+      <view class="zuopin_item" wx:for="{{shoucang_info}}" wx:if="{{index%2==0}}">
+        <image src="{{item.icon}}" mode="widthFix" class="img_zuopin" bindtap="go_dingzhi" data-index="{{index}}" data-id="{{item.id}}"></image>
+        <image src="../../resource/img/btn_close.png" class="btn_close" data-index="{{index}}" data-id="{{item.id}}" catchtap="del_shoucang"></image>
+      </view>
+    </view>
+    <view class="zuopin_list_right">
+      <view class="zuopin_item" wx:for="{{shoucang_info}}" wx:if="{{index%2==1}}">
+        <image src="{{item.icon}}" mode="widthFix" class="img_zuopin" bindtap="go_dingzhi" data-index="{{index}}" data-id="{{item.id}}"></image>
+        <image src="../../resource/img/btn_close.png" class="btn_close" catchtap="del_shoucang" data-index="{{index}}" data-id="{{item.id}}"></image>
+      </view>
+    </view>
+  </view>
+</view>

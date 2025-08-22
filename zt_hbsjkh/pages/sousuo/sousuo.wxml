@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class="view_sousuo">
+		<view class="view_sousuo_input">
+			<image src="../../resource/img/icon_sousuo.png"></image>
+			<input placeholder="多个关键词用空格分隔" bindconfirm='go_sousuo'></input>
+		</view>
+    <view class="btn_quxiao" bindtap="quxiao">取消</view>
+	</view>
+  <view class="key_words">
+    <view class="key_words_item" wx:for="{{sousuo_setting.keys}}" bindtap="go_sousuo_2" data-key="{{item}}">{{item}}</view>
+  </view>
+  <view class="sousuo_history">
+    <view class="sousuo_history_head">历史搜索</view>
+    <view class="sousuo_history_item" wx:for="{{sousuo_jilu}}" bindtap="go_sousuo_2" data-key="{{item}}">
+      <text class="left">{{item}}</text>
+      <text class="right" data-key="{{item}}" catchtap="del_sousuo">x</text>
+    </view>
+  </view>
+  <image class="guanggao" src="{{sousuo_setting.img}}" mode="widthFix"></image>
+</view>

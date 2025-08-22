@@ -1,0 +1,25 @@
+.container{
+  width: 750rpx;
+  height: 100%;
+  position: absolute;
+  background-color: rosybrown;
+}
+text{
+  font-size: 50rpx;
+  background-color: yellow;
+  position: absolute;
+  left: 50rpx;
+  top: 50rpx;
+  padding: 10rpx;
+  /* display: inline-block; */
+  line-height: 50rpx;
+  vertical-align: -webkit-baseline-middle;
+}
+.kuang{
+  width: 300rpx;
+  height: 300rpx;
+  border: 1rpx solid red;
+  position: absolute;
+  left: 50rpx;
+  top: 50rpx;
+}

@@ -1,0 +1,16 @@
+<view >
+    <view style="height: 30rpx;"></view>
+    <view style="height: 30rpx;"></view>
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button> 
+  <view style="height: 30rpx;"></view>
+  <view style="padding: 30px;">
+    <input bindchange="onInput"  bindblur="onInput" type="nickname" value="{{nickname}}"  style="text-align: center;" class="weui-input" placeholder="请输入昵称"/>
+  </view>
+  <view style="padding: 30px;">
+    <button  bindtap="loginSbumit" class="btn">
+        <view style="white-space: nowrap; text-align: center;" class="name">授权登录</view>
+    </button>
+  </view>
+</view>

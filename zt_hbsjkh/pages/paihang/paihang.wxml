@@ -1,0 +1,67 @@
+<view class="container">
+  <view class="head_view">
+    <picker mode="selector" value="{{cur_show_index}}" bindchange="bindStarttimeChange" range="{{allpaihang}}" range-key="yue">
+      <view class="cur_yue">
+        <view>{{cur_show_paihang.yue}}</view>
+        <image src="../../resource/img/icon_arrow_down2.png" mode="widthFix"></image>
+      </view>
+    </picker>
+    <view class="head_paihang_view">
+      <view class="head_paihang_item">
+        <view class="head_tx_view">
+          <image class="head_tx_min"
+            src="{{cur_show_paihang.info[1]?cur_show_paihang.info[1].member.avatar:setting.kongtx}}"></image>
+          <view class="txt_paiming_min">2</view>
+        </view>
+        <view class="txt_nickname">
+          {{cur_show_paihang.info[1]?cur_show_paihang.info[1].member.nickname:setting.kongname}}</view>
+        <view class="txt_gongxianzhi">{{cur_show_paihang.info[1]?cur_show_paihang.info[1].num:"****"}}</view>
+        <view class="icon_gongxianzhi">贡献值</view>
+      </view>
+      <view class="head_paihang_item">
+        <view class="head_tx_view">
+          <image class="head_tx_max"
+            src="{{cur_show_paihang.info[0]?cur_show_paihang.info[0].member.avatar:setting.kongtx}}"></image>
+          <view class="txt_paiming_max">1</view>
+        </view>
+        <view class="txt_nickname">
+          {{cur_show_paihang.info[0]?cur_show_paihang.info[0].member.nickname:setting.kongname}}</view>
+        <view class="txt_gongxianzhi">{{cur_show_paihang.info[0]?cur_show_paihang.info[0].num:"****"}}</view>
+        <view class="icon_gongxianzhi">贡献值</view>
+      </view>
+      <view class="head_paihang_item">
+        <view class="head_tx_view">
+          <image class="head_tx_min"
+            src="{{cur_show_paihang.info[2]?cur_show_paihang.info[2].member.avatar:setting.kongtx}}"></image>
+          <view class="txt_paiming_min">3</view>
+        </view>
+        <view class="txt_nickname">
+          {{cur_show_paihang.info[2]?cur_show_paihang.info[2].member.nickname:setting.kongname}}</view>
+        <view class="txt_gongxianzhi">{{cur_show_paihang.info[2]?cur_show_paihang.info[2].num:"****"}}</view>
+        <view class="icon_gongxianzhi">贡献值</view>
+      </view>
+    </view>
+  </view>
+  <view class="paihang_content">
+    <view class="paihang_item" wx:for="{{setting.jine}}" wx:if="{{index>2}}">
+      <view class="txt_paihang_num">{{index+1}}</view>
+      <image class="paihang_tx"
+        src="{{cur_show_paihang.info[index]?cur_show_paihang.info[index].member.avatar:setting.kongtx}}"></image>
+      <view class="paihang_nickname">
+        {{cur_show_paihang.info[index]?cur_show_paihang.info[index].member.nickname:setting.kongname}}</view>
+      <view class="gongxian_view">
+        <view class="icon_gxz">贡献值</view>
+        <view class="txt_gxz">{{cur_show_paihang.info[index]?cur_show_paihang.info[index].num:"****"}}</view>
+      </view>
+    </view>
+  </view>
+  <image class="img_sm" src="{{setting.jlsm}}" mode="widthFix"></image>
+</view>
+<view class="my_info">
+  <open-data type="userAvatarUrl" class="my_tx"></open-data>
+  <view class="my_info_content">
+    <open-data type="userNickName" class="my_info_nickname"></open-data>
+    <view class="icon_mygxz">贡献值：<view style="color:#000000;">{{mynum}}</view>
+    </view>
+  </view>
+</view>

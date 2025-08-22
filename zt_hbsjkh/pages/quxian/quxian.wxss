@@ -1,0 +1,229 @@
+@import '../shouquan/shouquan.wxss';
+page{
+  width: 750rpx;
+  height: 100%;
+  background-color: #F7F7F7;
+}
+.container{
+  width: 750rpx;
+  min-height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.head{
+  width: 750rpx;
+  height: 98rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.head text{
+  float: left;
+  width: 374rpx;
+  height: 67rpx;
+  line-height: 67rpx;
+  text-align: center;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:500;
+  color:rgba(187,187,187,1);
+  letter-spacing: 2rpx;
+}
+.head .head_on{
+  color: rgba(51,51,51,1);
+  font-family:PingFangSC-Medium;
+}
+.jiesuan{
+  width: 690rpx;
+  position: relative;
+  left: 30rpx;
+  top: 30rpx;
+}
+.jiesuan_content{
+  width: 690rpx;
+  height: 390rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.jiesuan_content image{
+  width: 118rpx;
+  height: 136rpx;
+  margin-bottom: 11rpx;
+}
+.jiesuan_content text{
+  font-size:44rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:#FF6365;
+}
+.btn_jiesuan{
+  float: left;
+  width: 690rpx;
+  height:88rpx;
+  background:linear-gradient(0deg,rgba(247,185,24,1),rgba(248,216,69,1),rgba(245,226,47,1));
+  border-radius:10rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 420rpx;
+
+  font-size:32rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:#333333;
+  line-height:88rpx;
+  text-align: center;
+}
+.jiesuan_jilu{
+
+}
+.jiesuan_jilu_item{
+  width: 690rpx;
+  height: 144rpx;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  position: relative;
+  background-color: white;
+  border-radius:8rpx;
+}
+.item_name{
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+
+  float: left;
+  width: 500rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item_name_on{
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:#F7B918;
+
+  float: left;
+  width: 500rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item_riqi{
+  position: absolute;
+  left: 30rpx;
+  bottom: 30rpx;
+  font-size:20rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.item_jine{
+  position: absolute;
+  right: 30rpx;
+  top: 47rpx;
+  font-size:36rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.item_jine_on{
+  position: absolute;
+  right: 30rpx;
+  top: 47rpx;
+  font-size:36rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:#F7B918;
+}
+.info_view{
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.info_view_content{
+  width: 630rpx;
+  /* height: 100rpx; */
+  background-color: white;
+  border-radius: 15rpx;
+  padding: 30rpx;
+}
+.info_view_title{
+  width: 630rpx;
+  /* height: 90rpx;
+  line-height: 90rpx; */
+  padding-bottom: 30rpx;
+  text-align: center;
+  font-size:33rpx;
+  color: #333333;
+  border-bottom:2rpx rgba(238,238,238,1) solid;
+}
+.info_input{
+  width:630rpx;
+  height:106rpx;
+  background:rgba(255,255,255,1);
+  border-bottom:2rpx rgba(238,238,238,1) solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.info_input text{
+  font-size:30rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(55,55,55,1);
+  line-height: 106rpx;
+  height: 106rpx;
+}
+.info_input input{
+  width: 500rpx;
+  height: 80rpx;
+  text-align: right;
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(155,155,155,1);
+}
+.info_input_placeholder{
+  height:30rpx;
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(155,155,155,1);
+  text-align: right;
+}
+.info_foot{
+  width:600rpx;
+  height:90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background:linear-gradient(-4deg,rgba(246,201,98,1),rgba(251,213,111,1),rgba(255,222,135,1));
+  font-size:32rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  border-radius: 45rpx;
+  position: relative;
+  left: 15rpx;
+  margin: 30rpx 0 0 0;
+}

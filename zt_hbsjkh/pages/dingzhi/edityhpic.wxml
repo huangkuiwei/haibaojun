@@ -1,0 +1,17 @@
+<!-- 图片编辑界面 -->
+<view class='edit_pic' wx:if="{{btn_status[0]==0}}">
+  <view class="edit_pic_left">
+    <view class="edit_pic_left_item" bindtap='change_yhpic' data-index="{{btn_status[1]}}">
+      <image src="../../resource/img/icon_dz_huantu.png"></image>
+      <text>换图</text>
+    </view>
+    <view class="edit_pic_left_item" bindtap="koutu" wx:if="{{(yonghu_can_koutu[btn_status[1]]==1)&&(can_koutu!=0)}}" data-type="1">
+      <image src="../../resource/img/icon_dz_koutu.png"></image>
+      <text>抠人像</text>
+    </view>
+    <view class="edit_pic_left_item" bindtap="kouhead" wx:if="{{(yonghu_can_kouhead[btn_status[1]]==1)&&(can_kouhead!=0)}}" data-type="1">
+      <image src="../../resource/img/icon_dz_kouhead.png"></image>
+      <text>抠头像</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+.edit_txt_view{
+  width: 710rpx;  
+  padding: 0 20rpx 0 20rpx;
+  height: 100%;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+}
+.edit_txt_view_top{
+  width: 710rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.edit_txt_input{
+  width: 662rpx;
+  height: 890rpx;
+  border-radius:5rpx;
+  position: relative;
+  padding: 12rpx 24rpx 12rpx 24rpx;
+}

@@ -1,0 +1,122 @@
+.container{
+  width: 750rpx;
+  min-height: 100%;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+.view_sousuo{
+  width: 720rpx;
+  height: 64rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  margin-left: 15rpx;
+  margin-top: 15rpx;
+}
+.view_sousuo_icon{
+  width: 80rpx;
+  height: 52rpx;
+  margin-right: 12rpx;
+}
+.view_sousuo_input{
+  width: 554rpx;
+  height: 64rpx;
+  background:rgba(240,239,239,1);
+  border-radius:30rpx;
+  padding-left: 37rpx;
+  padding-right: 37rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.view_sousuo_input image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 21rpx;
+}
+.view_sousuo_input input{
+  width: 500rpx;
+  font-size:28rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(114,114,114,1);
+}
+.btn_quxiao{
+  height:64rpx;
+  font-size:28rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:64rpx;
+  margin-left: 12rpx;
+}
+.key_words{
+  width: 690rpx;
+  padding: 8rpx 30rpx 30rpx 30rpx;
+  border-top: 2rpx solid #F0EFEF;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;  
+  flex-wrap: wrap;
+}
+.key_words_item{
+  height:64rpx;
+  line-height: 64rpx;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  background:rgba(246,246,246,1);
+  border-radius:32px;
+  font-size:24rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  margin-top: 22rpx;
+  margin-right: 15rpx;
+}
+.sousuo_history{
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-top: 40rpx;
+}
+.sousuo_history_head{
+  width: 690rpx;
+  border-bottom: 2rpx solid #F0EFEF;
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size:28rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(151,151,151,1);
+}
+.sousuo_history_item{
+  width: 690rpx;
+  border-bottom: 2rpx solid #F0EFEF;
+  height: 98rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.sousuo_history_item .left{
+  font-size:28rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(69,69,69,1);
+}
+.sousuo_history_item .right{
+  font-size:35rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(151,151,151,1);
+}
+.guanggao{
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-top: 70rpx;
+  margin-bottom: 30rpx;
+}

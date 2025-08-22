@@ -1,0 +1,18 @@
+<view class='edit_txt_view' wx:if="{{show_status==2}}">
+	<view class="edit_txt_view_top">
+		<view class="img_container" bindtap="jieguo_content_close">
+			<image src="../../resource/img/icon_dz_txt_close.png" style="width:20rpx;height:20rpx;"></image>
+		</view>
+		<view class="img_container" bindtap="finish_edit_txt">
+			<image src="../../resource/img/icon_dz_txt_ok.png" style="width:25rpx;height:25rpx;"></image>
+		</view>
+	</view>
+	<textarea class="edit_txt_input" placeholder="请输入文字" placeholder-style="color:#CCCCCC;font-size:28rpx;" value="{{element[btn_status[1]].txt}}" maxlength='-1' bindinput="txt_inputing" focus='{{true}}'></textarea>
+	<!-- <view class="edit_txt_content" catchtap="ceshi">
+    <textarea class="edit_txt_input" placeholder="请输入文字" placeholder-style="color:#CCCCCC;font-size:28rpx;" value="{{element[btn_status[1]].txt}}" style="color:{{element[btn_status[1]].color}};font-family:{{element[btn_status[1]].font}};" maxlength='-1' bindinput="txt_inputing"></textarea>
+    <view class="edit_txt_btns">
+      <view class="edit_txt_btns_left" bindtap="jieguo_content_close">取消</view>
+      <view class="edit_txt_btns_right" bindtap="finish_edit_txt">确认</view>
+    </view>
+  </view> -->
+</view>

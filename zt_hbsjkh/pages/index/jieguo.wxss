@@ -1,0 +1,96 @@
+.jieguo_view{
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.jieguo_content{
+  width: 504rpx;
+  height: 578rpx;
+  position: relative;
+}
+.jieguo_content_bg{
+  width: 504rpx;
+  height: 578rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+.jieguo_content_btn_close{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+}
+.jieguo_tishi{
+  font-size:28rpx;
+  font-family:Adobe Heiti Std;
+  font-weight:normal;
+  color:rgba(51,51,51,1);
+  position: absolute;
+  left: 49rpx;
+  top: 114rpx;
+}
+.jieguo_tishi_1{
+  width: 504rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 295rpx;
+  text-align: center;
+  height:34rpx;
+  line-height: 34rpx;
+  font-size:36rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(68,68,68,1);
+}
+.jieguo_tishi_2{
+  width: 484rpx;
+  position: absolute;
+  left: 10rpx;
+  top: 354rpx;
+  text-align: center;
+  height:31rpx;
+  font-size:32rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(56,56,56,1);
+}
+.btns_view{
+  width: 504rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 458rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btns_view_left{
+  width:186rpx;
+  height:76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  border:2rpx solid rgba(201,208,218,1);
+  border-radius:10rpx;
+  margin: 0 40rpx 0 0;
+  font-size:32rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(57,57,57,1);
+}
+.btns_view_right{
+  width:190rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background:rgba(255,221,2,1);
+  border-radius:10rpx;
+}

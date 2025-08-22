@@ -1,0 +1,28 @@
+
+<view class='container'>
+  <view class='canvas_view' style='width:0rpx;height:0rpx;'>
+    <canvas class='canvas' canvas-id='canvas'></canvas>
+  </view>
+  <view class='haibao_content'>
+    <swiper class='haibao_pic' indicator-dots='false' bindchange='swiperChange'>
+        <block wx:for="{{haibao_pic}}">
+          <swiper-item item-id="{{index}}">
+            <image src="{{item}}" class="slide-image" bindtap='jinruguanggao' data-index='{{index}}'/>
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+  <view class='guize'>
+    <text class='guize_head'>赚钱规则：</text>
+    <text class='guize_content'>首先，您需要先成为代理，可联系客服操作。海报中的二维码已经包括您的邀请信息，好友通过二维码进入小程序后，TA将永久成为您的邀请会员，未来TA进行充值消费您都有奖励，会自动进入您的账户中。</text>
+  </view>
+  <view class='guize'>
+    <text class='guize_head'>代理专属链接(点击可复制)：</text>
+    <text class='guize_content' bindtap="copy" data-content="zt_haibaosj/pages/index/index?pid={{uid}}">zt_haibaosj/pages/index/index?pid={{uid}}</text>
+  </view>
+  <view class='guize'>
+    <text class='guize_head'>AppId(点击可复制)：</text>
+    <text class='guize_content' bindtap="copy" data-content="{{appid}}">{{appid}}</text>
+  </view>
+  <view class='btns' bindtap='shengcheng'>生成海报</view>
+</view>

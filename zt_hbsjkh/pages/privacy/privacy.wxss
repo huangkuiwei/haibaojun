@@ -1,0 +1,51 @@
+.privacy-page {
+  padding: 30rpx;
+  font-size: 24rpx;
+  line-height: 1.8;
+}
+
+.privacy-page view {
+  margin-bottom: 10rpx;
+}
+
+.privacy-page view.title {
+  text-align: center;
+  font-size: 46rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+
+.privacy-page view.subtitle {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 20rpx 0;
+}
+
+.table {
+  border-left: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
+}
+
+.table .tr {
+  display: flex;
+  margin: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.table .tr view {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 37%;
+  padding: 10rpx;
+  margin: 0;
+  overflow-wrap: break-word;
+  border-right: 1px solid #cccccc;
+  align-self: stretch;
+}
+
+.table .tr view:nth-child(1) {
+  display: flex;
+  align-items: center;
+  width: 26%;
+}

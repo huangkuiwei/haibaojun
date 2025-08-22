@@ -1,0 +1,107 @@
+.imgcontainer{
+  position: relative;
+  top: 0rpx;
+  overflow: hidden;
+}
+.section{
+  overflow: hidden;
+}
+.nopic{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.nopic image{
+  width: 80%;
+  max-width: 176rpx;
+}
+.show_img{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  display: block;
+}
+.muban{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.imgcontaineryuan{
+  border-radius: 50%;
+  overflow: hidden;
+}
+.ctrcontainer{
+  width: 223rpx;
+  height: 76rpx;
+  padding-left: 38rpx;
+  padding-right: 38rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 38rpx;
+  position: relative;
+  top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.ctrcontainer image{
+  width: 37rpx;
+  height: 76rpx;
+}
+.btn_close{
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  bottom: -24rpx;
+  right: -24rpx;
+  z-index: 100;
+}
+.fuhe_view{
+  position: absolute;
+  left: 0rpx;
+  top: -25rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;  
+}
+.fuhe{
+  width: 130rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  z-index: 100;  
+  position: absolute;
+  font-size: 18rpx;
+  top: -25rpx;
+  color: #333333;
+  background-color: #FFDD02;
+  text-align: center;
+  border-radius: 8rpx;
+}
+.no_biankuang{
+  border:2rpx dashed rgba(0, 0, 0, 0);
+}
+.has_biankuang{
+  border:2rpx dashed #dddddd;
+}
+.add_pic{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx #dddddd dashed;
+  /* border: 2rpx rgba(0, 0, 0, 0) dashed; */
+  position: relative;
+}
+.add_pic image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 30rpx;
+}
+.add_pic view{
+  font-size: 33rpx;
+  color: #666666;
+}

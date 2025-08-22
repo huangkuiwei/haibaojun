@@ -1,0 +1,10 @@
+<view class="role_txt_container" wx:if="{{(member.vip==4)&&((btn_status[0]==2)&&(element[btn_status[1]].type==1))}}" style="top:{{window_height_rpx/2-210}}rpx;">
+  <image src="../../resource/img/dz_tel_{{element[btn_status[1]].model=='tel'?'on':'off'}}.png" catchtap="change_element_mode" data-model="{{element[btn_status[1]].model=='tel'?'':'tel'}}"></image>
+  <image src="../../resource/img/dz_name_{{element[btn_status[1]].model=='name'?'on':'off'}}.png" catchtap="change_element_mode" data-model="{{element[btn_status[1]].model=='name'?'':'name'}}"></image>
+  <image src="../../resource/img/dz_shopname_{{element[btn_status[1]].model=='shopname'?'on':'off'}}.png" catchtap="change_element_mode" data-model="{{element[btn_status[1]].model=='shopname'?'':'shopname'}}"></image>
+  <image src="../../resource/img/dz_addr_{{element[btn_status[1]].model=='addr'?'on':'off'}}.png" catchtap="change_element_mode" data-model="{{element[btn_status[1]].model=='addr'?'':'addr'}}"></image>
+</view>
+<view class="role_img_container" wx:if="{{(member.vip==4)&&((btn_status[0]==1)&&(element[btn_status[1]].type==0))}}" style="top:{{window_height_rpx/2-210}}rpx;">
+  <image src="../../resource/img/dz_erweima_{{element[btn_status[1]].model=='erweima'?'on':'off'}}.png" catchtap="change_element_mode" data-model="{{element[btn_status[1]].model=='erweima'?'':'erweima'}}"></image>
+  <image src="../../resource/img/dz_erweima_{{element[btn_status[1]].model=='logo'?'on':'off'}}.png" catchtap="change_element_mode" data-model="{{element[btn_status[1]].model=='logo'?'':'logo'}}"></image>
+</view>

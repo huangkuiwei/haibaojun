@@ -1,0 +1,55 @@
+<view class='container' bindtouchstart='touchstart' bindtouchmove='touchmove' bindtouchend='touchend'
+  bindtap="cancel_all_selected">
+  <view class="txt_tishi">#点击任意位置开始编辑#</view>
+  <view class="dz_content">
+    <view class="dz_content_top" style='height:{{window_height_rpx-320}}rpx'>
+      <view class="dz_content_top_content"
+        style='height:{{mb_pic_pos[3]}}rpx;width:{{mb_pic_pos[2]}}rpx;top:{{mb_pic_pos[1]}}rpx;left:{{mb_pic_pos[0]}}rpx;'>
+        <image src="{{muban_info.img}}" style='height:{{mb_pic_pos[3]}}rpx;width:{{mb_pic_pos[2]}}rpx;' wx:if="{{muban_info.img!=''}}"></image>
+        <myimg imgid="{{0+':'+index}}" wx:for="{{muban_info.pics}}" imgsrc="{{yonghu_pics[index]}}" 
+          style="position: absolute;left:{{item[1]*mb_pic_pos[4]}}rpx;top:{{item[2]*mb_pic_pos[4]}}rpx;"
+          bind:caibian='onCaibian' data-id="0:{{index}}" stv="{{stv_yonghu_pics[index]}}"
+          isfocus="{{(btn_status[0]==0)&&(btn_status[1]==index)?'1':'0'}}"
+          bind:focus='change_focus' bind:del="onClose" width="{{item[3] * mb_pic_pos[4]}}"
+          height="{{item[4] * mb_pic_pos[4] }}" s='{{bili}}' ismoving="{{ismoving}}"
+          bind:add="onClose">
+        </myimg>
+        <image class='front_pics' src='{{muban_info.frontimg}}'
+          style="position: absolute;left:0rpx;top:0rpx;height:{{mb_pic_pos[3]}}rpx;width:{{mb_pic_pos[2]}}rpx;"
+          wx:if="{{muban_info.frontimg!=''}}"></image>
+        <view wx:for="{{element}}">
+          <ztimg imgsrc="{{item.img}}" pPos="{{mb_pic_pos}}" bind:focus='change_focus' data-index="{{index}}"
+            data-id="1:{{index}}" cStv="{{item.cStv}}"
+            status="{{((btn_status[0]==1)&&(btn_status[1]==index))?'1':'0'}}" rpxTopx='{{rpx_to_px}}'
+            bind:stvChanged='element_stvChanged' imgStv="{{item.imgStv}}" bind:posInited="element_pos_inited"
+            wx:if="{{(item.type==0)&&(item.hasdel==0)}}" bind:showedit='go_change_pic' id="{{'element'+index}}"
+            ismoving="{{ismoving}}" bind:down='go_down' zindex="{{item.zindex+1}}" bind:up='go_up' bind:del='del_pic' toumingdu="{{item.toumingdu}}"></ztimg>
+          <zttxt pPos="{{mb_pic_pos}}" rpxTopx='{{rpx_to_px}}' wx:elif="{{(item.type==1)&&(item.hasdel==0)}}"
+            txt="{{item.txt}}" cStv="{{item.cStv}}" status="{{((btn_status[0]==2)&&btn_status[1]==index?'1':'0')}}"
+            bind:focus='change_focus' data-index="{{index}}" data-id="2:{{index}}" duiqi="{{item.duiqi}}"
+            color="{{item.color}}" font="{{item.font}}" bind:stvChanged='element_stvChanged'
+            bind:posInited="element_pos_inited" bind:centerInited="txt_center_inite" weight="{{item.weight}}"
+            direction="{{item.direction}}" bind:showedit='go_edit_txt' bind:del='del_element'
+            lineheight="{{item.lineheight}}" letterspacing="{{item.letterspacing}}" id="{{'element'+index}}"
+            ismoving="{{ismoving}}" container='{{item.container}}' bind:down='go_down' zindex="{{item.zindex+1}}"
+            bind:up='go_up' yushe="{{item.yushe}}" hasninitefont="{{item.hasninitefont}}"  toumingdu="{{item.toumingdu}}"></zttxt>
+        </view>
+        <image class="imgshuiyin" src="{{imgshuiyin}}"
+          style='position: absolute;top:0rpx;left:0rpx;width:{{mb_pic_pos[2]}}rpx;' wx:if="{{imgshuiyin!=''}}"
+          mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="dz_content_bottom" wx:if="{{btn_status[1]!=2}}">
+      <text>{{muban_info.name}}</text>
+    </view>
+  </view>
+</view>
+<include src="./dibu" />
+<include src="./addpic" />
+<include src="./editpic" />
+<include src="./jieguo" />
+<include src="./txton" />
+<include src="./edittxt" />
+<include src="./tietu" />
+<include src="./role" />
+<include src="./edityhpic" />

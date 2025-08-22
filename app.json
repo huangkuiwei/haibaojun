@@ -1,0 +1,75 @@
+{
+  "pages": [
+    "zt_hbsjkh/pages/index/index",
+    "zt_hbsjkh/pages/authorization/authorization",
+    "zt_hbsjkh/pages/wenanssjg/wenanssjg",
+    "zt_hbsjkh/pages/hbwenan/hbwenan",
+    "zt_hbsjkh/pages/dingzhi/dingzhi",
+    "zt_hbsjkh/pages/pinfo/pinfo",
+    "zt_hbsjkh/pages/wode/wode",
+    "zt_hbsjkh/pages/wenan/wenan",
+    "zt_hbsjkh/pages/paihang/paihang",
+    "zt_hbsjkh/pages/addwenan/addwenan",
+    "zt_hbsjkh/pages/upsm/upsm",
+    "zt_hbsjkh/pages/wenansousuo/wenansousuo",
+    "zt_hbsjkh/pages/mianze/mianze",
+    "zt_hbsjkh/pages/test/test",
+    "zt_hbsjkh/pages/vip/vip",
+    "zt_hbsjkh/pages/webview/webview",
+    "zt_hbsjkh/pages/zuopin/zuopin",
+    "zt_hbsjkh/pages/fenlei/fenlei",
+    "zt_hbsjkh/pages/quxian/quxian",
+    "zt_hbsjkh/pages/shoucang/shoucang",
+    "zt_hbsjkh/pages/zhuanti/zhuanti",
+    "zt_hbsjkh/pages/haibao/haibao",
+    "zt_hbsjkh/pages/tailorpic/tailorpic",
+    "zt_hbsjkh/pages/sousuo/sousuo",
+    "zt_hbsjkh/pages/sousuojieguo/sousuojieguo",
+    "zt_hbsjkh/pages/tuandui/tuandui",
+    "zt_hbsjkh/pages/fenleic/fenleic",
+    "zt_hbsjkh/pages/login/login",
+    "zt_hbsjkh/pages/auorder/auorder",
+    "zt_hbsjkh/pages/success/success",
+    "zt_hbsjkh/pages/renewal/renewal",
+    "zt_hbsjkh/pages/privacy/privacy",
+    "zt_hbsjkh/pages/protocol/protocol"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#454545",
+    "selectedColor": "#454545",
+    "list": [
+      {
+        "pagePath": "zt_hbsjkh/pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "zt_hbsjkh/resource/img/icon_index_on.png",
+        "iconPath": "zt_hbsjkh/resource/img/icon_index_off.png"
+      },
+      {
+        "pagePath": "zt_hbsjkh/pages/fenlei/fenlei",
+        "text": "模板中心",
+        "selectedIconPath": "zt_hbsjkh/resource/img/icon_fenlei_on.png",
+        "iconPath": "zt_hbsjkh/resource/img/icon_fenlei_off.png"
+      },
+      {
+        "pagePath": "zt_hbsjkh/pages/zuopin/zuopin",
+        "text": "我的设计",
+        "selectedIconPath": "zt_hbsjkh/resource/img/icon_sheji_on.png",
+        "iconPath": "zt_hbsjkh/resource/img/icon_sheji_off.png"
+      },
+      {
+        "pagePath": "zt_hbsjkh/pages/wode/wode",
+        "text": "个人中心",
+        "selectedIconPath": "zt_hbsjkh/resource/img/icon_wode_on.png",
+        "iconPath": "zt_hbsjkh/resource/img/icon_wode_off.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,72 @@
+@import './dibu.wxss';
+@import './addpic.wxss';
+@import './editpic.wxss';
+@import './jieguo.wxss';
+@import './edittxt.wxss';
+@import './tietu.wxss';
+@import './txton.wxss';
+@import './role.wxss';
+.container{
+  width: 750rpx;
+  min-height: 100%;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  background-color: #F9F9F9;
+}
+.txt_tishi{
+  width: 750rpx;
+  height: 23rpx;
+  line-height: 23rpx;
+  text-align: center;
+  color: #979797;
+  font-size: 24rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 36rpx;
+}
+.dz_content{
+  position: absolute;
+  top: 120rpx;
+  width: 750rpx; 
+  /* background-color: yellow; */
+}
+.dz_content_top{
+  width: 710rpx;
+  position: relative;
+  top: 0rpx;
+  left: 20rpx;
+  /* background-color: yellow; */
+}
+.dz_content_top_content{
+  position: absolute;
+  overflow: hidden;
+}
+.dz_content_bottom{
+  width: 750rpx;
+  text-align: center;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  position: relative;  
+}
+.dz_content_bottom text{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 27rpx;
+  color: #737373;
+  letter-spacing: 3rpx;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+}
+.imgshuiyin{
+  pointer-events: none;
+  z-index: 999;
+}
+.front_pics{
+  pointer-events: none;
+}

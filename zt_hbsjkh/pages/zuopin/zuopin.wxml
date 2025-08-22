@@ -1,0 +1,35 @@
+<view class='container'>
+  <view class="zuopin_kong" wx:if="{{zuopin.length==0}}">
+    <image src="../../resource/img/bg_zuopin_kong.png"></image>
+    <view>空空如也。。。</view>
+  </view>
+  <view class="zuopin_list" wx:else>
+    <view class="zuopin_list_left">
+      <view class="zuopin_item" wx:for="{{zuopin}}" wx:if="{{index%2==0}}">
+        <image src="{{item.icon}}" mode="widthFix" class="img_zuopin" bindtap="go_edit" data-index="{{index}}"></image>
+        <view class="zuopin_item_bottom">
+          <view class="zuopin_name">{{item.name}}</view>
+          <view class="zuopin_date">{{item.date}}</view>
+        </view>
+        <image src="../../resource/img/btn_close.png" class="btn_close" data-index="{{index}}" catchtap="del_zuopin"></image>
+        <image src="../../resource/img/btn_download.png" class="btn_download" bindtap="show_download" data-index="{{index}}"></image>
+        <image src="../../resource/img/btn_share.png" class="btn_share"></image>
+        <button open-type="share" class="btn_share" style="opacity: 0;" data-id="{{item.id}}" data-index="{{index}}"></button>
+      </view>
+    </view>
+    <view class="zuopin_list_right">
+      <view class="zuopin_item" wx:for="{{zuopin}}" wx:if="{{index%2==1}}">
+        <image src="{{item.icon}}" mode="widthFix" class="img_zuopin" bindtap="go_edit" data-index="{{index}}"></image>
+        <view class="zuopin_item_bottom">
+          <view class="zuopin_name">{{item.name}}</view>
+          <view class="zuopin_date">{{item.date}}</view>
+        </view>
+        <image src="../../resource/img/btn_close.png" class="btn_close" catchtap="del_zuopin" data-index="{{index}}"></image>
+        <image src="../../resource/img/btn_download.png" class="btn_download" bindtap="show_download" data-index="{{index}}"></image>
+        <image src="../../resource/img/btn_share.png" class="btn_share"></image>
+        <button open-type="share" class="btn_share" style="opacity: 0;" data-id="{{item.id}}" data-index="{{index}}"></button>
+      </view>
+    </view>
+  </view>
+</view>
+<include src="./jieguo" />

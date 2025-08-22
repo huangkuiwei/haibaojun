@@ -1,0 +1,223 @@
+.txton_container{
+  width: 690rpx;
+  height: 148rpx;
+  position: fixed;
+  bottom: 35rpx;
+  left: 30rpx;
+  z-index: 999;
+}
+.txton_container_top{
+  width: 690rpx;
+  height: 48rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.txton_container_top_left{
+  width:630rpx;
+  height:48rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.txton_container_top_right{
+  width:52rpx;
+  height:48rpx;
+  border:2rpx solid rgba(102,102,102,1);
+  border-radius:8rpx;
+}
+.txton_container_bottom{
+  width: 690rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.txton_container_bottom view{
+  width: 168rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size:30rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.ziti_container{
+  width: 750rpx;
+  height: 336rpx;
+  background-color: #FAFAFA;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  z-index: 999;
+}
+.ziti_container_top{
+  width: 750rpx;
+  height: 256rpx;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.ziti_container_top image{
+  display: block;
+  margin: 19rpx;
+}
+.ziti_item{
+  opacity: 1;
+}
+.ziti_item_off{
+  opacity: 0.3;
+}
+.txton_container_foot{
+  width: 750rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+}
+.txton_container_foot image{
+  position: relative;
+  z-index: 99;
+  display: inline-block;
+}
+.img_container{
+  width: 100rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* 颜色 */
+.color_container{
+  width: 750rpx;
+  height: 336rpx;
+  background-color: #FAFAFA;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  z-index: 999;
+}
+.color_container_top{
+  width: 721rpx;
+  height: 242rpx;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  padding-top: 14rpx;
+  padding-left: 20rpx;
+}
+.colors_item{
+  width: 58rpx;
+  height: 58rpx;
+  padding: 4rpx;
+  border-radius: 33rpx;
+  border: 4rpx solid rgba(129,129,129,1);
+  display: inline-block;
+  margin: 4rpx 12rpx 4rpx 12rpx;
+}
+.colors_item_off{
+  width: 58rpx;
+  height: 58rpx;
+  padding: 4rpx;
+  border-radius: 33rpx;
+  border: 4rpx solid rgba(129,129,129,0);
+  display: inline-block;
+  margin: 4rpx 12rpx 4rpx 12rpx;
+}
+/* 对齐 */
+.duiqi_container{
+  width: 750rpx;
+  height: 460rpx;
+  background-color: #FAFAFA;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  z-index: 999;
+}
+.duiqi_container_top{
+  width: 750rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.duiqi_container_top_item_on{
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0EEEE;
+}
+.duiqi_container_top_item_on image{
+  width: 40rpx;
+  height: 31rpx;
+}
+.duiqi_container_top_item{
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.duiqi_container_top_item image{
+  width: 40rpx;
+  height: 31rpx;
+}
+.jianju_container{
+  width: 750rpx;
+  height: 220rpx;
+  background-color: #FAFAFA;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  z-index: 999;
+}
+.jianju_container_top{
+  width: 710rpx;
+  height: 140rpx;
+  position: relative;
+  left: 20rpx;
+  /* top: 0rpx; */
+}
+.jianju_container_top_item{
+  width: 710rpx;
+  height: 25rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.jianju_container_top_item text{
+  font-size:28rpx;
+  font-family:SimHei;
+  font-weight:400;
+  color:rgb(99, 70, 70);
+}
+.jianju_container_top_item slider{
+  width: 500rpx;
+  padding: 0;
+  margin: 0;
+}

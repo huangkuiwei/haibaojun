@@ -1,0 +1,47 @@
+<view class='jieguo_view' wx:if="{{wenan_show_status==1}}">
+  <view class="jieguo_content">
+    <image src="../../resource/img/bg_dz_bcss.png" class="jieguo_content_bg"></image>
+    <view class="jieguo_content_btn_close" bindtap="wenan_jieguo_content_close"></view>
+    <view class="jieguo_tishi">可在”我的设计”页面查看</view>
+    <view wx:if="{{wenan_user_info.vip==4}}">
+      <view class="jieguo_tishi_1">您是超级会员</view>
+      <view class="jieguo_tishi_2">是否将该作品保存为范例</view>
+      <view class="btns_view">
+        <view class="btns_view_left" bindtap="down_wenan">下载</view>
+        <view class="btns_view_right" bindtap="save_fanli">保存</view>
+      </view>
+    </view>
+    <view wx:elif="{{(wenan_user_info.vip!=0)&&(wenan_user_info.left!=0)}}">
+      <view class="jieguo_tishi_1">{{wenan_user_info.msg}}</view>
+      <view class="jieguo_tishi_2">今日剩余{{wenan_user_info.left}}次</view>
+      <view class="btns_view">
+        <view class="btns_view_left" bindtap="wenan_jieguo_content_close">取消</view>
+        <view class="btns_view_right" bindtap="down_wenan">下载</view>
+      </view>
+    </view>
+    <view wx:elif="{{(wenan_user_info.vip!=0)&&(wenan_user_info.left==0)&&(wenan_user_info.dleft!=0)}}">
+      <view class="jieguo_tishi_1">VIP每日免费次数已用完</view>
+      <view class="jieguo_tishi_2">可使用系统赠送的{{wenan_user_info.dleft}}次</view>
+      <view class="btns_view">
+        <view class="btns_view_left" bindtap="wenan_jieguo_content_close">取消</view>
+        <view class="btns_view_right" bindtap="down_wenan">下载</view>
+      </view>
+    </view>
+    <view wx:elif="{{wenan_user_info.left!=0}}">
+      <view class="jieguo_tishi_1">可使用免费下载次数{{wenan_user_info.left}}次</view>
+      <view class="jieguo_tishi_2">分享给好友可获得更多下载次数</view>
+      <view class="btns_view">
+        <button open-type="share" class="btns_view_left">分享</button>
+        <view class="btns_view_right" bindtap="down_wenan">下载</view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="jieguo_tishi_1">可使用下载次数0次</view>
+      <view class="jieguo_tishi_2">分享给好友{{videoAd!=null?'或观看视频':''}}可获得更多下载次数</view>
+      <view class="btns_view">
+        <button open-type="share" class="btns_view_left" style="{{videoAd!=null?'':'margin:0;'}}">分享</button>
+        <view class="btns_view_right" bindtap="wana_show_ad" wx:if="{{videoAd!=null}}">观看</view>
+      </view>
+    </view>
+  </view>
+</view>

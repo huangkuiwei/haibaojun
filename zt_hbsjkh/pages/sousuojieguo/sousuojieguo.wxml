@@ -1,0 +1,32 @@
+<view class='container'>
+  <view class="view_sousuo" bindtap="go_sousuo">
+    <view class="view_sousuo_input">
+      <view class="view_sousuo_input_item" wx:for="{{keys_arr}}">
+        <text>{{item}}</text>
+        <image src="../../resource/img/icon_sousuo_close.png" bindtap="del_key" data-key="{{item}}"></image>
+      </view>
+    </view>
+  </view>
+  <scroll-view class='goods_fenlei' scrollWithAnimation="true" scroll-x="true">
+    <text class="{{cur_fenlei_index==-1?'goods_fenlei_item_active':'goods_fenlei_item'}}" data-index='{{-1}}' bindtap='switchFenlei' style='color:{{mlib_style.fontcolor}};'>全部</text>
+    <text wx:for="{{fenlei_muban}}" class="{{cur_fenlei_index==index?'goods_fenlei_item_active':'goods_fenlei_item'}}" data-index='{{index}}' bindtap='switchFenlei' style='color:{{mlib_style.fontcolor}};'>{{item.fenlei.name}}</text>
+  </scroll-view>
+  <view class="jieguo_title">
+    <view class="{{cur_show_status==0?'jieguo_title_selection':'jieguo_title_selection_off'}}" bindtap="change_show_status" data-status="0">最新</view>
+    <view class="jieguo_title_xian"></view>
+    <view class="{{cur_show_status==1?'jieguo_title_selection':'jieguo_title_selection_off'}}" bindtap="change_show_status" data-status="1">最热</view>
+    <view class="jieguo_title_num">{{cur_show_mubans.length}}个模板</view>
+  </view>
+  <view class="jieguo_content" wx:if="{{cur_show_mubans.length!=0}}">
+    <view class="jieguo_content_show_left">
+      <image src="{{item.icon}}" mode="widthFix" wx:for="{{cur_show_mubans}}" wx:if="{{index%2==0}}" bindtap="go_dingzhi" data-id="{{item.id}}"></image>
+    </view>
+    <view class="jieguo_content_show_right">
+      <image src="{{item.icon}}" mode="widthFix" wx:for="{{cur_show_mubans}}" wx:if="{{index%2==1}}" bindtap="go_dingzhi" data-id="{{item.id}}"></image>
+    </view>
+  </view>
+  <view class="jieguo_kong_view" wx:else>
+    <image src="../../resource/img/icon_sousuo_kong.png"></image>
+    <view>没有模板</view>
+  </view>
+</view>

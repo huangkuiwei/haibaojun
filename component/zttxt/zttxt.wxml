@@ -1,0 +1,28 @@
+<view class="ztimg_container" style="z-index:{{zindex}};{{direction==1?('width:'+(10*1+line_num*line_height)+'rpx;'):('height:'+(10*1+line_num*line_height)+'rpx;lineheight:'+line_height+'rpx;')}}top:{{pos_inited[1]}}rpx;left:{{pos_inited[0]}}rpx;transform: translate({{cStv.offsetX}}rpx, {{cStv.offsetY}}rpx) scale({{cStv.scale}}) rotate({{ cStv.rotate }}deg);" catchtap="selected">
+	<view class="tips" wx:if="{{(status==1)&&(ismoving==0)}}" style="transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);top: {{-34-(1/cStv.scale-1)*12}}rpx;">点击编辑文字,双指缩放</view>
+
+	<!--图片内容 -->
+	<text class="zttxt_content" style="opacity: {{toumingdu/100}};line-height:{{line_height}}rpx;letter-spacing:{{letterspacing}}rpx;top:0rpx;left:0rpx;color:{{color}};font-family:{{font}};text-align:{{duiqi}};{{weight==1?'font-weight: 800;':''}}{{direction==1?'writing-mode: vertical-lr;':''}}" id="myText" space="nbsp">{{txt}}</text>
+	<!--图片框 -->
+	<view class="ztimg_kuang" style='height:100%;width:100%;top:-2rpx;left:-2rpx;border:{{2/cStv.scale}}rpx solid rgba(153,153,153,0.8);  ' wx:if="{{status==1}}">
+		<view class="btn_zoom" style="bottom:-20rpx;right:-20rpx;transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);" catchtouchmove='touchmove' catchtouchstart="touchstart" catchtouchend="touchend" data-type="3" wx:if="{{ismoving==0}}">
+			<image src="./img/icon_zoom.png" style="width:30rpx;height:30rpx;"></image>
+		</view>
+		<view class="btn_zoom" style="bottom:-20rpx;left:-20rpx;transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);" wx:if="{{ismoving==0}}" catchtap="go_down">
+			<image src="./img/down.png" style="width:30rpx;height:30rpx;"></image>
+		</view>
+		<view class="btn_zoom" style="top:-20rpx;right:-20rpx;transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);" wx:if="{{ismoving==0}}" catchtap="go_up">
+			<image src="./img/up.png" style="width:30rpx;height:30rpx;"></image>
+		</view>
+		<view class="btn_close" style="top:-20rpx;left:-20rpx;transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);" catchtap="del" wx:if="{{ismoving==0}}">
+			<image src="./img/icon_close.png" style="width:30rpx;height:30rpx;"></image>
+		</view>
+	</view>
+	<!--旋转按钮-->
+	<view class="btn_xuanzhuan_view" wx:if="{{(status==1)&&(ismoving==0)}}" catchtouchmove='touchmove' catchtouchstart="touchstart" catchtouchend="touchend" data-type="0" style="bottom: {{-80-(1/cStv.scale-1)*40}}rpx;transform: translate(0rpx, 0rpx) scale({{1/cStv.scale}}) rotate(0deg);">
+		<image src="./img/icon_xuanzhuan.png" class="btn_xuanzhuan"></image>
+	</view>
+
+	<!-- 取值用的 -->
+</view>
+<text class="zttxt_content_quzhi" style="letter-spacing:{{letterspacing}}rpx;top:0rpx;left:0rpx;color:{{color}};font-family:{{font}};text-align:{{duiqi}};line-height: {{line_height}}rpx;{{direction==1?'writing-mode: vertical-lr;':''}}" id="myText2" space="nbsp">{{txt}}</text>
