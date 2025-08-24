@@ -53,19 +53,19 @@
       },
       {
         "pagePath": "zt_hbsjkh/pages/fenlei/fenlei",
-        "text": "模板中心",
+        "text": "模板",
         "selectedIconPath": "zt_hbsjkh/resource/img/icon_fenlei_on.png",
         "iconPath": "zt_hbsjkh/resource/img/icon_fenlei_off.png"
       },
       {
         "pagePath": "zt_hbsjkh/pages/zuopin/zuopin",
-        "text": "我的设计",
+        "text": "设计",
         "selectedIconPath": "zt_hbsjkh/resource/img/icon_sheji_on.png",
         "iconPath": "zt_hbsjkh/resource/img/icon_sheji_off.png"
       },
       {
         "pagePath": "zt_hbsjkh/pages/wode/wode",
-        "text": "个人中心",
+        "text": "我的",
         "selectedIconPath": "zt_hbsjkh/resource/img/icon_wode_on.png",
         "iconPath": "zt_hbsjkh/resource/img/icon_wode_off.png"
       }

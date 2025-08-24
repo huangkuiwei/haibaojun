@@ -1,6 +1,17 @@
 <view class='container' bindtouchstart='touchstart' bindtouchmove='touchmove' bindtouchend='touchend'
   bindtap="cancel_all_selected">
-  <view class="txt_tishi">#点击任意位置开始编辑#</view>
+  <view class="txt_tishi">
+    <image bindtap='change_shoucang_status' wx:if="{{ has_shoucang == 0 }}" style="width: 68rpx; margin-right: 28rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/favicon1.png" mode="widthFix"></image>
+    <image bindtap='change_shoucang_status' wx:else style="width: 68rpx; margin-right: 28rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/favicon2.png" mode="widthFix"></image>
+
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="foot_right1" wx:if="{{(member.realtel=='')&&(gettel==1)}}">
+        <image style="width: 184rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/save.png" mode="widthFix"></image>
+    </button>
+    <view class='foot_right1' bindtap='shenhe' wx:else>
+        <image style="width: 184rpx" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/save.png" mode="widthFix"></image>
+    </view>
+
+  </view>
   <view class="dz_content">
     <view class="dz_content_top" style='height:{{window_height_rpx-320}}rpx'>
       <view class="dz_content_top_content"

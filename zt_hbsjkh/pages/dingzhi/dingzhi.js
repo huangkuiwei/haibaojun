@@ -19,6 +19,8 @@ Page({
     mpics:[],//我的图片
     cur_selected_xtpics:0,
     element:[],//添加的元素
+    initELement:[],//添加的元素
+    historyElement: [],
     cur_txt:'',//当前编辑中的文字
     loading_ziti:0,
     colors: [],
@@ -60,6 +62,21 @@ Page({
     yonghu_can_kouhead:[],
     wenanid:0,
   },
+
+  quash: function () {
+    let element = this.data.historyElement.pop()
+
+    this.setData({
+      element: element
+    })
+  },
+
+  reset: function () {
+    this.setData({
+      element: JSON.parse(JSON.stringify(this.data.initELement))
+    })
+  },
+
   go_wenan:function(){
     wx.navigateTo({
       url: '../hbwenan/hbwenan?hbid='+this.data.id,
@@ -126,6 +143,7 @@ Page({
     var that=this;
     app.imgfunc.kouhead(url,function(url){
       that.data.element[that.data.btn_status[1]].img=url;
+      that.data.historyElement.push(JSON.parse(JSON.stringify(that.data.element)))
       that.setData({
         element:that.data.element
       })
@@ -157,6 +175,7 @@ Page({
     var that=this;
     app.imgfunc.koutu(url,function(url){
       that.data.element[that.data.btn_status[1]].img=url;
+      that.data.historyElement.push(JSON.parse(JSON.stringify(that.data.element)))
       that.setData({
         element:that.data.element
       })
@@ -351,6 +370,7 @@ Page({
       this.data.cur_toumingdu=this.data.element[this.data.btn_status[1]].toumingdu;
     }
     this.data.element[this.data.btn_status[1]].toumingdu = toumingdu;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element: this.data.element
     })
@@ -369,6 +389,7 @@ Page({
     console.log(e.target.dataset);
     console.log(model);
     this.data.element[this.data.btn_status[1]].model=model;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element:this.data.element
     })
@@ -518,6 +539,7 @@ Page({
           that.data.loading_ziti = 0;
           wx.hideLoading();
           that.data.element[that.data.btn_status[1]].font = name;
+          that.data.historyElement.push(JSON.parse(JSON.stringify(that.data.element)))
           that.setData({
             element: that.data.element,
             all_ziti: that.data.all_ziti,
@@ -531,6 +553,7 @@ Page({
           that.data.loading_ziti = 0;
           wx.hideLoading();
           that.data.element[that.data.btn_status[1]].font = name;
+          that.data.historyElement.push(JSON.parse(JSON.stringify(that.data.element)))
           that.setData({
             element: that.data.element,
             all_ziti: that.data.all_ziti,
@@ -543,6 +566,7 @@ Page({
     {
       console.log('字体已经载入过了');
       this.data.element[this.data.btn_status[1]].font = name;
+      this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
       this.setData({
         element: this.data.element,
         all_ziti: this.data.all_ziti,
@@ -577,6 +601,7 @@ Page({
   select_color:function(e){
     var color = e.currentTarget.dataset.color;
     this.data.element[this.data.btn_status[1]].color = color;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element: this.data.element
     })
@@ -599,6 +624,7 @@ Page({
   select_duiqi:function(e){
     var duiqi = e.currentTarget.dataset.duiqi;
     this.data.element[this.data.btn_status[1]].duiqi = duiqi;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element: this.data.element
     })
@@ -621,6 +647,7 @@ Page({
   select_bold:function(e){
     var weight = e.currentTarget.dataset.weight;
     this.data.element[this.data.btn_status[1]].weight = weight;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element: this.data.element
     })
@@ -649,6 +676,7 @@ Page({
       return;
     }
     this.data.element[this.data.btn_status[1]].letterspacing = letterspacing;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element: this.data.element
     })
@@ -677,6 +705,7 @@ Page({
       return;
     }
     this.data.element[this.data.btn_status[1]].lineheight = lineheight;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element: this.data.element
     })
@@ -720,6 +749,7 @@ Page({
     }
     this.data.element[index].zindex=max_down;
     this.data.element[max_down_index].zindex=temp;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element:this.data.element
     })
@@ -749,6 +779,7 @@ Page({
     }
     this.data.element[index].zindex=min_up;
     this.data.element[min_up_index].zindex=temp;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element:this.data.element
     })
@@ -809,6 +840,7 @@ Page({
           'type':0,//代表图片
         }
         this.data.element.push(img_new);
+        this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
         console.log(this.data.element);
         var index = this.data.element.length;
         console.log(index);
@@ -826,6 +858,7 @@ Page({
         if (cur_img != url)
         {
           this.data.element[this.data.btn_status[1]].img = url;
+          this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
           this.setData({
             element: this.data.element,
             show_status:0,
@@ -1081,6 +1114,7 @@ Page({
     }
     var str = this.data.cur_txt.replace(/↵/g, "\n");
     this.data.element[this.data.btn_status[1]].txt=str;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       show_status: 0,
       element: this.data.element
@@ -1100,6 +1134,7 @@ Page({
   select_direction:function(e){
     var direction = e.currentTarget.dataset.direction;
     this.data.element[this.data.btn_status[1]].direction=direction;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element: this.data.element
     })
@@ -1155,6 +1190,7 @@ Page({
       'letterspacing':0,
     }
     this.data.element.push(txt_new);
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     var index = this.data.element.length-1;
     this.setData({
       element: this.data.element,
@@ -1247,6 +1283,7 @@ Page({
     this.data.element.sort(function (a, b) {
       return a.zindex - b.zindex;
     })
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     var element=[];
     for(var i=0;i<this.data.element.length;++i)
     {
@@ -1344,6 +1381,7 @@ Page({
    */
   finish_tailor:function(stv){
     this.data.element[this.data.btn_status[1]].imgStv=stv;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.setData({
       element: this.data.element
     })
@@ -1425,6 +1463,7 @@ Page({
     this.data.element[index].center[0] = center[0] - 20 - this.data.mb_pic_pos[0];
     this.data.element[index].center[1] = center[1] - 120 - this.data.mb_pic_pos[1];
     // this.data.element[index].center = center;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
   },
   element_pos_inited: function (e) {
     // console.log(e);
@@ -1433,6 +1472,7 @@ Page({
     // console.log('获取到图片初始化信息'+index);
     var container = e.detail;
     this.data.element[index].container = container;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
   },
   /**
    * 图片stv被改变
@@ -1443,6 +1483,7 @@ Page({
     var stv = e.detail;
     this.data.element[index].cStv = stv;
     this.data.element[index].yushe = 0;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
   },
   del_pic:function(e){
     console.log('删除图片####################');
@@ -1464,6 +1505,7 @@ Page({
     var element=this.data.element;
     element[btn_status[1]].hasdel=1;
     this.data.element=element;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     var that=this;
     this.setData({
       btn_status: [-1, -1],
@@ -1774,7 +1816,8 @@ Page({
       stv_yonghu_pics: zuopin_info.yhstv,
       bili:scale,
     })
-    this.data.element=pics;      
+    this.data.element=pics;
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
     this.inite_zindex();
     this.inite_cankoutu();
     console.log(this.data.element);
@@ -1860,6 +1903,9 @@ Page({
     this.inite_cankoutu();
     console.log('初始化素材');
     console.log(this.data.element);
+
+    this.data.initELement = JSON.parse(JSON.stringify(this.data.element));
+    this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
   },
   inite_element:function(){
     console.log('inite_element');
@@ -2278,6 +2324,7 @@ Page({
         stv.offsetX += change_x;
         stv.offsetY += change_y;
         this.data.element[this.data.btn_status[1]].cStv = stv;
+
         this.setData({
           element: this.data.element
         })
@@ -2339,6 +2386,7 @@ Page({
       }    
     }
     else {
+      this.data.historyElement.push(JSON.parse(JSON.stringify(this.data.element)))
       console.log('动了');
       this.setData({
         ismoving:0

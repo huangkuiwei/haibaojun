@@ -1,23 +1,21 @@
 <!-- 初始化界面 -->
 <view class='foot' wx:if="{{btn_status[0]==-1}}">
   <view class='foot_left'>
-    <view class='foot_left_item' bindtap='change_shoucang_status'>
-      <image src="../../resource/img/{{has_shoucang==0?'icon_dz_shoucang.png':'icon_dz_yishoucang.png'}}"></image>
-      <text>{{has_shoucang==0?'加收藏':'已收藏'}}</text>
-    </view>
-    <!-- <view class='foot_left_item' bindtap="go_wenan">
-      <image src='../../resource/img/icon_dz_wenan.png'></image>
-      <text>文案</text>
-    </view> -->
+  <view class='foot_left_item' bindtap="quash">
+        <image src='https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/icon1.png'></image>
+        <text>撤销</text>
+      </view>
     <view class='foot_left_item' bindtap="add_txt">
-      <image src='../../resource/img/icon_dz_jiazi.png'></image>
-      <text>加文字</text>
+      <image src='https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/icon2.png'></image>
+      <text>文字</text>
     </view>
     <view class='foot_left_item' bindtap='go_add_pic'>
-      <image src='../../resource/img/icon_dz_jiatu.png'></image>
-      <text>加图片</text>
+      <image src='https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/icon3.png'></image>
+      <text>加图</text>
     </view>
+     <view class='foot_left_item' bindtap='reset'>
+          <image src='https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/dingzhi/icon4.png'></image>
+          <text>重做</text>
+        </view>
   </view>
-  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="foot_right" wx:if="{{(member.realtel=='')&&(gettel==1)}}">保存</button>
-  <view class='foot_right' bindtap='shenhe' wx:else>保存</view>
 </view>

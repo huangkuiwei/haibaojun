@@ -298,6 +298,12 @@
   color: rgba(51, 51, 51, 1);
   line-height: 34rpx;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.tuijian_haibao_title .left image {
+    margin-left: 16rpx;
 }
 
 .tuijian_haibao_title .right {
@@ -307,6 +313,13 @@
   font-weight: 400;
   color: rgba(99, 99, 99, 1);
   line-height: 34rpx;
+   display: flex;
+    align-items: center;
+}
+
+.tuijian_haibao_title .right image {
+    width: 25rpx;
+    margin-left: 8rpx;
 }
 
 .tuijian_haibao_content {
@@ -351,22 +364,30 @@
   height: 54rpx;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 34rpx;
 }
 
 .tuijian_haibao_btns view {
-  width: 335rpx;
-  height: 54rpx;
-  line-height: 54rpx;
-  background: rgba(236, 236, 236, 1);
-  font-size: 24rpx;
+  width: 159rpx;
+  height: 41rpx;
+  background: #F8F8F8;
+  border-radius: 7rpx;
+  line-height: 41rpx;
+  font-size: 22rpx;
+  color: #47C92C;
   font-family: SimHei;
   font-weight: 400;
-  color: rgba(69, 69, 69, 1);
-  text-align: center;
+   display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.tuijian_haibao_btns view image {
+    width: 22rpx;
+    margin-right: 14rpx;
+  }
 
 .fenlei_content {
   width: 710rpx;

@@ -1146,6 +1146,14 @@ Page({
       'cachetime': '0',
       success(res) {
         console.log(res);
+        res.data.data.shouye.tjfenleiinfo.forEach(item => {
+          if (item.name === '教育培训') {
+            item.hot = true
+          } else if (item.name === '节日促销') {
+            item.sale = true
+          }
+        })
+
         that.setData({
           all_fenlei:res.data.data.allfenlei,
           shouye_info: res.data.data.shouye,

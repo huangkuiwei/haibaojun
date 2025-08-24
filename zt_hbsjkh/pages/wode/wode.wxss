@@ -5,14 +5,17 @@
   position: absolute;
   left: 0rpx;
   top: 0rpx;
-  background-color: #fafafa;
+  background-color: #ffffff;
+}
+.head-container {
+ background: url("https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/bg.png") left top/100% 100% no-repeat;
 }
 .head{
   width: 750rpx;
-  height: 200rpx;
+  height: 677rpx;
   position: relative;
   margin-bottom: 25rpx;
-  background-color: white;
+  background: #F3FFDF85;
 }
 .bg_head{
   width: 750rpx;
@@ -21,15 +24,15 @@
 }
 .head_content{
   width: 670rpx;
-  height: 110rpx;
   position: absolute;
   left: 40rpx;
-  top: 35rpx;
+  top: 70rpx;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
+
 .uid_view{
   position: absolute;
   left: 40rpx;
@@ -56,24 +59,16 @@
   color:rgba(51,51,51,1);
 }
 .touxiang{
-  width: 110rpx;
-  height: 110rpx;
+  width: 160rpx;
+  height: 160rpx;
   border-radius: 50%;
+  margin-bottom: 23rpx;
   overflow: hidden;
-  margin-right: 27rpx;
 }
 .nickname{
-  max-width: 380rpx;
-  height: 32rpx;
-  line-height: 32rpx;
-  font-size:32rpx;
-  font-family:SimHei;
-  font-weight:400;
-  color:rgba(51,51,51,1);
-  margin-right: 27rpx;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+ font-weight: 600;
+ font-size: 33rpx;
+ color: #000000;
 }
 /* .icon_vip{
   width: 106rpx;
@@ -90,7 +85,7 @@
 }
 .shouyi_head{
   width: 652rpx;
-  height: 83rpx;
+  height:103rpx;
   margin: 0 25rpx 0 25rpx;
   border-bottom: 2rpx solid rgba(230,230,230,1);
   display: flex;
@@ -99,16 +94,16 @@
   align-items: center;
 }
 .shouyi_head_left{
-  height: 83rpx;
-  line-height: 83rpx;
+  height:103rpx;
+  line-height:103rpx;
   font-size:28rpx;
   font-family:SimHei;
   font-weight:400;
   color:rgba(51,51,51,1);
 }
 .shouyi_head_right{
-  height: 83rpx;
-  line-height: 83rpx;
+  height:103rpx;
+  line-height:103rpx;
   font-size:28rpx;
   font-family:SimHei;
   font-weight:400;
@@ -152,13 +147,11 @@
 .wode_content{
   width: 750rpx;
   /* margin-top: 25rpx; */
-  background-color: white;
   margin-bottom: 25rpx;
 }
 .wode_content_item{
   width: 700rpx;
-  height: 83rpx;
-  border-bottom: 2rpx solid #E6E6E6;
+  height:103rpx;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -167,28 +160,26 @@
   left: 25rpx;
 }
 .wode_content_item_icon{
-  width: 35rpx;
-  height: 35rpx;
-  margin-right: 23rpx;
+  width: 36rpx;
+  margin-right: 27rpx;
 }
 .wode_content_item_name{
-  height: 83rpx;
-  line-height: 83rpx;
-  font-size:28rpx;
-  color:rgba(51,51,51,1);
+  height:103rpx;
+  line-height:103rpx;
+  font-size: 30rpx;
+  color: #000000;
 }
 .wode_content_item_arrow{
-  height: 83rpx;
-  line-height: 83rpx;
-  font-size:28rpx;
-  color:#979797;
+  height:103rpx;
+ font-size: 26rpx;
+ color: #7E7E7E;
   position: absolute;
   right: 0rpx;
-  top: 0rpx;
+  top: 36rpx;
 }
 .wode_content_item button{
   width: 700rpx;
-  height: 83rpx;
+  height:103rpx;
   position: absolute;
   opacity: 0;
 }
@@ -294,6 +285,7 @@
   position: relative;
   display: flex;
   align-items: center;
+   margin-top: 20rpx;
 }
 
 .pt-vip-text {
@@ -336,3 +328,50 @@
   width: 100rpx;
   position: relative;
 }
+
+.options1 {
+    position: relative;
+    top: -240rpx;
+    background: #ffffff;
+    border-radius: 35rpx;
+    padding: 30rpx 0;
+}
+
+.vip-banner {
+        position: absolute;
+        left: 30rpx;
+        right: 30rpx;
+        width: 684rpx;
+        height: 100rpx;
+        top: -100rpx;
+        background: linear-gradient(132deg, #F3E3BB 0%, #E6BF76 100%);
+        border-radius: 21rpx 21rpx 0 0;
+         display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 40rpx;
+          box-sizing: border-box;
+    }
+
+    .vip-icon {
+        width: 36rpx;
+        margin-right: 17rpx;
+    }
+
+    .word1 {
+        font-weight: 500;
+        font-size: 34rpx;
+        color: #8F4D2B;
+          margin-right: 17rpx;
+    }
+
+     .word2 {
+            flex-grow: 1;
+            font-weight: 500;
+            font-size: 27rpx;
+            color: #8F4D2B;
+        }
+
+        .sale-btn {
+             width: 135rpx;
+        }

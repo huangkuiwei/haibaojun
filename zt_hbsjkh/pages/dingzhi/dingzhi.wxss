@@ -15,15 +15,10 @@
   background-color: #F9F9F9;
 }
 .txt_tishi{
-  width: 750rpx;
-  height: 23rpx;
-  line-height: 23rpx;
-  text-align: center;
-  color: #979797;
-  font-size: 24rpx;
-  position: absolute;
-  left: 0rpx;
-  top: 36rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20rpx 54rpx 0 0;
 }
 .dz_content{
   position: absolute;

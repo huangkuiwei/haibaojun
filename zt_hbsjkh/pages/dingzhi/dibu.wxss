@@ -7,12 +7,13 @@
 }
 .foot_left{
   position: absolute;
-  left: 0rpx;
-  width: 510rpx;
+  left: 100rpx;
+  right: 100rpx;
+  width: 550rpx;
   height: 120rpx;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 .foot_left_item{

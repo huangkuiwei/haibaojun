@@ -53,20 +53,18 @@
       </view>
     </view>
     <image src="{{shouye_info.imgM}}" wx:if="{{show_vip==1}}" mode="widthFix" class="img_guanggao" bindtap="go_vip" binderror="pics_error"></image>
-    <view class="zhuanti" wx:if="{{zhuanti.length>0}}">
-      <view class="zhuanti_title">
-        <image src="../../resource/img/icon_huo.png"></image>
-        <text>近期热门专题</text>
-      </view>
-      <scroll-view class="zhuanti_content" scrollWithAnimation="true" scroll-x="true">
-        <image src="{{item.icon}}" wx:for="{{zhuanti}}" mode="heightFix" bindtap="go_zhuanti" data-id="{{item.id}}">
-        </image>
-      </scroll-view>
-    </view>
+
     <view class="tuijian_haibao" wx:for="{{shouye_info.tjfenleiinfo}}">
       <view class="tuijian_haibao_title">
-        <text class="left">{{item.name}}</text>
-        <text class="right" bindtap="tuijian_go_fenlei" data-index="{{index}}">全部 ></text>
+        <view class="left">
+            {{item.name}}
+             <image style="width: 32rpx" wx:if="{{ item.hot }}" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/hot.png" mode="widthFix"></image>
+             <image style="width: 36rpx" wx:if="{{ item.sale }}" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/sale.png" mode="widthFix"></image>
+        </view>
+        <view class="right" bindtap="tuijian_go_fenlei" data-index="{{index}}">
+            更多
+            <image src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/more.png" mode="widthFix"></image>
+        </view>
       </view>
       <view class="tuijian_haibao_content">
         <view wx:for="{{tuijian_fenlei_info[index].muban}}" wx:for-index="cindex">
@@ -75,8 +73,10 @@
         </view>
       </view>
       <view class="tuijian_haibao_btns">
-        <view bindtap="tuijian_go_fenlei" data-index="{{index}}">更多</view>
-        <view bindtap="huanyipi" data-index="{{index}}">换一批</view>
+        <view bindtap="huanyipi" data-index="{{index}}">
+            <image src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/index/refresh.png" mode="widthFix"></image>
+            换一换
+        </view>
       </view>
     </view>
   </view>

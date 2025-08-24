@@ -108,8 +108,10 @@
   width: 536rpx;
   height: 100%;
   position: absolute;
-  right: 24rpx;
+  right: 34rpx;
   top: 0rpx;
+  overflow: auto;
+  padding: 20rpx 0;
 }
 
 .fenlei_content_head {
@@ -142,17 +144,12 @@
   background-color: #FFDD02;
 }
 .fenlei_content_show{
-  width: 536rpx;
-  position: absolute;
-  left: 0rpx;
-  top: 79rpx;
-  bottom: 0rpx;
+
 }
 .fenlei_content_show_left{
-  width: 258rpx;
-  position: absolute;
-  left: 0rpx;
-  min-height: 103%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10rpx;
 }
 .fenlei_content_show_right{
   width: 258rpx;
@@ -161,15 +158,23 @@
   min-height: 103%;
 }
 .fenlei_content_show image{
-  width: 258rpx;
-  margin-bottom: 15rpx;  
+  width: 150rpx;
+  height: 300rpx;
+  margin-bottom: 15rpx;
   border-radius: 10rpx;
 }
 .fenlei_content_show video{
-  width: 258rpx;
+  width: 150rpx;
   margin-bottom: 15rpx;
   position: relative;
 }
+
+.item-name {
+    font-size: 22rpx;
+    color: #000000;
+     margin-bottom: 15rpx;
+}
+
 .icon_editzuopin{
   width: 35rpx;
   height: 35rpx;
