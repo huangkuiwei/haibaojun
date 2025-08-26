@@ -57,7 +57,7 @@
         </view>
 
         <view class="protocol-tip">
-          欢迎来到magic创意社小程序，在使用我们的服务，确保您能正常体验小程序功能前，请仔细阅读
+          欢迎来到海报君小程序，在使用我们的服务，确保您能正常体验小程序功能前，请仔细阅读
           <navigator open-type="navigate" url="/zt_hbsjkh/pages/protocol/protocol">《用户服务协议》</navigator>
           和
           <navigator open-type="navigate" url="/zt_hbsjkh/pages/privacy/privacy">《隐私政策》</navigator>

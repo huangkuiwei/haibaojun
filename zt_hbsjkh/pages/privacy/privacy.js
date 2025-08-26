@@ -6,7 +6,7 @@ Page({
    */
   data: {
     configInfo: {
-      appName: 'Magic创意社',
+      appName: '海报君',
       companyName: '长沙阿迪拉网络科技有限公司',
       address: '湖南省长沙市岳麓区桔子洲街道潇湘中路298号曙光泊岸锦园1期-1004 号-145号',
     },

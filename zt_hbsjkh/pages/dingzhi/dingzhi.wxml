@@ -50,9 +50,6 @@
           mode="widthFix"></image>
       </view>
     </view>
-    <view class="dz_content_bottom" wx:if="{{btn_status[1]!=2}}">
-      <text>{{muban_info.name}}</text>
-    </view>
   </view>
 </view>
 <include src="./dibu" />

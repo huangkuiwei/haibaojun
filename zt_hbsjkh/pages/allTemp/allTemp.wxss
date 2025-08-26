@@ -149,7 +149,6 @@
   bottom: 0rpx;
 }
 .fenlei_content_show_left{
-  min-height: 100%;
    display: flex;
    flex-wrap: wrap;
    align-self: flex-start;
