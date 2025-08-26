@@ -20,25 +20,6 @@
     "bigPackageSizeSupport": false,
     "useIsolateContext": true
   },
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "name": "zt_hbsjkh/pages/wode/wode",
-          "pathName": "zt_hbsjkh/pages/wode/wode",
-          "query": "",
-          "scene": null,
-          "launchMode": "default"
-        },
-        {
-          "name": "zt_hbsjkh/pages/fenlei/fenlei",
-          "pathName": "zt_hbsjkh/pages/fenlei/fenlei",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        }
-      ]
-    }
-  },
+  "condition": {},
   "libVersion": "3.5.6"
 }

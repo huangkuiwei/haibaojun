@@ -32,7 +32,7 @@ Page({
       showProtocolDialog: false
     })
   },
-  
+
   has_buy_muban:function(id){
     console.log(this.data.fenlei_info);
     for(var i=0;i<this.data.fenlei_info.length;++i)
@@ -152,7 +152,7 @@ Page({
           that._download_zuopin();
         }
       }
-    })    
+    })
   },
   _download_zuopin:function(){
     var that = this;
@@ -198,7 +198,7 @@ Page({
             console.log(res.path);
             wx.saveImageToPhotosAlbum({
               filePath: res.path,
-              success(res) { 
+              success(res) {
                 wx.showToast({
                   title: '保存成功',
                 })
@@ -232,15 +232,6 @@ Page({
       }
     })
   },
-
-  showAll:function(event){
-    let cur_erji_fenlei_id = event.currentTarget.dataset.cur_erji_fenlei_id
-
-    wx.navigateTo({
-      url: `/zt_hbsjkh/pages/allTemp/allTemp?cur_fenlei_id=${this.data.cur_fenlei_id}&cur_erji_fenlei_id=${cur_erji_fenlei_id}`,
-    })
-  },
-
   show_ad:function(){
     var videoAd=this.data.videoAd;
     if (videoAd) {
@@ -276,7 +267,7 @@ Page({
           that.add_download_cishu();
           console.log('激励广告加载完成')
         } else {
-        console.log('激励广告被强制关闭')
+          console.log('激励广告被强制关闭')
         }
       })
     }
@@ -370,37 +361,37 @@ Page({
       }
       this.data.loading=1;
       var that = this;
-    var data = new Object();
-    data.apiname = 'getmore';
-    data.yiji = fenlei_info[cur_fenlei].info.id;
-    data.erji = fenlei_info[cur_fenlei].erji[cur_erji_fenlei].id;  
-    fenlei_info[cur_fenlei].page[cur_erji_fenlei]+=1;
-    data.page=fenlei_info[cur_fenlei].page[cur_erji_fenlei];
-    console.log(data);
-    app.mlib.request({
-      'model': 'fenlei',
-      'data': data,
-      'cachetime': '0',
-      success(res) {
-        console.log(res);
-        that.data.loading=0;
-        if(res.data.data.r==0)
-        {
-          wx.showToast({
-            title: '加载错误',
+      var data = new Object();
+      data.apiname = 'getmore';
+      data.yiji = fenlei_info[cur_fenlei].info.id;
+      data.erji = fenlei_info[cur_fenlei].erji[cur_erji_fenlei].id;
+      fenlei_info[cur_fenlei].page[cur_erji_fenlei]+=1;
+      data.page=fenlei_info[cur_fenlei].page[cur_erji_fenlei];
+      console.log(data);
+      app.mlib.request({
+        'model': 'fenlei',
+        'data': data,
+        'cachetime': '0',
+        success(res) {
+          console.log(res);
+          that.data.loading=0;
+          if(res.data.data.r==0)
+          {
+            wx.showToast({
+              title: '加载错误',
+            })
+            return;
+          }
+          var temp=fenlei_info[cur_fenlei].muban[cur_erji_fenlei].concat(res.data.data.d);
+          fenlei_info[cur_fenlei].muban[cur_erji_fenlei]=temp;
+          that.setData({
+            fenlei_info:fenlei_info
           })
-          return;
+        },
+        fail(res) {
+          console.log(res);
         }
-        var temp=fenlei_info[cur_fenlei].muban[cur_erji_fenlei].concat(res.data.data.d);
-        fenlei_info[cur_fenlei].muban[cur_erji_fenlei]=temp;
-        that.setData({
-          fenlei_info:fenlei_info
-        })
-      },
-      fail(res) {
-        console.log(res);
-      }
-    })
+      })
     }
   },
   /**
@@ -420,14 +411,12 @@ Page({
   change_fenlei:function(e){
     console.log(e.currentTarget.dataset.index);
     var index=e.currentTarget.dataset.index;
-    var id=e.currentTarget.dataset.id;
     this.setData({
       cur_fenlei:index,
-      cur_fenlei_id:id,
       cur_erji_fenlei:0,
       scroll_top:0,
     })
-  },  
+  },
   /**
    * 初始化
    */
@@ -498,14 +487,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('onload111');
-    if(app.mlib.fenleiinfo!=null)
-    {
-      this.data.cur_fenlei_id = app.mlib.fenleiinfo.pid;
-      this.data.cur_erji_fenlei_id = app.mlib.fenleiinfo.cid;
-      app.mlib.fenleiinfo = null;
-      this.data.has_inite=0;
-    }
+    console.log('options', options);
+    this.data.cur_fenlei_id = Number(options.cur_fenlei_id);
+    this.data.cur_erji_fenlei_id = Number(options.cur_erji_fenlei_id);
+
     this.inite();
   },
 
@@ -514,32 +499,6 @@ Page({
    */
   onReady: function () {
 
-  },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    let hasArgeeProtocol = wx.getStorageSync('hasArgeeProtocol')
-
-    if (hasArgeeProtocol) {
-      this.setData({
-        showProtocolDialog: false
-      })
-    } else {
-      this.setData({
-        showProtocolDialog: true
-      })
-    }
-
-    console.log('onShow111');
-    // if(app.mlib.fenleiinfo!=null)
-    // {
-    //   this.data.cur_fenlei_id = app.mlib.fenleiinfo.pid;
-    //   this.data.cur_erji_fenlei_id = app.mlib.fenleiinfo.cid;
-    //   app.mlib.fenleiinfo = null;
-    //   this.data.has_inite=0;
-    // }
-    // this.inite();
   },
 
   /**

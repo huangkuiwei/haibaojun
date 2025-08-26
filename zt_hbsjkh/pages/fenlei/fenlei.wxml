@@ -8,7 +8,7 @@
 	<view class="fenlei">
 		<scroll-view class='fenlei_head' scrollWithAnimation="true" scroll-y="true"
 			scroll-into-view="{{'id'+(cur_fenlei-5)}}">
-			<view wx:for="{{fenlei_info}}" class="scroll-view-item {{cur_fenlei==index?'active':''}}" data-index='{{index}}'
+			<view wx:for="{{fenlei_info}}" class="scroll-view-item {{cur_fenlei==index?'active':''}}" data-id="{{item.info.id}}" data-index='{{index}}'
 				bindtap='change_fenlei' id="{{'id'+index}}">
 				<view class="yellow_bar" wx:if="{{cur_fenlei==index}}"></view>
 				<view class="right {{cur_fenlei==index?'active':''}}">{{item.info.name}}</view>
@@ -16,7 +16,17 @@
 		</scroll-view>
 		<view class="fenlei_content">
 		    <view wx:for="{{fenlei_info[cur_fenlei].erji}}" id="{{'id'+index}}" data-index='{{index}}'>
-			    <view class="item-name">{{item.name}}</view>
+			    <view class="item-name">
+			        <view>{{item.name}}</view>
+			        <view
+			            style="color: #727272; display: flex; align-items: center; justify-content: center;"
+			            data-cur_erji_fenlei_id="{{item.id}}"
+			            bindtap="showAll"
+			        >
+			            <text style="padding-right: 14rpx">全部</text>
+                        <image src="../../resource/img/arrow-right.png" mode="widthFix" style="width: 12rpx;"></image>
+			        </view>
+			    </view>
 
 			    <scroll-view class="fenlei_content_show" scrollWithAnimation="true" scroll-x="true"
                 				bindscrolltolower='refresh_fenlei' style="{{fenlei_info[cur_fenlei].erji.length==0?'top:0rpx;':''}}" scroll-top="{{scroll_top}}">

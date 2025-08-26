@@ -51,13 +51,13 @@
 }
 
 .fenlei {
-  width: 750rpx;
+  width: 690rpx;
   /* margin-top: 30rpx; */
   border-top: 2rpx solid #F0EFEF;
   position: absolute;
-  left: 0rpx;
-  right: 0rpx;
-  top: 111rpx;
+  left: 30rpx;
+  right: 30rpx;
+  top: 110rpx;
   bottom: 0rpx;
 }
 
@@ -105,17 +105,15 @@
 }
 
 .fenlei_content {
-  width: 536rpx;
+  width: 100%;
   height: 100%;
   position: absolute;
-  right: 34rpx;
+  right: 0rpx;
   top: 0rpx;
-  overflow: auto;
-  padding: 20rpx 0;
 }
 
 .fenlei_content_head {
-  width: 536rpx;
+  width: 100%;
   height: 46rpx;
   white-space: nowrap;
   margin-top: 15rpx;
@@ -144,40 +142,34 @@
   background-color: #FFDD02;
 }
 .fenlei_content_show{
-
+  width: 100%;
+  position: absolute;
+  left: 0rpx;
+  top: 40rpx;
+  bottom: 0rpx;
 }
 .fenlei_content_show_left{
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10rpx;
+  min-height: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-self: flex-start;
+   gap: 20rpx;
 }
 .fenlei_content_show_right{
   width: 258rpx;
   position: absolute;
   right: 0rpx;
-  min-height: 103%;
+  min-height: 100%;
 }
 .fenlei_content_show image{
-  width: 150rpx;
-  height: 300rpx;
-  margin-bottom: 15rpx;
+  width: 100%;
   border-radius: 10rpx;
 }
 .fenlei_content_show video{
-  width: 150rpx;
+  width: 258rpx;
   margin-bottom: 15rpx;
   position: relative;
 }
-
-.item-name {
-    font-size: 22rpx;
-    color: #000000;
-     margin-bottom: 15rpx;
-     display: flex;
-       align-items: center;
-       justify-content: space-between;
-}
-
 .icon_editzuopin{
   width: 35rpx;
   height: 35rpx;
@@ -197,6 +189,8 @@
 }
 .muban_item{
   position: relative;
+  width: 216rpx;
+  flex-shrink: 0;
 }
 
 .protocol-dialog {
