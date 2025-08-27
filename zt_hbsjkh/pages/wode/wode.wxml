@@ -110,12 +110,13 @@
           <text class="wode_content_item_name">联系电话</text>
           <text class="wode_content_item_arrow">{{info.tel}}</text>
         </view>
-        <view class="wode_content_item" style="border:none;">
+        <!-- TODO 暂时隐藏客服 -->
+        <!-- <view class="wode_content_item" style="border:none;">
           <image mode="widthFix" class="wode_content_item_icon" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/icon4.png"></image>
           <text class="wode_content_item_name">微信客服</text>
           <image class="wode_content_item_arrow" style="width: 14rpx" mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/arrow-right.png"></image>
           <button bindtap="openCustomerServiceChat"></button>
-        </view>
+        </view> -->
       </view>
 
       <view style="padding: 30rpx;" wx:if="{{is_login == 1}}">
