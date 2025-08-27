@@ -7,10 +7,10 @@ Page({
   data: {
     configInfo: {
       appName: '海报君',
-      companyName: '长沙阿迪拉网络科技有限公司',
-      address: '湖南省长沙市岳麓区桔子洲街道潇湘中路298号曙光泊岸锦园1期-1004 号-145号',
+      companyName: '长沙睿见信息科技有限公司',
+      address: '湖南湘江新区天顶街道平川路239号紫檀溪苑二期4-1、4-2裙楼、塔楼及地下室1042',
     },
-    privacyUpdateDate: '2024年11月12日'
+    privacyUpdateDate: '2025年08月01日'
   },
 
   /**
