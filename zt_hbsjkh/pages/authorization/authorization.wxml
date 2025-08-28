@@ -1,66 +1,60 @@
-<view class="tckBox" >
-    <view catchtouchmove="catchtouch" class="tckBg"></view>
-    <view class="tckBottom">
-        <!-- <view catchtap="closeForm" class="closeInfo iconfont icon-guanbi"></view> -->
-        <view class="tckTitle lineText2 wrap"></view>
-  
-        <form bindsubmit="saveForm" >
-            <block >
-           
-                <block >
-                    <view class="formItem flex_align">
-                        <view class="label">头像<text class="textH">*</text>
-                        </view>
-                        <view class="flex_sub">
-                            <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-                                <image class="avatar"  src="{{avatarUrl}}"></image>
-                            </button>
-                            <!-- <input bindinput="intChange" class="inputH" data-type="phone" maxlength="11" placeholder="请输入" value="{{member.tel?member.tel:phone}}"></input> -->
-                        </view>
-                    </view>
-                    <view class="formItem flex_align">
-                        <view class="label">昵称<text class="textH">*</text>
-                        </view>
-                        <view class="flex_sub">
-                            <input  class="inputH" bindchange="onInput"  bindblur="onInput" type="nickname" placeholder="请输入" value="{{member.nickname|| ''}}"></input>
-                        </view>
-                    </view>   
-                    <view class="formItem flex_align">
-                        <view class="label">手机号<text class="textH">*</text>
-                        </view>
-                        <view class="flex_sub">
-                            <input bindinput="intChange" class="inputH" data-type="phone" maxlength="11" placeholder="请输入" value="{{member.tel?member.tel:phone}}"></input>
-                        </view>
-                    </view>
-                    <view class="formItem flex_align" >
-                        <view class="label">验证码<text class="textH" >*</text>
-                        </view>
-                        <view class="flex_sub">
-                            <input bindblur="user_code" class="inputH" data-type="code" placeholder="请输入" value="{{code}}"></input>
-                        </view>
-                        <button bindtap="getCapcha" class="getCapcha ml15 " disabled="{{!!cooling}}" hoverClass="hoverBtn">{{cooling?cooling+'s':'获取验证码'}}</button>
-                    </view>
-                </block>
-              
-       
-                    
-               
-            </block>
+<view class="tckBox">
+  <view class="tckBg">
+    <button class="head" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image mode="aspectFill" class="avatar" src="{{avatarUrl}}"></image>
+      <image mode="widthFix" class="creme" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/authorization/creme.png"></image>
+    </button>
+  </view>
 
-            <view class="tabBarBox"  >
-        <view class="tabBar" >
-          <button  bindtap="login" class="btn">
-  <image class="image" style="margin:0 0 ; border: 0;" role="img" src="https://scrm.res.ixiaochengxu.cc/SCRM_NEW/2023-06-25/iqXmacY9gIIgfZ4eOXxj8kZ3isGOPLdWi9s2z8eg.png" ></image>
-  <view style="white-space: nowrap; text-align: center;" class="name">确认绑定</view>
+  <view class="tckBottom">
+    <!-- <view catchtap="closeForm" class="closeInfo iconfont icon-guanbi"></view> -->
+    <view class="tckTitle lineText2 wrap"></view>
 
-</button>
+    <form bindsubmit="saveForm">
+      <block>
+        <block>
+          <!-- <view class="formItem flex_align"> -->
+          <!--     <view class="label">头像<text class="textH">*</text> -->
+          <!--     </view> -->
+          <!--     <view class="flex_sub"> -->
+          <!--         <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"> -->
+          <!--             <image class="avatar"  src="{{avatarUrl}}"></image> -->
+          <!--         </button> -->
+          <!--         &lt;!&ndash; <input bindinput="intChange" class="inputH" data-type="phone" maxlength="11" placeholder="请输入" value="{{member.tel?member.tel:phone}}"></input> &ndash;&gt; -->
+          <!--     </view> -->
+          <!-- </view> -->
+          <view class="formItem flex_align">
+            <view class="label">昵称
+            </view>
+            <view class="flex_sub">
+              <input class="inputH" bindchange="onInput" bindblur="onInput" type="nickname" placeholder="请输入" value="{{member.nickname|| ''}}"></input>
+            </view>
+          </view>
+          <view class="formItem flex_align">
+            <view class="label">手机号
+            </view>
+            <view class="flex_sub">
+              <input bindinput="intChange" class="inputH" data-type="phone" maxlength="11" placeholder="请输入" value="{{member.tel?member.tel:phone}}"></input>
+            </view>
+          </view>
+          <view class="formItem formItem1 flex_align">
+            <view class="label">验证码
+            </view>
+            <view class="flex_sub">
+              <input bindblur="user_code" class="inputH" data-type="code" placeholder="请输入" value="{{code}}"></input>
+            </view>
+            <button bindtap="getCapcha" class="getCapcha ml15 " disabled="{{!!cooling}}" hoverClass="hoverBtn">{{cooling ? cooling + 's' : '获取验证码'}}</button>
+          </view>
+        </block>
+      </block>
 
-
-
+      <view class="tabBarBox">
+        <view class="tabBar" bindtap="login">
+          <image mode="widthFix" style="width: 100%" role="img" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/authorization/btn.png"></image>
         </view>
-    </view>
-        </form>
-    </view>
+      </view>
+    </form>
+  </view>
 </view>
 
 
