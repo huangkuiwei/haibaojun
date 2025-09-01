@@ -7,8 +7,17 @@
   top: 0rpx;
   background-color: #ffffff;
 }
-.head-container {
- background: url("https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/bg.png") left top/100% 100% no-repeat;
+
+.head-container .bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.head-container .bg image {
+  width: 100%;
 }
 .head{
   width: 750rpx;
@@ -69,6 +78,14 @@
  font-weight: 600;
  font-size: 33rpx;
  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14rpx;
+}
+
+.nickname .vip {
+  width: 44rpx;
 }
 /* .icon_vip{
   width: 106rpx;

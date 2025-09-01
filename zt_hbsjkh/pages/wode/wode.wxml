@@ -1,47 +1,59 @@
 <include src="../shouquan/shouquan" />
 <view class='container'>
   <view class="head-container">
+    <view class="bg">
+      <image mode="widthFix" src="{{ member.avatar || 'https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/wode/bg.png' }}"/>
+    </view>
+
     <view class="head">
         <!-- <image src="../../resource/img/bg_wode.png" class="bg_head"></image> -->
         <view class="head_content">
-          <image src="../../resource/img/tx_wode_kong.png" mode="widthFix" class="touxiang" wx:if="{{(member.avatar=='')&&(member.nickname=='') || (is_login == 0)}}" bindtap="login"></image>
+          <image src="../../resource/img/tx_wode_kong.png" mode="widthFix" class="touxiang" wx:if="{{(!member.avatar)&&(!member.nickname)}}" bindtap="login"></image>
           <view wx:else class="touxiang">
-            <open-data type="userAvatarUrl"></open-data>
+            <!-- <open-data type="userAvatarUrl"></open-data> -->
+            <image src="{{ member.avatar }}" mode="widthFix" class="touxiang"></image>
           </view>
-          <view>
-            <view class="nickname" wx:if="{{(member.avatar=='')&&(member.nickname=='')  || (is_login == 0)}}" bindtap="login">点击登录</view>
-            <open-data type="userNickName" class="nickname" wx:else></open-data>
-            <!-- <view style="margin-top: 10rpx;" wx:if="{{is_login == 1}}">{{member.tel}}</view> -->
-          </view>
+          <view style="display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 20rpx; color: #000000;">
+            <view class="nickname" wx:if="{{(member.avatar=='')&&(member.nickname=='')}}" bindtap="login">点击登录</view>
+            <!-- <open-data type="userNickName" class="nickname" wx:else></open-data> -->
 
-          <block wx:if="{{ is_login == 1 }}">
-            <!-- <image class="icon_vip" src="../../resource/img/icon_vip_0.png" wx:if="{{member.vip==0}}"></image>
-            <image class="icon_vip" src="{{fenxiao.niankalogo}}" wx:elif="{{member.vip==3}}"></image>
-            <image class="icon_vip" src="{{fenxiao.jikalogo}}" wx:elif="{{member.vip==2}}"></image>
-            <image class="icon_vip" src="{{fenxiao.yuekalogo}}" wx:elif="{{member.vip==1}}"></image> -->
-
-            <view class="icon_vip-wrap">
-              <image mode="widthFix" class="icon_vip" src="../../resource/img/tp-vip.png" wx:if="{{member.vip==0}}"></image>
-              <image mode="widthFix" class="icon_vip" src="{{fenxiao.niankalogo}}" wx:if="{{member.vip==3}}"></image>
-              <image mode="widthFix" class="icon_vip" src="{{fenxiao.yuekalogo}}" wx:if="{{member.vip==1}}"></image>
-              <image mode="widthFix" class="icon_vip" src="{{fenxiao.jikalogo}}" wx:if="{{member.vip==2}}"></image>
-
-              <text class="pt-vip-text" wx:if="{{member.vip==0}}">普通会员</text>
-
-              <view class="vip-text" wx:if="{{member.vip==1 || member.vip==2 ||member.vip==3}}">
-                <text style="color: #FFE2B2; margin-right: 24rpx;">VIP</text>
-                <text style="color: #D12021;" wx:if="{{member.vip==1}}">月</text>
-                <text style="color: #D12021;" wx:if="{{member.vip==2}}">月</text>
-                <text style="color: #D12021;" wx:if="{{member.vip==3}}">年</text>
-              </view>
+            <view class="nickname" wx:else>
+              <text>{{ member.nickname || '微信用户' }}</text>
+              <image wx:if="{{ member.vip > 0 }}" mode="widthFix" class="vip" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/vip/vip-icon2.png"></image>
+              <image wx:else mode="widthFix" class="vip" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/vip/vip-icon1.png"></image>
             </view>
-          </block>
+
+            <view style="margin-top: 10rpx;" wx:if="{{member.uid}}}">ID：{{ member.uid }}</view>
+          </view>
+
+          <!-- <block wx:if="{{ is_login == 1 }}"> -->
+          <!--   &lt;!&ndash; <image class="icon_vip" src="../../resource/img/icon_vip_0.png" wx:if="{{member.vip==0}}"></image> -->
+          <!--   <image class="icon_vip" src="{{fenxiao.niankalogo}}" wx:elif="{{member.vip==3}}"></image> -->
+          <!--   <image class="icon_vip" src="{{fenxiao.jikalogo}}" wx:elif="{{member.vip==2}}"></image> -->
+          <!--   <image class="icon_vip" src="{{fenxiao.yuekalogo}}" wx:elif="{{member.vip==1}}"></image> &ndash;&gt; -->
+
+          <!--   <view class="icon_vip-wrap"> -->
+          <!--     <image mode="widthFix" class="icon_vip" src="../../resource/img/tp-vip.png" wx:if="{{member.vip==0}}"></image> -->
+          <!--     <image mode="widthFix" class="icon_vip" src="{{fenxiao.niankalogo}}" wx:if="{{member.vip==3}}"></image> -->
+          <!--     <image mode="widthFix" class="icon_vip" src="{{fenxiao.yuekalogo}}" wx:if="{{member.vip==1}}"></image> -->
+          <!--     <image mode="widthFix" class="icon_vip" src="{{fenxiao.jikalogo}}" wx:if="{{member.vip==2}}"></image> -->
+
+          <!--     <text class="pt-vip-text" wx:if="{{member.vip==0}}">普通会员</text> -->
+
+          <!--     <view class="vip-text" wx:if="{{member.vip==1 || member.vip==2 ||member.vip==3}}"> -->
+          <!--       <text style="color: #FFE2B2; margin-right: 24rpx;">VIP</text> -->
+          <!--       <text style="color: #D12021;" wx:if="{{member.vip==1}}">月</text> -->
+          <!--       <text style="color: #D12021;" wx:if="{{member.vip==2}}">月</text> -->
+          <!--       <text style="color: #D12021;" wx:if="{{member.vip==3}}">年</text> -->
+          <!--     </view> -->
+          <!--   </view> -->
+          <!-- </block> -->
 
         </view>
 
-        <view class="uid_view" bindtap="copy" wx:if="{{ is_login == 1 }}">
-          <view class="uid_view_right" wx:if="{{(member.vip!=0)&&(member.vip!=4)}}">{{member.vipendtime}}会员到期</view>
-        </view>
+        <!-- <view class="uid_view" bindtap="copy" wx:if="{{ is_login == 1 }}"> -->
+        <!--   <view class="uid_view_right" wx:if="{{(member.vip!=0)&&(member.vip!=4)}}">{{member.vipendtime}}会员到期</view> -->
+        <!-- </view> -->
         <!-- <view class="shouyi">
           <view class="shouyi_bottom">
             <view class="shouyi_bottom_item">

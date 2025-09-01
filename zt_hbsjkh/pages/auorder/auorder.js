@@ -30,7 +30,7 @@ Page({
     wx.request({
       method: 'GET',
       withCredentials: true,
-      url: `https://weapi.ardila.cn/api/business/ali_sign/au_order/${this.queryO}`,
+      url: `https://tfapi.csruij.cn/api/business/ali_sign/au_order/${this.queryO}`,
       dataType: 'json',
       success: (response) => {
         let res = response.data

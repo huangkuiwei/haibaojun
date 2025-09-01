@@ -1,100 +1,130 @@
 <import src="../../../wxParse/wxParse.wxml"></import>
 <include src="../shouquan/shouquan" />
 <view class='container'>
-  <image mode="widthFix" src="../../resource/img/bg1.png" class="bg1" />
+  <view class="tckBg">
+    <image class="head" mode="aspectFill" class="avatar" src="{{member.avatar || avatarUrl}}"></image>
 
-  <view class="vip_top">
-    <view class="user_info">
-      <image src="../../resource/img/tx_wode_kong.png" class="touxiang" wx:if="{{(member.avatar=='')&&(member.nickname=='')}}" bindtap="login">
-      </image>
-      <!-- <open-data type="userAvatarUrl" class="touxiang" wx:else></open-data> -->
-      <image src="{{member.avatar || avatarUrl}}" class="touxiang" wx:else></image>
-
-      <view class="name-info">
-        <view class="nickname" wx:if="{{(member.avatar=='')&&(member.nickname=='')}}" bindtap="login">点击登录</view>
-        <view class="nickname" wx:else bindtap="login">{{member.nickname || '微信用户'}}</view>
-
-        <view class="vip_info">
-          <view class="vip_info_left">剩余{{user.lefttzh == 10000 ? '无限' : user.lefttzh}}次下载</view>
+    <view>
+      <view class="nickname" wx:if="{{(member.avatar=='')&&(member.nickname=='')}}" bindtap="login">点击登录</view>
+      <view style="display: flex; flex-direction: column; align-items: center; justify-content: center" wx:else>
+        <!-- <open-data type="userNickName" class="nickname"></open-data> -->
+        <view class="nickname">
+          <text>{{ member.nickname || '微信用户' }}</text>
+          <image wx:if="{{ member.vip > 0 }}" mode="widthFix" class="vip" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/vip/vip-icon2.png"></image>
+          <image wx:else mode="widthFix" class="vip" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/vip/vip-icon1.png"></image>
         </view>
-      </view>
-
-      <!-- <open-data type="userNickName" class="nickname" wx:else></open-data> -->
-      <view class="icon_vip-wrap">
-        <image mode="widthFix" class="icon_vip" src="../../resource/img/tp-vip.png" wx:if="{{member.vip==0}}"></image>
-        <image mode="widthFix" class="icon_vip" src="{{fenxiao.niankalogo}}" wx:if="{{member.vip==3}}"></image>
-        <image mode="widthFix" class="icon_vip" src="{{fenxiao.yuekalogo}}" wx:if="{{member.vip==1}}"></image>
-        <image mode="widthFix" class="icon_vip" src="{{fenxiao.jikalogo}}" wx:if="{{member.vip==2}}"></image>
-        
-        <text class="pt-vip-text" wx:if="{{member.vip==0}}">普通会员</text>
-
-        <view class="vip-text" wx:if="{{member.vip==1 || member.vip==2 ||member.vip==3}}">
-          <text style="color: #FFE2B2; margin-right: 24rpx;">VIP</text>
-          <text style="color: #D12021;" wx:if="{{member.vip==1}}">月</text>
-          <text style="color: #D12021;" wx:if="{{member.vip==2}}">月</text>
-          <text style="color: #D12021;" wx:if="{{member.vip==3}}">年</text>
-        </view>
-      </view>
-
-      <view style="flex-grow: 1;"></view>
-
-      <view class="renew">
-        <image bindtap="renewManage" mode="widthFix" src="../../resource/img/renew-icon.png"></image>
-        <text wx:if="{{(member.vip!=0)&&(member.vip!=4)}}">{{member.vipendtime}}会员到期</text> 
+        <text wx:if="{{ member.uid }}" style="margin-top: 12rpx; font-size: 20rpx; color: #000000;">ID：{{ member.uid }}</text>
       </view>
     </view>
+  </view>
+
+  <view class="vip_top">
+    <!-- <view class="user_info"> -->
+    <!--   <image src="../../resource/img/tx_wode_kong.png" class="touxiang" wx:if="{{(member.avatar=='')&&(member.nickname=='')}}" bindtap="login"> -->
+    <!--   </image> -->
+    <!--   &lt;!&ndash; <open-data type="userAvatarUrl" class="touxiang" wx:else></open-data> &ndash;&gt; -->
+    <!--   <image src="{{member.avatar || avatarUrl}}" class="touxiang" wx:else></image> -->
+
+    <!--   <view class="name-info"> -->
+    <!--     <view class="nickname" wx:if="{{(member.avatar=='')&&(member.nickname=='')}}" bindtap="login">点击登录</view> -->
+    <!--     <view class="nickname" wx:else bindtap="login">{{member.nickname || '微信用户'}}</view> -->
+
+    <!--     <view class="vip_info"> -->
+    <!--       <view class="vip_info_left">剩余{{user.lefttzh == 10000 ? '无限' : user.lefttzh}}次下载</view> -->
+    <!--     </view> -->
+    <!--   </view> -->
+
+    <!--   &lt;!&ndash; <open-data type="userNickName" class="nickname" wx:else></open-data> &ndash;&gt; -->
+    <!--   <view class="icon_vip-wrap"> -->
+    <!--     <image mode="widthFix" class="icon_vip" src="../../resource/img/tp-vip.png" wx:if="{{member.vip==0}}"></image> -->
+    <!--     <image mode="widthFix" class="icon_vip" src="{{fenxiao.niankalogo}}" wx:if="{{member.vip==3}}"></image> -->
+    <!--     <image mode="widthFix" class="icon_vip" src="{{fenxiao.yuekalogo}}" wx:if="{{member.vip==1}}"></image> -->
+    <!--     <image mode="widthFix" class="icon_vip" src="{{fenxiao.jikalogo}}" wx:if="{{member.vip==2}}"></image> -->
+    <!--      -->
+    <!--     <text class="pt-vip-text" wx:if="{{member.vip==0}}">普通会员</text> -->
+
+    <!--     <view class="vip-text" wx:if="{{member.vip==1 || member.vip==2 ||member.vip==3}}"> -->
+    <!--       <text style="color: #FFE2B2; margin-right: 24rpx;">VIP</text> -->
+    <!--       <text style="color: #D12021;" wx:if="{{member.vip==1}}">月</text> -->
+    <!--       <text style="color: #D12021;" wx:if="{{member.vip==2}}">月</text> -->
+    <!--       <text style="color: #D12021;" wx:if="{{member.vip==3}}">年</text> -->
+    <!--     </view> -->
+    <!--   </view> -->
+
+    <!--   <view style="flex-grow: 1;"></view> -->
+
+    <!--   <view class="renew"> -->
+    <!--     <image bindtap="renewManage" mode="widthFix" src="../../resource/img/renew-icon.png"></image> -->
+    <!--     <text wx:if="{{(member.vip!=0)&&(member.vip!=4)}}">{{member.vipendtime}}会员到期</text>  -->
+    <!--   </view> -->
+    <!-- </view> -->
 
     <view class="vip_shuoming">
       <view class="vip_content">
-        <view class="vip_content_title">会员套餐</view>
+        <!-- <view class="vip_content_title">会员套餐</view> -->
         <!-- <view class='content_gonggao' wx:if="{{setting.gonggao!=''}}">
         <view class="content_gonggao_content">
           <view id="text" style='color:{{mlib_style.fontcolor}};'>{{setting.gonggao}}</view>
         </view>
       </view> -->
 
+        <view class="desc">
+          <image mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/vip/desc.png" />
+
+          <view class="desc-words">
+            <text>VIP身份特权</text>
+            <text>无限下载</text>
+            <text>商用无忧</text>
+            <text>高清无水印</text>
+          </view>
+        </view>
+
         <view class="vip-list">
           <view class="{{cur_select==1?'vip_content_item':'vip_content_item_off'}}" data-index="1" bindtap="change_select">
             <!-- <image src="{{fenxiao.yuekaicon}}" style="width:678rpx;height:160rpx;position: absolute;"></image> -->
-            <image src="{{fenxiao.yuekalogos}}"></image>
+            <image mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/vip/icon1.png"></image>
             <view class="vip_content_item_right">
-              <view class="name">创意会员包(包月)</view>
+              <view class="name">年度会员</view>
               <view class="price">
-                <text>25</text>元
+                ￥<text>98</text>
               </view>
+              <view class="price2">每月低至8.1元</view>
             </view>
           </view>
 
           <view class="{{cur_select==2?'vip_content_item':'vip_content_item_off'}}" data-index="2" bindtap="change_select">
             <!-- <image src="{{fenxiao.yuekaicon}}" style="width:678rpx;height:160rpx;position: absolute;"></image> -->
-            <image src="{{fenxiao.yuekalogos}}"></image>
+            <image mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/vip/icon2.png"></image>
             <view class="vip_content_item_right">
-              <view class="name">创意会员包(连续包月)</view>
+              <view class="name">季度会员</view>
               <view class="price">
-                <text>19.9</text>元
+                ￥<text>58</text>
               </view>
+              <view class="price2">每月低至19.3元</view>
             </view>
           </view>
 
-          <view class="{{cur_select==3?'vip_content_item':'vip_content_item_off'}}" data-index="3" bindtap="change_select">
-            <!-- <image src="{{fenxiao.jikaicon}}" style="width:680rpx;height:160rpx;position: absolute;"></image> -->
-            <image src="{{fenxiao.jikalogos}}"></image>
-            <view class="vip_content_item_right">
-              <view class="name">创意无限包(包月)</view>
-              <view class="price">
-                <text>35</text>元
-              </view>
-            </view>
-          </view>
+          <!-- <view class="{{cur_select==3?'vip_content_item':'vip_content_item_off'}}" data-index="3" bindtap="change_select"> -->
+          <!--   &lt;!&ndash; <image src="{{fenxiao.jikaicon}}" style="width:680rpx;height:160rpx;position: absolute;"></image> &ndash;&gt; -->
+          <!--   &lt;!&ndash; <image src="{{fenxiao.jikalogos}}"></image> &ndash;&gt; -->
+          <!--   <view class="vip_content_item_right"> -->
+          <!--     <view class="name">月度会员</view> -->
+          <!--     <view class="price"> -->
+          <!--       ￥<text>35</text> -->
+          <!--     </view> -->
+          <!--     <view class="price2">每天低至0.7元</view> -->
+          <!--   </view> -->
+          <!-- </view> -->
 
           <view class="{{cur_select==4?'vip_content_item':'vip_content_item_off'}}" data-index="4" bindtap="change_select">
             <!-- <image src="{{fenxiao.jikaicon}}" style="width:680rpx;height:160rpx;position: absolute;"></image> -->
-            <image src="{{fenxiao.jikalogos}}"></image>
+            <image mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/vip/icon3.png"></image>
             <view class="vip_content_item_right">
-              <view class="name">创意无限包(连续包月)</view>
+              <view class="name">月度会员</view>
               <view class="price">
-                <text>29.9</text>元
+                ￥<text>22</text>
               </view>
+              <view class="price2">每天低至0.7元</view>
             </view>
           </view>
 
@@ -109,31 +139,31 @@
           <!--   </view> -->
           <!-- </view> -->
 
-          <view class="{{cur_select==5?'vip_content_item':'vip_content_item_off'}}" data-index="5" bindtap="change_select">
-            <!-- <image src="{{fenxiao.jikaicon}}" style="width:680rpx;height:160rpx;position: absolute;"></image> -->
-            <image src="{{fenxiao.niankalogos}}"></image>
-            <view class="vip_content_item_right">
-              <view class="name">创意会员包(包年)</view>
-              <view class="price">
-                <text>198</text>元
-              </view>
-            </view>
-          </view>
+          <!-- <view class="{{cur_select==5?'vip_content_item':'vip_content_item_off'}}" data-index="5" bindtap="change_select"> -->
+          <!--   &lt;!&ndash; <image src="{{fenxiao.jikaicon}}" style="width:680rpx;height:160rpx;position: absolute;"></image> &ndash;&gt; -->
+          <!--   &lt;!&ndash; <image src="{{fenxiao.niankalogos}}"></image> &ndash;&gt; -->
+          <!--   <view class="vip_content_item_right"> -->
+          <!--     <view class="name">创意会员包(包年)</view> -->
+          <!--     <view class="price"> -->
+          <!--       ￥<text>198</text> -->
+          <!--     </view> -->
+          <!--   </view> -->
+          <!-- </view> -->
         </view>
       </view>
 
-      <view class="vip_shuoming_title">会员权益</view>
-      <view class="shop-desc">
-        <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
-        <!-- <view><text></text>创意会员包 (包月) 每日可下载次数30次。 </view>
-        <view><text></text>创意无限包 (包月) 每日可无限次下载。</view>
-        <view><text></text>创意会员包 (包年) 每日可下载次数1000次。</view> -->
-      </view>
+      <!-- <view class="vip_shuoming_title">会员权益</view> -->
+      <!-- <view class="shop-desc"> -->
+      <!--   <template is="wxParse" data="{{wxParseData:article.nodes}}"></template> -->
+      <!--   &lt;!&ndash; <view><text></text>创意会员包 (包月) 每日可下载次数30次。 </view> -->
+      <!--   <view><text></text>创意无限包 (包月) 每日可无限次下载。</view> -->
+      <!--   <view><text></text>创意会员包 (包年) 每日可下载次数1000次。</view> &ndash;&gt; -->
+      <!-- </view> -->
     </view>
   </view>
 
   <view class="foot">
-    <view bindtap="pay">确认支付</view>
+    <view bindtap="pay">立即购买</view>
   </view>
 </view>
 <!-- <view class="goumai_info">

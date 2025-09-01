@@ -43,7 +43,7 @@ Page({
     wx.request({
       method: 'POST',
       withCredentials: true,
-      url: `https://weapi.ardila.cn/api/microapp/order/query_user_order_sign`,
+      url: `https://tfapi.csruij.cn/api/microapp/order/query_user_order_sign`,
       dataType: 'json',
       data: {
         appid: wx.getAccountInfoSync().miniProgram.appId
@@ -90,7 +90,7 @@ Page({
     wx.request({
       method: 'POST',
       withCredentials: true,
-      url: `https://weapi.ardila.cn/api/global/sms/send_code`,
+      url: `https://tfapi.csruij.cn/api/global/sms/send_code`,
       dataType: 'json',
       data: {
         mobile: this.data.member.tel,
@@ -152,7 +152,7 @@ Page({
     wx.request({
       method: 'POST',
       withCredentials: true,
-      url: `https://weapi.ardila.cn/api/microapp/auth/we_micro/login`,
+      url: `https://tfapi.csruij.cn/api/microapp/auth/we_micro/login`,
       dataType: 'json',
       data: {
         mobile: this.data.member.tel,
@@ -210,7 +210,7 @@ Page({
     wx.request({
       method: 'POST',
       withCredentials: true,
-      url: `https://weapi.ardila.cn/api/sms/sendcode`,
+      url: `https://tfapi.csruij.cn/api/sms/sendcode`,
       data: {
         mobile: this.data.member.tel,
         item_type: this.data.currentOrderInfo.businessType,
@@ -247,7 +247,7 @@ Page({
     wx.request({
       method: 'POST',
       withCredentials: true,
-      url: `https://weapi.ardila.cn/api/user/order/refund`,
+      url: `https://tfapi.csruij.cn/api/user/order/refund`,
       data: {
         external_agreement_no: this.data.currentOrderInfo.external_agreement_no,
         mobile: this.data.member.tel,

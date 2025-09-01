@@ -6,9 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132',
+    avatarUrl: 'https://hnenjoy.oss-cn-shanghai.aliyuncs.com/claimapp/authorization/head.png',
 
-    cur_select: 0,
+    cur_select: '4',
     member: null,
     user: null,
     fenxiao: null,
@@ -24,6 +24,7 @@ Page({
     goumai_info: [],
     cur_show_goumai: 0,
     height_px: 0,
+    is_login:0,
   },
   /**
    * 登录
@@ -47,8 +48,10 @@ Page({
             })
             return;
           }
+          wx.setStorageSync('is_login', 1);
           that.setData({
-            member: res.data.data.d.member
+            member: res.data.data.d.member,
+            is_login:1
           })
         },
         fail(res) {
@@ -102,157 +105,227 @@ Page({
     }
 
     if (this.data.cur_select === '1') {
-      data.url = 'https://ad51c.ardila.cn/#/pages/adllq/adlhbts/06031?vcid=23872'
-      data.pt = 12
-      data.business_version = 2
-    } else if (this.data.cur_select === '2') {
-      data.url = 'https://ad51c.ardila.cn/#/pages/adllq/adlhbts/06031?vcid=23872'
-      data.pt = 15
-    } else if (this.data.cur_select === '3') {
-      data.url = 'https://ad51c.ardila.cn/#/pages/adllq/adlts/09263?vcid=25486'
-      data.pt = 12
-      data.business_version = 2
-    } else if (this.data.cur_select === '4') {
-      data.url = 'https://ad51c.ardila.cn/#/pages/adllq/adlts/09263?vcid=25486'
-      data.pt = 15
-    } else if (this.data.cur_select === '5') {
-      data.url = 'https://ad51c.ardila.cn/#/pages/adllq/adlhbts/06031?vcid=23872'
+      data.url = 'https://tg-hbj.csruij.cn/#/pages/rjxx/rjhbjts/5082941?lj=41719&cb=1'
       data.pt = 12
       data.business_version = 4
-    } else if (this.data.cur_select === '6') {
-      data.url = 'https://ad51c.ardila.cn/#/pages/adllq/adlzg/411131?vcid=28753'
+    } else if (this.data.cur_select === '2') {
+      data.url = 'https://tg-hbj.csruij.cn/#/pages/rjxx/rjhbjts/5082941?lj=41719&cb=1'
       data.pt = 12
-      data.business_version = 0
+      data.business_version = 3
+    }
+    // else if (this.data.cur_select === '3') {
+    //   data.url = 'https://ad51c.ardila.cn/#/pages/adllq/adlts/09263?vcid=25486'
+    //   data.pt = 12
+    //   data.business_version = 2
+    // }
+    else if (this.data.cur_select === '4') {
+      data.url = 'https://tg-hbj.csruij.cn/#/pages/rjxx/rjhbjts/5082941?lj=41719&cb=1'
+      data.pt = 12
+      data.business_version = 2
+    }
+    // else if (this.data.cur_select === '5') {
+    //   data.url = 'https://ad51c.ardila.cn/#/pages/adllq/adlhbts/06031?vcid=23872'
+    //   data.pt = 12
+    //   data.business_version = 4
+    // } else if (this.data.cur_select === '6') {
+    //   data.url = 'https://ad51c.ardila.cn/#/pages/adllq/adlzg/411131?vcid=28753'
+    //   data.pt = 12
+    //   data.business_version = 0
+    // }
+
+    data.appid = wx.getAccountInfoSync().miniProgram.appId
+    data.openid = this.data.member.openid
+
+    if (!data.openid) {
+      this.login()
+      return
     }
 
-    if (this.data.cur_select === '2' || this.data.cur_select === '4') {
-      wx.request({
-        method: 'POST',
-        withCredentials: true,
-        url: `https://weapi.ardila.cn/api/business/ali_sign/create_sign`,
-        data: data,
-        dataType: 'json',
-        success: (response) => {
-          let res = response.data
+    wx.showLoading({
+      title: '请稍等...',
+      mask:true,
+    })
 
-          if (res.code === 0 || res.Code === 0) {
-            let params = this.getParams(res.data)
-            let odataParams = this.getParams(params.odata)
+    wx.request({
+      method: 'POST',
+      withCredentials: true,
+      url: `https://tfapi.csruij.cn/api/open/order/create`,
+      data: data,
+      dataType: 'json',
+      success: (response) => {
+        wx.hideLoading()
+        let res = response.data
 
-            if (odataParams) {
-              let signno = odataParams.signno
+        if (res.code === 0 || res.Code === 0) {
+          let params = JSON.parse(res.data)
 
-              wx.request({
-                method: 'GET',
-                withCredentials: true,
-                url: `https://weapi.ardila.cn/api/business/ali_sign/au_order/${signno}`,
-                dataType: 'json',
-                success: (response1) => {
-                  let res = response1.data
+          wx.requestPayment({
+            'timeStamp': params.timeStamp,
+            'nonceStr': params.nonceStr,
+            'package': params.package,
+            'signType': 'MD5',
+            'paySign': params.paySign,
+            'success': function (res) {
+              wx.showToast({
+                title: '支付成功',
+                icon: 'success'
+              })
 
-                  if (res.code === 0 || res.Code === 0) {
-                    if (res.data.startsWith('http')) {
-                      app.mlib.webview_url = res.data;
-
-                      wx.navigateTo({
-                        url: '../webview/webview',
-                      })
-                    } else {
-                      let params = JSON.parse(res.data);
-                      console.log(params, 'params');
-                      this.navigateToMiniProgram(params);
-                    }
-                  } else {
-                    wx.hideLoading()
-
-                    wx.showToast({
-                      title: res.msg || res.Msg,
-                      icon: 'none',
-                      mask: true,
-                    });
-                  }
-
-                },
-                fail: () => {
-                  wx.hideLoading()
-                }
+              setTimeout(() => {
+                that.inite();
+              }, 500)
+            },
+            'fail': function (res) {
+              wx.showToast({
+                title: '支付失败',
+                icon: 'error'
               })
             }
-          } else {
-            wx.hideLoading()
-
-            wx.showToast({
-              title: res.msg || res.Msg,
-              icon: 'none',
-              mask: true,
-            });
-          }
-
-        },
-        fail: () => {
+          })
+        } else {
           wx.hideLoading()
-        }
-      })
-    } else {
-      data.appid = wx.getAccountInfoSync().miniProgram.appId
-      data.openid = this.data.member.openid
 
-      if (!data.openid) {
-        this.login()
-        return
+          wx.showToast({
+            title: res.msg || res.Msg,
+            icon: 'none',
+            mask: true,
+          });
+        }
+
+      },
+      fail: () => {
+        wx.hideLoading()
       }
+    })
 
-      wx.request({
-        method: 'POST',
-        withCredentials: true,
-        url: `https://weapi.ardila.cn/api/open/order/create`,
-        data: data,
-        dataType: 'json',
-        success: (response) => {
-          let res = response.data
-
-          if (res.code === 0 || res.Code === 0) {
-            let params = JSON.parse(res.data)
-
-            wx.requestPayment({
-              'timeStamp': params.timeStamp,
-              'nonceStr': params.nonceStr,
-              'package': params.package,
-              'signType': 'MD5',
-              'paySign': params.paySign,
-              'success': function (res) {
-                wx.showToast({
-                  title: '支付成功',
-                  icon: 'success'
-                })
-
-                setTimeout(() => {
-                  that.inite();
-                }, 500)
-              },
-              'fail': function (res) {
-                wx.showToast({
-                  title: '支付失败',
-                  icon: 'error'
-                })
-              }
-            })
-          } else {
-            wx.hideLoading()
-
-            wx.showToast({
-              title: res.msg || res.Msg,
-              icon: 'none',
-              mask: true,
-            });
-          }
-
-        },
-        fail: () => {
-          wx.hideLoading()
-        }
-      })
-    }
+    // if (this.data.cur_select === '2' || this.data.cur_select === '4') {
+    //   wx.request({
+    //     method: 'POST',
+    //     withCredentials: true,
+    //     url: `https://tfapi.csruij.cn/api/business/ali_sign/create_sign`,
+    //     data: data,
+    //     dataType: 'json',
+    //     success: (response) => {
+    //       let res = response.data
+    //
+    //       if (res.code === 0 || res.Code === 0) {
+    //         let params = this.getParams(res.data)
+    //         let odataParams = this.getParams(params.odata)
+    //
+    //         if (odataParams) {
+    //           let signno = odataParams.signno
+    //
+    //           wx.request({
+    //             method: 'GET',
+    //             withCredentials: true,
+    //             url: `https://tfapi.csruij.cn/api/business/ali_sign/au_order/${signno}`,
+    //             dataType: 'json',
+    //             success: (response1) => {
+    //               let res = response1.data
+    //
+    //               if (res.code === 0 || res.Code === 0) {
+    //                 if (res.data.startsWith('http')) {
+    //                   app.mlib.webview_url = res.data;
+    //
+    //                   wx.navigateTo({
+    //                     url: '../webview/webview',
+    //                   })
+    //                 } else {
+    //                   let params = JSON.parse(res.data);
+    //                   console.log(params, 'params');
+    //                   this.navigateToMiniProgram(params);
+    //                 }
+    //               } else {
+    //                 wx.hideLoading()
+    //
+    //                 wx.showToast({
+    //                   title: res.msg || res.Msg,
+    //                   icon: 'none',
+    //                   mask: true,
+    //                 });
+    //               }
+    //
+    //             },
+    //             fail: () => {
+    //               wx.hideLoading()
+    //             }
+    //           })
+    //         }
+    //       } else {
+    //         wx.hideLoading()
+    //
+    //         wx.showToast({
+    //           title: res.msg || res.Msg,
+    //           icon: 'none',
+    //           mask: true,
+    //         });
+    //       }
+    //
+    //     },
+    //     fail: () => {
+    //       wx.hideLoading()
+    //     }
+    //   })
+    // } else {
+    //   data.appid = wx.getAccountInfoSync().miniProgram.appId
+    //   data.openid = this.data.member.openid
+    //
+    //   if (!data.openid) {
+    //     this.login()
+    //     return
+    //   }
+    //
+    //   wx.request({
+    //     method: 'POST',
+    //     withCredentials: true,
+    //     url: `https://tfapi.csruij.cn/api/open/order/create`,
+    //     data: data,
+    //     dataType: 'json',
+    //     success: (response) => {
+    //       let res = response.data
+    //
+    //       if (res.code === 0 || res.Code === 0) {
+    //         let params = JSON.parse(res.data)
+    //
+    //         wx.requestPayment({
+    //           'timeStamp': params.timeStamp,
+    //           'nonceStr': params.nonceStr,
+    //           'package': params.package,
+    //           'signType': 'MD5',
+    //           'paySign': params.paySign,
+    //           'success': function (res) {
+    //             wx.showToast({
+    //               title: '支付成功',
+    //               icon: 'success'
+    //             })
+    //
+    //             setTimeout(() => {
+    //               that.inite();
+    //             }, 500)
+    //           },
+    //           'fail': function (res) {
+    //             wx.showToast({
+    //               title: '支付失败',
+    //               icon: 'error'
+    //             })
+    //           }
+    //         })
+    //       } else {
+    //         wx.hideLoading()
+    //
+    //         wx.showToast({
+    //           title: res.msg || res.Msg,
+    //           icon: 'none',
+    //           mask: true,
+    //         });
+    //       }
+    //
+    //     },
+    //     fail: () => {
+    //       wx.hideLoading()
+    //     }
+    //   })
+    // }
 
 
     // app.mlib.getUserInfo(this, function (response) {
