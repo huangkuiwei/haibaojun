@@ -31,6 +31,7 @@
     "zt_hbsjkh/pages/login/login",
     "zt_hbsjkh/pages/auorder/auorder",
     "zt_hbsjkh/pages/success/success",
+    "zt_hbsjkh/pages/receiveRedPacket/receiveRedPacket",
     "zt_hbsjkh/pages/renewal/renewal",
     "zt_hbsjkh/pages/privacy/privacy",
     "zt_hbsjkh/pages/protocol/protocol"

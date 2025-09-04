@@ -12,10 +12,19 @@ App({
         // appId为wxbd687630cd02ce1d：从签约小程序跳转回来
         if (appId === 'wxbd687630cd02ce1d') {
           if(extraData.return_code === 'SUCCESS') {
-            // 跳转到订购成功页面
-            wx.navigateTo({
-              url: '/zt_hbsjkh/pages/success/success',
-            })
+            let sign_order_no = wx.getStorageSync("sign_order_no");
+
+            if (sign_order_no) {
+              // 跳转到红包领取页面
+              wx.navigateTo({
+                url: '/zt_hbsjkh/pages/receiveRedPacket/receiveRedPacket',
+              });
+            } else {
+              // 跳转到订购成功页面
+              wx.navigateTo({
+                url: '/zt_hbsjkh/pages/success/success',
+              })
+            }
           } else {
             wx.showToast({
               title: '签约失败',

@@ -1,0 +1,22 @@
+<view class="receive-red-packet-page">
+  <view class="container">
+    <view class="top">
+      <!-- <image -->
+      <!--   mode="widthFix" -->
+      <!--   src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/haibaojun/receiveRedPacket/logo.png" -->
+      <!-- /> -->
+
+      <text>海报君发出的红包</text>
+    </view>
+
+    <view class="bottom">恭喜发财，大吉大利！</view>
+  </view>
+
+  <view class="btn">
+    <image
+      mode="widthFix"
+      bindtap="confirmReceive"
+      src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/haibaojun/receiveRedPacket/open-btn.png"
+    />
+  </view>
+</view>

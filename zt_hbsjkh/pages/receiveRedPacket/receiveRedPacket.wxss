@@ -1,0 +1,53 @@
+page {
+  height: 100%;
+}
+
+.receive-red-packet-page {
+  height: 100%;
+  background: #F15442 url("https://hnenjoy.oss-cn-shanghai.aliyuncs.com/scantool/static/assets/receiveRedPacket/red-packet-bg.png") left top/100% auto no-repeat;
+  position: relative;
+}
+
+.container {
+  padding-top: 236rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 52rpx;
+}
+
+.top image {
+  width: 60rpx;
+  margin-right: 25rpx;
+}
+
+.top text {
+  font-weight: 500;
+  font-size: 40rpx;
+  color: #FFE0B0;
+}
+
+.bottom {
+  font-weight: 500;
+  font-size: 56rpx;
+  color: #FFE0B0;
+}
+
+.btn {
+  position: absolute;
+  top: 57%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.btn image {
+  width: 266rpx;
+}

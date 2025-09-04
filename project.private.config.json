@@ -24,11 +24,25 @@
     "miniprogram": {
       "list": [
         {
-          "name": "zt_hbsjkh/pages/vip/vip",
-          "pathName": "zt_hbsjkh/pages/vip/vip",
+          "name": "zt_hbsjkh/pages/receiveRedPacket/receiveRedPacket",
+          "pathName": "zt_hbsjkh/pages/receiveRedPacket/receiveRedPacket",
           "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "zt_hbsjkh/pages/auorder/auorder",
+          "pathName": "zt_hbsjkh/pages/auorder/auorder",
+          "query": "shurl=https%3A%2F%2Ftg-hbj.csruij.cn%2F%23%2Fpages%2Frjxx%2Frjsd%2F5082913%3Flj%3D41773%26cb%3D1&mobile=18692556313&pt=12",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "zt_hbsjkh/pages/vip/vip",
+          "pathName": "zt_hbsjkh/pages/vip/vip",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
